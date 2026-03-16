@@ -63,19 +63,20 @@ async function build() {
   }
 
   for (const row of rows) {
-    const name = row.Name || row.name;
-    if (!name) continue;
+    const rawName = row.Name || row.name || row.NAME;
+    if (!rawName || rawName.trim() === '') continue;
+    const name = rawName.trim();
 
     // Build the description from multiple columns
-    let fullDescription = `<h3>Description</h3><p>${row.Description || row.description || ''}</p>`;
-    if (row.Mechanics || row.mechanics) fullDescription += `<h3>Mechanics</h3><p>${row.Mechanics || row.mechanics}</p>`;
-    if (row.Extras || row.extras) fullDescription += `<h3>Extras</h3><p>${row.Extras || row.extras}</p>`;
-    if (row.Flaws || row.flaws) fullDescription += `<h3>Flaws</h3><p>${row.Flaws || row.flaws}</p>`;
+    let fullDescription = `<h3>Description</h3><p>${row.Description || row.description || row.DESCRIPTION || ''}</p>`;
+    if (row.Mechanics || row.mechanics || row.MECHANICS) fullDescription += `<h3>Mechanics</h3><p>${row.Mechanics || row.mechanics || row.MECHANICS}</p>`;
+    if (row.Extras || row.extras || row.EXTRAS) fullDescription += `<h3>Extras</h3><p>${row.Extras || row.extras || row.EXTRAS}</p>`;
+    if (row.Flaws || row.flaws || row.FLAWS) fullDescription += `<h3>Flaws</h3><p>${row.Flaws || row.flaws || row.FLAWS}</p>`;
 
-    const action = (row.Action || row.action || 'standard').trim().toLowerCase();
-    const range = (row.Range || row.range || 'close').trim().toLowerCase();
-    const duration = (row.Duration || row.duration || 'instant').trim().toLowerCase();
-    const type = (row.Power || row.power || 'power').trim().toLowerCase();
+    const action = (row.Action || row.action || row.ACTION || 'standard').trim().toLowerCase();
+    const range = (row.Range || row.range || row.RANGE || 'close').trim().toLowerCase();
+    const duration = (row.Duration || row.duration || row.DURATION || 'instant').trim().toLowerCase();
+    const type = (row.Power || row.power || row.POWER || 'power').trim().toLowerCase();
 
     const foundryItem = {
       name: name,
@@ -89,11 +90,11 @@ async function build() {
         portee: translationMap.range[range] || range,
         duree: translationMap.duration[duration] || duration,
         effets: fullDescription,
-        notes: row.Description || row.description || '',
+        notes: row.Description || row.description || row.DESCRIPTION || '',
         cout: {
-          rang: parseInt(row.Rank || row.rank) || 0,
-          parrang: parseInt(row.Cost || row.cost) || 1,
-          total: (parseInt(row.Rank || row.rank) || 0) * (parseInt(row.Cost || row.cost) || 1)
+          rang: parseInt(row.Rank || row.rank || row.RANK) || 0,
+          parrang: parseInt(row.Cost || row.cost || row.COST) || 1,
+          total: (parseInt(row.Rank || row.rank || row.RANK) || 0) * (parseInt(row.Cost || row.cost || row.COST) || 1)
         }
       },
       _id: Math.random().toString(36).substring(2, 18)
