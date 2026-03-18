@@ -38,7 +38,7 @@ const translationMap = {
 
 async function build() {
   const csvFile = path.join(__dirname, '../1st Powers Input.csv');
-  const distDir = path.join(__dirname, '../packs');
+  const distDir = path.join(__dirname, '../mnm-3e-expanded/packs');
   const outFile = path.join(distDir, 'powers.db');
 
   // Ensure output directory exists
