@@ -1,0 +1,11 @@
+Name,Type,Ranks,Description
+Accurate Attack,Combat,1,"When you make an accurate attack, you can take a penalty of up to –5 on the effect modifier of the attack and add the same number (up to +5) to your attack bonus."
+Agile Feint,Skill,1,"You can use your Acrobatics bonus or movement speed rank in place of Deception to feint and trick in combat."
+All-out Attack,Combat,1,"When you make an all-out attack, you can take a penalty of up to –5 on your active defenses (Dodge and Parry) and add the same number (up to +5) to your attack bonus."
+Animal Empathy,Skill,1,"You have a special connection with animals. You can use interaction skills on animals normally, and do not have to speak a language the animal understands."
+Artificer,Skill,1,"You can use the Expertise: Magic skill to create temporary magical devices."
+Assessment,Skill,1,"You can use Insight to able to judge an opponent’s relative combat capabilities."
+Attractive,General,1,"You are particularly attractive, giving you a +2 circumstance bonus on Deception and Persuasion checks to deceive, mislead, or influence others who are attracted to you. Rank 2 gives a +5 bonus."
+Beginner's Luck,Fortune,1,"By spending a hero point, you gain an effective 5 ranks in a skill in which you currently have 0 ranks."
+Benefit,General,1,"You have some significant social or structural benefit, such as wealth, status, or a secret identity. Each rank provides one benefit."
+Chokehold,Combat,1,"If you successfully grab and maintain a hold on an opponent, you can suffocate them."

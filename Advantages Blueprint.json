@@ -1,0 +1,76 @@
+{
+  "name": "Accurate Attack",
+  "type": "talent",
+  "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
+  "system": {
+    "description": "<p>When you make an accurate attack, you can take a penalty of up to &ndash;5 on the effect modifier of the attack and add the same number (up to +5) to your attack bonus.</p>",
+    "equipement": false,
+    "rang": 0,
+    "edit": true,
+    "listEffectsVariantes": {}
+  },
+  "effects": [
+    {
+      "name": "Accurate Attack",
+      "flags": {
+        "mutants-and-masterminds-3e": {
+          "variante": "e0"
+        }
+      },
+      "changes": [
+        {
+          "key": "",
+          "mode": 2,
+          "priority": null,
+          "value": "0"
+        }
+      ],
+      "disabled": false,
+      "img": null,
+      "_id": "7fCyHkyW8y48Qccz",
+      "type": "base",
+      "system": {},
+      "duration": {
+        "startTime": null,
+        "combat": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "lastModifiedBy": null
+      }
+    }
+  ],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "Compendium.world.powers.Item.SdOTBpXIhk2J2z3e",
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "mandm",
+      "uuid": "Item.Ii7clIkYVvfe7VB6",
+      "coreVersion": "13.350",
+      "systemId": "mutants-and-masterminds-3e",
+      "systemVersion": "1.39.13"
+    },
+    "coreVersion": "13.350",
+    "systemId": "mutants-and-masterminds-3e",
+    "systemVersion": "1.39.13",
+    "createdTime": 1773806363983,
+    "modifiedTime": 1773806363983,
+    "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -9,7 +9,7 @@ const FLAWS = require('./flaws');
 const translationMap = {
   type: {
     'power': 'pouvoir',
-    'advantage': 'avantage',
+    'advantage': 'talent', // Corrected for Advantages
     'attack': 'pouvoir',
     'defense': 'pouvoir'
   },
@@ -23,58 +23,48 @@ const translationMap = {
   range: {
     'personal': 'personnelle',
     'close': 'contact',
-    'ranged': 'distance', // Corrected value
+    'ranged': 'distance',
     'perception': 'perception',
     'rank': 'rang'
   },
   duration: {
     'instant': 'instantane',
-    'sustained': 'prolonge', // Corrected value
+    'sustained': 'prolonge',
     'continuous': 'continu',
     'concentration': 'concentration',
     'permanent': 'permanent'
   }
 };
 
-async function build() {
+const distDir = path.join(__dirname, '../mnm-3e-expanded/packs');
+
+async function readCsv(filePath) {
+  return new Promise((resolve, reject) => {
+    const results = [];
+    if (!fs.existsSync(filePath)) return resolve([]);
+    fs.createReadStream(filePath)
+      .pipe(csv({
+        mapHeaders: ({ header }) => header.trim().replace(/^\uFEFF/, '')
+      }))
+      .on('data', (data) => results.push(data))
+      .on('end', () => resolve(results))
+      .on('error', (err) => reject(err));
+  });
+}
+
+async function buildPowers() {
   const csvFile = path.join(__dirname, '../1st Powers Input.csv');
-  const distDir = path.join(__dirname, '../mnm-3e-expanded/packs');
   const outFile = path.join(distDir, 'powers.db');
-
-  // Ensure output directory exists
-  await fs.ensureDir(distDir);
-
+  const rows = await readCsv(csvFile);
   const items = [];
-
-  const readCsv = () => {
-    return new Promise((resolve, reject) => {
-      const results = [];
-      fs.createReadStream(csvFile)
-        .pipe(csv({
-          mapHeaders: ({ header }) => header.trim().replace(/^\uFEFF/, '')
-        }))
-        .on('data', (data) => results.push(data))
-        .on('end', () => resolve(results))
-        .on('error', (err) => reject(err));
-    });
-  };
-
-  const rows = await readCsv();
-  if (rows.length > 0) {
-    console.log('First row data keys:', Object.keys(rows[0]));
-    console.log('First row name value:', rows[0].Name || rows[0].name);
-  }
 
   for (const row of rows) {
     const rawName = row.Name || row.name || row.NAME;
     if (!rawName || rawName.trim() === '') continue;
     const name = rawName.trim();
 
-    // Build the description from multiple columns
     let fullDescription = `<h3>Description</h3><p>${row.Description || row.description || row.DESCRIPTION || ''}</p>`;
     if (row.Mechanics || row.mechanics || row.MECHANICS) fullDescription += `<h3>Mechanics</h3><p>${row.Mechanics || row.mechanics || row.MECHANICS}</p>`;
-    if (row.Extras || row.extras || row.EXTRAS) fullDescription += `<h3>Extras</h3><p>${row.Extras || row.extras || row.EXTRAS}</p>`;
-    if (row.Flaws || row.flaws || row.FLAWS) fullDescription += `<h3>Flaws</h3><p>${row.Flaws || row.flaws || row.FLAWS}</p>`;
 
     const action = (row.Action || row.action || row.ACTION || 'standard').trim().toLowerCase();
     const range = (row.Range || row.range || row.RANGE || 'close').trim().toLowerCase();
@@ -90,7 +80,7 @@ async function build() {
       let count = 1;
       for (const extraName of extraNames) {
         if (EXTRAS[extraName]) {
-          extrasObject[count] = EXTRAS[extraName];
+          extrasObject[count] = JSON.parse(JSON.stringify(EXTRAS[extraName]));
           count++;
         }
       }
@@ -102,7 +92,7 @@ async function build() {
       let count = 1;
       for (const flawName of flawNames) {
         if (FLAWS[flawName]) {
-          flawsObject[count] = FLAWS[flawName];
+          flawsObject[count] = JSON.parse(JSON.stringify(FLAWS[flawName]));
           count++;
         }
       }
@@ -111,7 +101,7 @@ async function build() {
     const foundryItem = {
       name: name,
       type: translationMap.type[type] || 'pouvoir',
-      img: `systems/mutants-and-masterminds-3e/assets/icons/${translationMap.type[type] || 'pouvoir'}.svg`,
+      img: `systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg`,
       system: {
         activate: false,
         special: translationMap.action[action] || 'simple',
@@ -127,23 +117,80 @@ async function build() {
           rang: parseInt(row.Rank || row.rank || row.RANK) || 0,
           parrang: parseInt(row.Cost || row.cost || row.COST) || 1,
           total: (parseInt(row.Rank || row.rank || row.RANK) || 0) * (parseInt(row.Cost || row.cost || row.COST) || 1),
-          rangDyn: 0,
-          rangDynMax: 0,
-          divers: 0,
-          modrang: 0,
-          modfixe: 0,
-          totalTheorique: 0,
-          parrangtotal: "0"
+          rangDyn: 0, rangDynMax: 0, divers: 0, modrang: 0, modfixe: 0, totalTheorique: 0, parrangtotal: "0"
         }
       },
       _id: Math.random().toString(36).substring(2, 18)
     };
-
     items.push(JSON.stringify(foundryItem));
   }
-
   await fs.writeFile(outFile, items.join('\n'));
-  console.log(`Successfully built powers.db with ${items.length} items from CSV.`);
+  console.log(`Successfully built powers.db with ${items.length} items.`);
 }
 
-build().catch(err => console.error(err));
+async function buildAdvantages() {
+  const csvFile = path.join(__dirname, '../Advantages.csv');
+  const outFile = path.join(distDir, 'advantages.db');
+  const rows = await readCsv(csvFile);
+  const items = [];
+
+  for (const row of rows) {
+    const name = row.Name || row.name;
+    if (!name) continue;
+
+    const foundryItem = {
+      name: name,
+      type: 'talent',
+      img: 'systems/mutants-and-masterminds-3e/assets/icons/talent.svg',
+      system: {
+        description: `<p>${row.Description || ''}</p>`,
+        equipement: false,
+        rang: parseInt(row.Ranks) || 1,
+        edit: true,
+        listEffectsVariantes: {}
+      },
+      effects: [],
+      _id: Math.random().toString(36).substring(2, 18)
+    };
+    items.push(JSON.stringify(foundryItem));
+  }
+  await fs.writeFile(outFile, items.join('\n'));
+  console.log(`Successfully built advantages.db with ${items.length} items.`);
+}
+
+async function buildModifiers(dataMap, fileName) {
+  const outFile = path.join(distDir, fileName);
+  const items = [];
+
+  for (const key in dataMap) {
+    const mod = dataMap[key];
+    const foundryItem = {
+      name: mod.name,
+      type: 'pouvoir', // Modifiers are technically power components
+      img: 'systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg',
+      system: {
+        description: mod.data.description,
+        notes: mod.data.description,
+        cout: {
+          rang: mod.data.cout.rang ? 1 : 0,
+          parrang: mod.data.cout.rang ? mod.data.cout.value : 0,
+          total: mod.data.cout.value
+        }
+      },
+      _id: Math.random().toString(36).substring(2, 18)
+    };
+    items.push(JSON.stringify(foundryItem));
+  }
+  await fs.writeFile(outFile, items.join('\n'));
+  console.log(`Successfully built ${fileName} with ${items.length} items.`);
+}
+
+async function main() {
+  await fs.ensureDir(distDir);
+  await buildPowers();
+  await buildAdvantages();
+  await buildModifiers(EXTRAS, 'extras.db');
+  await buildModifiers(FLAWS, 'flaws.db');
+}
+
+main().catch(err => console.error(err));
