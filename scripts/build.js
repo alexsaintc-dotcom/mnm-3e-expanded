@@ -197,7 +197,7 @@ async function buildAdvantages() {
   console.log(`Successfully built advantages.db with ${items.length} items.`);
 }
 
-async function buildModifiers(dataMap, fileName) {
+async function buildModifiers(dataMap, fileName, subType) {
   const outFile = path.join(distDir, fileName);
   const items = [];
 
@@ -206,15 +206,16 @@ async function buildModifiers(dataMap, fileName) {
     const modItem = {
       ...getBaseMetadata(),
       name: mod.name,
-      type: 'pouvoir',
-      img: 'systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg',
+      type: 'modificateur', // Professional Modifier type
+      img: `systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg`,
       system: {
+        type: subType, // "extra" or "defaut"
         description: mod.data.description,
         notes: mod.data.description,
         cout: {
-          rang: mod.data.cout.rang ? 1 : 0,
-          parrang: mod.data.cout.rang ? mod.data.cout.value : 0,
-          total: mod.data.cout.value
+          fixe: mod.data.cout.fixe,
+          rang: mod.data.cout.rang,
+          value: mod.data.cout.value
         }
       }
     };
@@ -228,8 +229,8 @@ async function main() {
   await fs.ensureDir(distDir);
   await buildPowers();
   await buildAdvantages();
-  await buildModifiers(EXTRAS, 'extras.db');
-  await buildModifiers(FLAWS, 'flaws.db');
+  await buildModifiers(EXTRAS, 'extras.db', 'extra');
+  await buildModifiers(FLAWS, 'flaws.db', 'defaut');
 }
 
 main().catch(err => console.error(err));
