@@ -48,6 +48,7 @@ async function buildPowers() {
     }
 
     const powerItem = {
+      "_id": Math.random().toString(36).substring(2, 18),
       "name": name,
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -76,6 +77,7 @@ async function buildAdvantages() {
     if (!name) continue;
 
     const advantageItem = {
+      "_id": Math.random().toString(36).substring(2, 18),
       "name": name,
       "type": 'talent',
       "img": 'systems/mutants-and-masterminds-3e/assets/icons/talent.svg',
@@ -97,6 +99,7 @@ async function buildModifiers(dataMap, fileName, subType) {
   for (const key in dataMap) {
     const mod = dataMap[key];
     const modItem = {
+      "_id": Math.random().toString(36).substring(2, 18),
       "name": mod.name,
       "type": 'modificateur',
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
