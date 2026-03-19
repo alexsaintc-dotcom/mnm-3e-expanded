@@ -1,0 +1,83 @@
+{
+  "folder": null,
+  "name": "Blast",
+  "type": "pouvoir",
+  "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+  "system": {
+    "activate": true,
+    "special": "standard",
+    "type": "generaux",
+    "action": "aucune",
+    "portee": "contact",
+    "duree": "instantane",
+    "effetsprincipaux": "",
+    "effets": "",
+    "notes": "",
+    "link": "",
+    "descripteurs": {},
+    "extras": {
+      "1": {
+        "name": "Area",
+        "data": {
+          "description": "",
+          "cout": {
+            "fixe": false,
+            "rang": true,
+            "value": 1
+          }
+        },
+        "details": true
+      },
+      "2": {
+        "name": "Accurate",
+        "data": {
+          "description": "",
+          "cout": {
+            "fixe": true,
+            "rang": false,
+            "value": 1
+          }
+        },
+        "details": true
+      }
+    },
+    "defauts": {},
+    "effectsVarianteSelected": "",
+    "listEffectsVariantes": {},
+    "edit": false,
+    "cout": {
+      "rangDyn": 0,
+      "rangDynMax": 0,
+      "rang": -1,
+      "parrang": 0,
+      "divers": 0,
+      "modrang": 0,
+      "modfixe": 0,
+      "total": 0,
+      "totalTheorique": 0,
+      "parrangtotal": "0"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "Compendium.world.powers.Item.Dx8YoGkY8x3wSNlE",
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "mandm",
+      "uuid": "Item.49nldm2vnkCYLePD",
+      "coreVersion": "13.350",
+      "systemId": "mutants-and-masterminds-3e",
+      "systemVersion": "1.39.13"
+    },
+    "coreVersion": "13.350",
+    "systemId": "mutants-and-masterminds-3e",
+    "systemVersion": "1.39.13",
+    "createdTime": 1773809661562,
+    "modifiedTime": 1773809661562,
+    "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+  },
+  "ownership": {
+    "default": 0
+  }
+}

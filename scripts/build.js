@@ -138,6 +138,31 @@ async function buildAdvantages() {
     const name = row.Name || row.name;
     if (!name) continue;
 
+    const effects = [];
+    const modKey = row.ModKey || row.modkey;
+    const modValue = row.ModValue || row.modvalue;
+
+    if (modKey && modValue) {
+      effects.push({
+        name: `${name} Bonus`,
+        changes: [
+          {
+            key: modKey,
+            mode: 2, // ADD
+            value: modValue.toString(),
+            priority: 20
+          }
+        ],
+        disabled: false,
+        transfer: true,
+        icon: 'systems/mutants-and-masterminds-3e/assets/icons/talent.svg',
+        type: 'base',
+        system: {},
+        duration: { startTime: null, combat: null },
+        _id: Math.random().toString(36).substring(2, 18)
+      });
+    }
+
     const foundryItem = {
       name: name,
       type: 'talent',
@@ -149,7 +174,7 @@ async function buildAdvantages() {
         edit: true,
         listEffectsVariantes: {}
       },
-      effects: [],
+      effects: effects,
       _id: Math.random().toString(36).substring(2, 18)
     };
     items.push(JSON.stringify(foundryItem));

@@ -1,0 +1,25 @@
+{
+  "name": "Initiative Automation Test",
+  "type": "pouvoir",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "<p>This is a test to see if we can automate the sheet!</p>",
+    "notes": "Testing +4 to Initiative."
+  },
+  "effects": [
+    {
+      "name": "Improved Initiative Bonus",
+      "changes": [
+        {
+          "key": "system.initiative.bonuses",
+          "mode": 2,
+          "value": "4",
+          "priority": 20
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "icon": "icons/svg/lightning.svg"
+    }
+  ]
+}

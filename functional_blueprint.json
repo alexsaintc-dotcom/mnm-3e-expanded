@@ -1,0 +1,1189 @@
+{
+  "name": "Furst",
+  "type": "personnage",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "version": 2,
+    "identite": {
+      "name": "",
+      "secret": false
+    },
+    "description": "",
+    "historique": "",
+    "puissance": 8,
+    "heroisme": 0,
+    "blessure": 0,
+    "blessureNL": 0,
+    "ddparade": 0,
+    "ddesquive": 0,
+    "ptsEquipements": {
+      "max": 0,
+      "use": 0
+    },
+    "filtre": "tous",
+    "complications": {},
+    "caracteristique": {
+      "force": {
+        "total": 0,
+        "base": 5,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "agilite": {
+        "total": 0,
+        "base": 3,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "combativite": {
+        "total": 0,
+        "base": 8,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "sensibilite": {
+        "total": 0,
+        "base": 2,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "endurance": {
+        "total": 0,
+        "base": 3,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "dexterite": {
+        "total": 0,
+        "base": 5,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "intelligence": {
+        "total": 0,
+        "base": 1,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "presence": {
+        "total": 0,
+        "base": 2,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      }
+    },
+    "competence": {
+      "combatcontact": {
+        "canAdd": true,
+        "car": "cbt",
+        "modele": {
+          "label": "",
+          "carac": 0,
+          "rang": 0,
+          "autre": 0,
+          "total": 0
+        },
+        "list": {},
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "combatdistance": {
+        "canAdd": true,
+        "car": "dex",
+        "modele": {
+          "label": "",
+          "carac": 0,
+          "rang": 0,
+          "autre": 0,
+          "total": 0
+        },
+        "list": {},
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "expertise": {
+        "canAdd": true,
+        "modele": {
+          "car": "int",
+          "carCanChange": true,
+          "label": "",
+          "carac": 0,
+          "rang": 0,
+          "autre": 0,
+          "total": 0
+        },
+        "list": {},
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "acrobaties": {
+        "carac": 0,
+        "car": "agi",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "athletisme": {
+        "carac": 0,
+        "car": "for",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "duperie": {
+        "carac": 0,
+        "car": "prs",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "perspicacite": {
+        "carac": 0,
+        "car": "sns",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "intimidation": {
+        "carac": 0,
+        "car": "prs",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "investigation": {
+        "carac": 0,
+        "car": "int",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "perception": {
+        "carac": 0,
+        "car": "sns",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "persuasion": {
+        "carac": 0,
+        "car": "prs",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "habilete": {
+        "carac": 0,
+        "car": "dex",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "discretion": {
+        "carac": 0,
+        "car": "agi",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "technologie": {
+        "carac": 0,
+        "car": "int",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "soins": {
+        "carac": 0,
+        "car": "int",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "vehicules": {
+        "carac": 0,
+        "car": "dex",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "new": {
+        "modele": {
+          "carCanChange": true,
+          "car": "int",
+          "label": "",
+          "carac": 0,
+          "rang": 0,
+          "autre": 0,
+          "total": 0
+        },
+        "list": {},
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "new": true
+      }
+    },
+    "pp": {
+      "base": 150,
+      "gain": 0,
+      "used": 0,
+      "divers": 0,
+      "caracteristiques": 0,
+      "pouvoirs": 0,
+      "talents": 0,
+      "competences": 0,
+      "defenses": 0,
+      "total": 0
+    },
+    "attaque": {},
+    "defense": {
+      "esquive": {
+        "car": "agi",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "parade": {
+        "car": "cbt",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "vigueur": {
+        "car": "end",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "robustesse": {
+        "car": "end",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "volonte": {
+        "car": "sns",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      }
+    },
+    "initiative": {
+      "base": 0,
+      "carac": 0,
+      "bonuses": 0,
+      "surcharge": 0,
+      "ranks": {},
+      "surchargeranks": {},
+      "total": 0
+    },
+    "strategie": {
+      "attaqueprecision": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "attaqueoutrance": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "attaquedefensive": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "attaquepuissance": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "etats": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "total": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "limite": {
+        "attaqueprecision": {
+          "atk": {
+            "base": 2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "eff": {
+            "base": -2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "def": {
+            "base": 0,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "attaque": 2,
+          "defense": 0,
+          "effet": -2
+        },
+        "attaqueoutrance": {
+          "atk": {
+            "base": 2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "eff": {
+            "base": 0,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "def": {
+            "base": -2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "attaque": 2,
+          "defense": -2,
+          "effet": 0
+        },
+        "attaquedefensive": {
+          "atk": {
+            "base": -2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "eff": {
+            "base": 0,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "def": {
+            "base": 2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "attaque": -2,
+          "defense": 2,
+          "effet": 0
+        },
+        "attaquepuissance": {
+          "atk": {
+            "base": -2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "eff": {
+            "base": 2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "def": {
+            "base": 0,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "attaque": -2,
+          "defense": 0,
+          "effet": 2
+        }
+      }
+    },
+    "pwr": {
+      "8qWrooi2sHS7Ys8e": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "PM2BE8sIBCjICsan": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "H3PWGfxbe1M1mZxo": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "6OVswe00KDYm9V6T": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "KTtiyiZG2mQRwaWQ": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "4N2pUDrqytWapIZi": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "9KviVSU5mlzcFCln": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "cyu6LgjvqhP2b95h": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "h2MEMWbO9N5be0XT": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "tLmev2dmVYWmfrmU": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "si8772g6imEDO3cX": {
+        "cout": {
+          "rang": 0
+        }
+      }
+    },
+    "accessibility": {
+      "font": "Kalam",
+      "fontOther": ""
+    },
+    "vitesse": {
+      "list": {
+        "base": {
+          "autotrade": "base",
+          "rang": 0,
+          "round": 0,
+          "kmh": 0,
+          "selected": true
+        },
+        "course": {
+          "autotrade": "course",
+          "rang": 1,
+          "round": 0,
+          "kmh": 0,
+          "selected": false
+        },
+        "natation": {
+          "autotrade": "natation",
+          "rang": -2,
+          "round": 0,
+          "kmh": 0,
+          "selected": false
+        }
+      },
+      "actuel": 0
+    },
+    "affiliation": "",
+    "base": "",
+    "genre": "",
+    "age": "",
+    "taille": "1.80m",
+    "poids": "90kg",
+    "yeux": "",
+    "cheveux": "",
+    "etats": ""
+  },
+  "prototypeToken": {
+    "name": "Furst",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "blessure"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "flags": {},
+    "randomImg": false,
+    "appendNumber": false,
+    "prependAdjective": false
+  },
+  "items": [
+    {
+      "name": "Accurate Attack",
+      "type": "talent",
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
+      "_id": "OT3JMbALkfPnavpO",
+      "system": {
+        "description": "<p>When you make an accurate attack, you can take a penalty of up to &ndash;5 on the effect modifier of the attack and add the same number (up to +5) to your attack bonus.</p>",
+        "equipement": false,
+        "rang": 0,
+        "edit": true,
+        "listEffectsVariantes": {}
+      },
+      "effects": [
+        {
+          "name": "Accurate Attack",
+          "flags": {
+            "mutants-and-masterminds-3e": {
+              "variante": "e0"
+            }
+          },
+          "changes": [
+            {
+              "key": "",
+              "mode": 2,
+              "priority": null,
+              "value": "0"
+            }
+          ],
+          "disabled": false,
+          "img": null,
+          "_id": "7fCyHkyW8y48Qccz",
+          "type": "base",
+          "system": {},
+          "duration": {
+            "startTime": 0,
+            "combat": null
+          },
+          "description": "",
+          "origin": null,
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null,
+            "coreVersion": "13.350",
+            "systemId": "mutants-and-masterminds-3e",
+            "systemVersion": "1.39.13",
+            "lastModifiedBy": null
+          }
+        }
+      ],
+      "folder": "bvK0kcmCRv7INsY1",
+      "sort": 100000,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.world.powers.Item.SdOTBpXIhk2J2z3e",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1773517644479,
+        "modifiedTime": 1773517644479,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Affliction",
+      "type": "pouvoir",
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+      "system": {
+        "activate": true,
+        "special": "simple",
+        "type": "attaque",
+        "action": "simple",
+        "portee": "contact",
+        "duree": "instantane",
+        "effets": "<p>Fortitude or Will vs. DC [Affliction rank + 10]</p>\n<p>Success: No effect.</p>\n<p>Failure (one degree): The target is dazed, entranced, fatigued, hindered, impaired, or vulnerable (choose one).</p>\n<p>Failure (two degrees): The target is compelled, defenseless, disabled, exhausted, immobile, prone, or stunned (choose one).</p>\n<p>Failure (three degrees): The target is asleep, controlled, incapacitated, paralyzed, transformed or unaware (choose one).</p>",
+        "notes": "You can impose some debilitating condition or conditions on a target by making a close attack.",
+        "cout": {
+          "rang": 2,
+          "parrang": 1,
+          "total": 2,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 0,
+          "parrangtotal": "0"
+        },
+        "effetsprincipaux": "",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false
+      },
+      "_id": "KTtiyiZG2mQRwaWQ",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1773619490910,
+        "modifiedTime": 1773619490910,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Affliction",
+      "type": "pouvoir",
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+      "system": {
+        "activate": true,
+        "special": "simple",
+        "type": "attaque",
+        "action": "simple",
+        "portee": "contact",
+        "duree": "instantane",
+        "effets": "<p>Fortitude or Will vs. DC [Affliction rank + 10]</p>\n<p>Success: No effect.</p>\n<p>Failure (one degree): The target is dazed, entranced, fatigued, hindered, impaired, or vulnerable (choose one).</p>\n<p>Failure (two degrees): The target is compelled, defenseless, disabled, exhausted, immobile, prone, or stunned (choose one).</p>\n<p>Failure (three degrees): The target is asleep, controlled, incapacitated, paralyzed, transformed or unaware (choose one).</p>",
+        "notes": "You can impose some debilitating condition or conditions on a target by making a close attack.",
+        "cout": {
+          "rang": 2,
+          "parrang": 1,
+          "total": 2,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 0,
+          "parrangtotal": "0"
+        },
+        "effetsprincipaux": "",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false
+      },
+      "_id": "4N2pUDrqytWapIZi",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1773619496084,
+        "modifiedTime": 1773619496084,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Affliction",
+      "type": "pouvoir",
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+      "system": {
+        "activate": true,
+        "special": "simple",
+        "type": "attaque",
+        "action": "simple",
+        "portee": "contact",
+        "duree": "instantane",
+        "effets": "<p>Fortitude or Will vs. DC [Affliction rank + 10]</p>\n<p>Success: No effect.</p>\n<p>Failure (one degree): The target is dazed, entranced, fatigued, hindered, impaired, or vulnerable (choose one).</p>\n<p>Failure (two degrees): The target is compelled, defenseless, disabled, exhausted, immobile, prone, or stunned (choose one).</p>\n<p>Failure (three degrees): The target is asleep, controlled, incapacitated, paralyzed, transformed or unaware (choose one).</p>",
+        "notes": "You can impose some debilitating condition or conditions on a target by making a close attack.",
+        "cout": {
+          "rang": 2,
+          "parrang": 1,
+          "total": 2,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 0,
+          "parrangtotal": "0"
+        },
+        "effetsprincipaux": "",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false
+      },
+      "_id": "9KviVSU5mlzcFCln",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1773619533026,
+        "modifiedTime": 1773619533026,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Animal Control",
+      "type": "pouvoir",
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+      "system": {
+        "activate": true,
+        "special": "simple",
+        "type": "attaque",
+        "action": "simple",
+        "portee": "perception",
+        "duree": "maintenu",
+        "effets": "<h3>Description</h3><p>You can control the actions of animals. You make a perception-range attack check against the animal’s Will defense. If you succeed, you can command the animal to perform any action it is capable of.</p><h3>Mechanics</h3><p>Will vs. DC [Rank + 10]. Success: You control the animal.</p>",
+        "notes": "You can control the actions of animals. You make a perception-range attack check against the animal’s Will defense. If you succeed, you can command the animal to perform any action it is capable of.",
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 0,
+          "parrangtotal": "0"
+        },
+        "effetsprincipaux": "",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false
+      },
+      "_id": "h2MEMWbO9N5be0XT",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1773631105311,
+        "modifiedTime": 1773631105311,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Burrowing",
+      "type": "pouvoir",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/pouvoir.svg",
+      "system": {
+        "activate": false,
+        "special": "libre",
+        "type": "generaux",
+        "action": "libre",
+        "portee": "personnelle",
+        "duree": "prolonge",
+        "effets": "<h3>Description</h3><p>You can burrow through the ground, leaving a tunnel behind if you choose. You move through soil and sand at a speed rank equal to your Burrowing rank, minus 5.</p><h3>Mechanics</h3><p>Speed rank = Burrowing rank - 5.</p>",
+        "notes": "You can burrow through the ground, leaving a tunnel behind if you choose. You move through soil and sand at a speed rank equal to your Burrowing rank, minus 5.",
+        "extras": {},
+        "defauts": {},
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 0,
+          "parrangtotal": "0"
+        },
+        "effetsprincipaux": "",
+        "link": "",
+        "descripteurs": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false
+      },
+      "_id": "tLmev2dmVYWmfrmU",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1773640979932,
+        "modifiedTime": 1773640979932,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "folder": "cgtNt85aCPUXFVWV",
+      "name": "Blast",
+      "type": "pouvoir",
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+      "_id": "si8772g6imEDO3cX",
+      "system": {
+        "activate": true,
+        "special": "standard",
+        "type": "generaux",
+        "action": "aucune",
+        "portee": "contact",
+        "duree": "instantane",
+        "effetsprincipaux": "",
+        "effets": "",
+        "notes": "",
+        "link": "",
+        "descripteurs": {},
+        "extras": {
+          "1": {
+            "name": "Area",
+            "data": {
+              "description": "",
+              "cout": {
+                "fixe": false,
+                "rang": true,
+                "value": 1
+              }
+            },
+            "details": true
+          },
+          "2": {
+            "name": "Accurate",
+            "data": {
+              "description": "",
+              "cout": {
+                "fixe": true,
+                "rang": false,
+                "value": 1
+              }
+            },
+            "details": true
+          }
+        },
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
+        "cout": {
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "rang": -1,
+          "parrang": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "total": 0,
+          "totalTheorique": 0,
+          "parrangtotal": "0"
+        }
+      },
+      "effects": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.world.powers.Item.Dx8YoGkY8x3wSNlE",
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1773809923783,
+        "modifiedTime": 1773809923783,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    }
+  ],
+  "effects": [],
+  "folder": "EPCjaRZFMN9WRucB",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "mandm",
+      "uuid": "Actor.RjSCeesxCgeJPWmP",
+      "coreVersion": "13.350",
+      "systemId": "mutants-and-masterminds-3e",
+      "systemVersion": "1.39.13"
+    },
+    "coreVersion": "13.350",
+    "systemId": "mutants-and-masterminds-3e",
+    "systemVersion": "1.39.13",
+    "createdTime": 1773184887968,
+    "modifiedTime": 1773809923874,
+    "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+  },
+  "ownership": {
+    "default": 0
+  }
+}

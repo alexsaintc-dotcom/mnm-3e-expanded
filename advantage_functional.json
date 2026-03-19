@@ -1,0 +1,94 @@
+{
+  "folder": null,
+  "name": "Improved Initiative",
+  "type": "pouvoir",
+  "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+  "system": {
+    "activate": true,
+    "special": "standard",
+    "type": "generaux",
+    "action": "aucune",
+    "portee": "personnelle",
+    "duree": "instantane",
+    "effetsprincipaux": "",
+    "effets": "",
+    "notes": "",
+    "link": "",
+    "descripteurs": {},
+    "extras": {},
+    "defauts": {},
+    "effectsVarianteSelected": "e1",
+    "listEffectsVariantes": {
+      "e1": "+4 bonus to the Initiative attribute"
+    },
+    "edit": false,
+    "cout": {
+      "rangDyn": 0,
+      "rangDynMax": 0,
+      "rang": 0,
+      "parrang": 0,
+      "divers": 0,
+      "modrang": 0,
+      "modfixe": 0,
+      "total": 0,
+      "totalTheorique": 0,
+      "parrangtotal": "0"
+    }
+  },
+  "effects": [
+    {
+      "name": "+4 bonus to the Initiative attribute",
+      "flags": {
+        "mutants-and-masterminds-3e": {
+          "variante": "e1"
+        }
+      },
+      "changes": [],
+      "disabled": false,
+      "img": null,
+      "_id": "kyqti8ZAyfE1mcF1",
+      "type": "base",
+      "system": {},
+      "duration": {
+        "startTime": null,
+        "combat": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "lastModifiedBy": null
+      }
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "Compendium.world.powers.Item.7L09szHnWCRMlq8l",
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "mandm",
+      "uuid": "Item.zOoWxgqiHfX4mRTZ",
+      "coreVersion": "13.350",
+      "systemId": "mutants-and-masterminds-3e",
+      "systemVersion": "1.39.13"
+    },
+    "coreVersion": "13.350",
+    "systemId": "mutants-and-masterminds-3e",
+    "systemVersion": "1.39.13",
+    "createdTime": 1773881423158,
+    "modifiedTime": 1773881423158,
+    "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+  },
+  "ownership": {
+    "default": 0
+  }
+}
