@@ -165,21 +165,31 @@ async function buildPowers() {
         duree: translationMap.duration[duration] || 'instantane',
         effets: fullDescription,
         notes: row.Description || '',
+        effetsprincipaux: "",
+        link: "",
+        descripteurs: {},
         extras: extrasObject,
         defauts: flawsObject,
+        effectsVarianteSelected: "",
+        listEffectsVariantes: {},
+        edit: false,
         cout: {
           rang: baseRank,
           parrang: baseCostPerRank,
-          total: finalTotal, // Forced calculation
+          total: finalTotal,
           rangDyn: 0,
           rangDynMax: 0,
           divers: 0,
           modrang: modCostPerRank,
           modfixe: flatCost,
           totalTheorique: finalTotal,
-          parrangtotal: finalCostPerRank.toString() // String required by system
+          parrangtotal: "0" // Set to 0 to match working blueprint
         }
-      }
+      },
+      effects: [],
+      folder: null,
+      sort: 0,
+      flags: {}
     };
     items.push(JSON.stringify(powerItem));
   }
