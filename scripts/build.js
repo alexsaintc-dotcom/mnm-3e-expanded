@@ -36,6 +36,19 @@ const translationMap = {
 
 const distDir = path.join(__dirname, '../mnm-3e-expanded/packs');
 
+function sanitizeText(text) {
+  if (!text) return "";
+  return text
+    .replace(/\?\?\?/g, "—")
+    .replace(/â€“/g, "—")
+    .replace(/â€¢/g, "•")
+    .replace(/â€™/g, "'")
+    .replace(/â€œ/g, '"')
+    .replace(/â€\?/g, '"')
+    .replace(/\s\s+/g, ' ')
+    .trim();
+}
+
 async function readCsv(filePath) {
   return new Promise((resolve, reject) => {
     const results = [];
@@ -61,15 +74,17 @@ async function buildPowers() {
     if (!rawName || rawName.trim() === '') continue;
     const name = rawName.trim();
 
-    let fullDescription = `<h3>Description</h3><p>${row.Description || row.description || row.DESCRIPTION || ''}</p>`;
-    if (row.Mechanics || row.mechanics || row.MECHANICS) fullDescription += `<h3>Mechanics</h3><p>${row.Mechanics || row.mechanics || row.MECHANICS}</p>`;
+    const cleanDesc = sanitizeText(row.Description || row.description);
+    const cleanMech = sanitizeText(row.Mechanics || row.mechanics);
+
+    let fullDescription = `<h3>Description</h3><p>${cleanDesc || ''}</p>`;
+    if (cleanMech) fullDescription += `<h3>Mechanics</h3><p>${cleanMech}</p>`;
 
     const action = (row.Action || row.action || row.ACTION || 'standard').trim().toLowerCase();
     const range = (row.Range || row.range || row.RANGE || 'close').trim().toLowerCase();
     const duration = (row.Duration || row.duration || row.DURATION || 'instant').trim().toLowerCase();
     const type = (row.Power || row.power || row.POWER || 'power').trim().toLowerCase();
 
-    // DYNAMIC COST CALCULATION (For the Summary)
     const baseRank = parseInt(row.Rank || row.rank || row.RANK) || 1;
     const baseCostPerRank = parseInt(row.Cost || row.cost || row.COST) || 1;
     let modCostPerRank = 0;
@@ -77,8 +92,8 @@ async function buildPowers() {
     let extrasList = [];
     let flawsList = [];
 
-    const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
     const extrasObject = {};
+    const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
     if (extrasText) {
       const extraNames = extrasText.split(',').map(e => e.trim());
       let count = 1;
@@ -98,9 +113,8 @@ async function buildPowers() {
       }
     }
 
-    const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
-    // PROCESS FLAWS
     const flawsObject = {};
+    const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
     if (flawsText) {
       const flawNames = flawsText.split(',').map(f => f.trim());
       let count = 1;
@@ -122,7 +136,7 @@ async function buildPowers() {
 
     const finalCostPerRank = Math.max(1, baseCostPerRank + modCostPerRank);
     const finalTotal = Math.max(1, (finalCostPerRank * baseRank) + flatCost);
-    // BUILD FINAL RECIPE SUMMARY (High-Visibility HTML)
+
     let recipe = `<b>[ POWER SETUP RECIPE ]</b><br/>`;
     recipe += `&bull; <b>Rank:</b> Set Rank to <b>${baseRank}</b><br/>`;
     recipe += `&bull; <b>Action:</b> Select <b>${action.toUpperCase()}</b><br/>`;
@@ -153,7 +167,7 @@ async function buildPowers() {
         "portee": translationMap.range[range] || 'contact',
         "duree": translationMap.duration[duration] || 'instantane',
         "description": recipe + fullDescription,
-        "notes": recipe + (row.Description || ''),
+        "notes": recipe + cleanDesc,
         "extras": extrasObject,
         "defauts": flawsObject,
         "cout": {
@@ -188,6 +202,8 @@ async function buildAdvantages() {
     const name = (row.Name || row.name || "").trim();
     if (!name) continue;
 
+    const cleanDesc = sanitizeText(row.Description || row.description);
+
     const effects = [];
     const modKey = row.ModKey || row.modkey;
     const modValue = row.ModValue || row.modvalue;
@@ -208,7 +224,7 @@ async function buildAdvantages() {
       "type": 'talent',
       "img": 'systems/mutants-and-masterminds-3e/assets/icons/talent.svg',
       "system": {
-        "description": `<p>${row.Description || ''}</p>`,
+        "description": `<p>${cleanDesc || ''}</p>`,
         "rang": parseInt(row.Ranks || row.ranks) || 1
       },
       "effects": effects,
@@ -226,14 +242,6 @@ async function buildModifiers(dataMap, fileName, subType) {
 
   for (const key in dataMap) {
     const mod = dataMap[key];
-
-    // BUILD MODIFIER SUMMARY (Visible at top of description)
-    const costType = mod.data.cout.rang ? "PER RANK" : "FLAT (Fixed)";
-    const costValue = mod.data.cout.value >= 0 ? `+${mod.data.cout.value}` : mod.data.cout.value;
-    let modSummary = `<b>[ MODIFIER TYPE: ${subType.toUpperCase()} ]</b><br/>`;
-    modSummary += `&bull; <b>Cost Type:</b> ${costType}<br/>`;
-    modSummary += `&bull; <b>Cost Value:</b> ${costValue}<br/><hr/>`;
-
     const modItem = {
       "_id": Math.random().toString(36).substring(2, 18),
       "name": mod.name,
@@ -241,7 +249,7 @@ async function buildModifiers(dataMap, fileName, subType) {
       "img": `systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg`,
       "system": {
         "type": subType,
-        "description": modSummary + mod.data.description,
+        "description": sanitizeText(mod.data.description),
         "cout": {
           "fixe": mod.data.cout.fixe,
           "rang": mod.data.cout.rang,
@@ -258,11 +266,9 @@ async function buildModifiers(dataMap, fileName, subType) {
 async function updateVersion() {
   const manifestPath = path.join(__dirname, '../mnm-3e-expanded/module.json');
   const manifest = await fs.readJson(manifestPath);
-  
   const versionParts = manifest.version.split('.');
   versionParts[2] = parseInt(versionParts[2]) + 1;
   manifest.version = versionParts.join('.');
-  
   await fs.writeJson(manifestPath, manifest, { spaces: 2 });
   console.log(`Auto-incremented version to ${manifest.version}`);
 }
