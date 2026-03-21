@@ -10,6 +10,27 @@ const translationMap = {
   type: {
     'power': 'pouvoir',
     'advantage': 'talent'
+  },
+  action: {
+    'standard': 'simple',
+    'move': 'mouvement',
+    'free': 'libre',
+    'reaction': 'reaction',
+    'none': 'aucune'
+  },
+  range: {
+    'personal': 'personnelle',
+    'close': 'contact',
+    'ranged': 'distance',
+    'perception': 'perception',
+    'rank': 'rang'
+  },
+  duration: {
+    'instant': 'instantane',
+    'sustained': 'prolonge',
+    'continuous': 'continu',
+    'concentration': 'concentration',
+    'permanent': 'permanent'
   }
 };
 
@@ -43,9 +64,10 @@ async function buildPowers() {
     let fullDescription = `<h3>Description</h3><p>${row.Description || row.description || row.DESCRIPTION || ''}</p>`;
     if (row.Mechanics || row.mechanics || row.MECHANICS) fullDescription += `<h3>Mechanics</h3><p>${row.Mechanics || row.mechanics || row.MECHANICS}</p>`;
 
-    const action = (row.Action || row.action || row.ACTION || 'standard').trim();
-    const range = (row.Range || row.range || row.RANGE || 'close').trim();
-    const duration = (row.Duration || row.duration || row.DURATION || 'instant').trim();
+    const action = (row.Action || row.action || row.ACTION || 'standard').trim().toLowerCase();
+    const range = (row.Range || row.range || row.RANGE || 'close').trim().toLowerCase();
+    const duration = (row.Duration || row.duration || row.DURATION || 'instant').trim().toLowerCase();
+    const type = (row.Power || row.power || row.POWER || 'power').trim().toLowerCase();
 
     // DYNAMIC COST CALCULATION (For the Summary)
     const baseRank = parseInt(row.Rank || row.rank || row.RANK) || 1;
@@ -56,8 +78,10 @@ async function buildPowers() {
     let flawsList = [];
 
     const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
+    const extrasObject = {};
     if (extrasText) {
       const extraNames = extrasText.split(',').map(e => e.trim());
+      let count = 1;
       for (const extraName of extraNames) {
         const masterExtra = Object.keys(EXTRAS).find(k => k.toLowerCase() === extraName.toLowerCase());
         if (masterExtra) {
@@ -65,13 +89,20 @@ async function buildPowers() {
           if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
           extrasList.push(`${mod.name} (+${mod.data.cout.value})`);
+          extrasObject[count] = {
+            name: mod.name,
+            data: { description: mod.data.description, cout: mod.data.cout }
+          };
+          count++;
         }
       }
     }
 
     const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
+    const flawsObject = {};
     if (flawsText) {
       const flawNames = flawsText.split(',').map(f => f.trim());
+      let count = 1;
       for (const flawName of flawNames) {
         const masterFlaw = Object.keys(FLAWS).find(k => k.toLowerCase() === flawName.toLowerCase());
         if (masterFlaw) {
@@ -79,6 +110,11 @@ async function buildPowers() {
           if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
           flawsList.push(`${mod.name} (${mod.data.cout.value})`);
+          flawsObject[count] = {
+            name: mod.name,
+            data: { description: mod.data.description, cout: mod.data.cout }
+          };
+          count++;
         }
       }
     }
@@ -110,8 +146,16 @@ async function buildPowers() {
       "type": "pouvoir",
       "img": `systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg`,
       "system": {
+        "activate": true,
+        "special": translationMap.action[action] || 'simple',
         "type": systemType,
+        "action": translationMap.action[action] || 'simple',
+        "portee": translationMap.range[range] || 'contact',
+        "duree": translationMap.duration[duration] || 'instantane',
         "description": recipe + fullDescription,
+        "notes": recipe + (row.Description || ''),
+        "extras": extrasObject,
+        "defauts": flawsObject,
         "cout": {
           "rang": baseRank,
           "parrang": baseCostPerRank,
@@ -124,7 +168,9 @@ async function buildPowers() {
           "totalTheorique": finalTotal,
           "parrangtotal": "0"
         }
-      }
+      },
+      "effects": [],
+      "flags": {}
     };
     items.push(JSON.stringify(powerItem));
   }
@@ -165,13 +211,15 @@ async function buildAdvantages() {
         "description": `<p>${row.Description || ''}</p>`,
         "rang": parseInt(row.Ranks || row.ranks) || 1
       },
-      "effects": effects
+      "effects": effects,
+      "flags": {}
     };
     items.push(JSON.stringify(advantageItem));
   }
   await fs.writeFile(outFile, items.join('\n'));
   console.log(`Successfully built advantages.db with ${items.length} items.`);
 }
+
 async function buildModifiers(dataMap, fileName, subType) {
   const outFile = path.join(distDir, fileName);
   const items = [];
@@ -206,6 +254,7 @@ async function buildModifiers(dataMap, fileName, subType) {
   await fs.writeFile(outFile, items.join('\n'));
   console.log(`Successfully built ${fileName} with ${items.length} items.`);
 }
+
 async function updateVersion() {
   const manifestPath = path.join(__dirname, '../mnm-3e-expanded/module.json');
   const manifest = await fs.readJson(manifestPath);
@@ -226,4 +275,5 @@ async function main() {
   await buildModifiers(EXTRAS, 'extras.db', 'extra');
   await buildModifiers(FLAWS, 'flaws.db', 'defaut');
 }
+
 main().catch(err => console.error(err));
