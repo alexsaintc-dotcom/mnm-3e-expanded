@@ -31,14 +31,14 @@ const EXTRAS = {
     name: "Accurate",
     data: {
       description: "<p>An effect with this extra is especially accurate; you get +2 per Accurate rank to attack checks made with it.</p><p>Flat 1 point per rank.</p>",
-      cout: { fixe: true, rang: true, value: 1 }
+      cout: { fixe: true, rang: false, value: 1 }
     }
   },
   "Affects Corporeal": {
     name: "Affects Corporeal",
     data: {
       description: "<p>An incorporeal being can use an effect with this extra on the corporeal world. When an effect is used against a corporeal target, the effect’s rank is equal to the rank of this extra, up to a maximum of the effect’s full rank.</p><p>Flat 1 point per rank.</p>",
-      cout: { fixe: true, rang: true, value: 1 }
+      cout: { fixe: true, rang: false, value: 1 }
     }
   },
   "Affects Insubstantial": {
@@ -136,21 +136,21 @@ const EXTRAS = {
     name: "Extended Range",
     data: {
       description: "<p>Each rank of Extended Range doubles all of the effect’s range categories.</p><p>Flat 1 point per rank.</p>",
-      cout: { fixe: true, rang: true, value: 1 }
+      cout: { fixe: true, rang: false, value: 1 }
     }
   },
   "Feature": {
     name: "Feature",
     data: {
       description: "<p>Adds some minor additional capability or benefit to a basic effect.</p><p>Flat 1 point per rank.</p>",
-      cout: { fixe: true, rang: true, value: 1 }
+      cout: { fixe: true, rang: false, value: 1 }
     }
   },
   "Homing": {
     name: "Homing",
     data: {
       description: "<p>This modifier grants a ranged effect an additional opportunity to hit if it misses.</p><p>Flat 1 point per rank.</p>",
-      cout: { fixe: true, rang: true, value: 1 }
+      cout: { fixe: true, rang: false, value: 1 }
     }
   },
   "Impervious": {
@@ -164,7 +164,7 @@ const EXTRAS = {
     name: "Increased Mass",
     data: {
       description: "<p>Each rank of this extra increases the mass rank you can carry or move with the effect by 1.</p><p>Flat 1 point per rank.</p>",
-      cout: { fixe: true, rang: true, value: 1 }
+      cout: { fixe: true, rang: false, value: 1 }
     }
   },
   "Incurable": {
@@ -199,7 +199,7 @@ const EXTRAS = {
     name: "Penetrating",
     data: {
       description: "<p>Your effect overcomes Impervious Resistance to a degree.</p><p>Flat 1 point per rank.</p>",
-      cout: { fixe: true, rang: true, value: 1 }
+      cout: { fixe: true, rang: false, value: 1 }
     }
   },
   "Precise": {
@@ -213,7 +213,7 @@ const EXTRAS = {
     name: "Reach",
     data: {
       description: "<p>Each rank of this modifier to a close range effect extends its reach by 5 feet.</p><p>Flat 1 point per rank.</p>",
-      cout: { fixe: true, rang: true, value: 1 }
+      cout: { fixe: true, rang: false, value: 1 }
     }
   },
   "Reaction": {
@@ -234,7 +234,7 @@ const EXTRAS = {
     name: "Ricochet",
     data: {
       description: "<p>You can ricochet or bounce an attack effect off of a solid surface to change its direction.</p><p>Flat 1 point per rank.</p>",
-      cout: { fixe: true, rang: true, value: 1 }
+      cout: { fixe: true, rang: false, value: 1 }
     }
   },
   "Secondary Effect": {
@@ -262,7 +262,7 @@ const EXTRAS = {
     name: "Split",
     data: {
       description: "<p>A resistible effect that works on one target can be split between two or more targets.</p><p>Flat 1 point per rank.</p>",
-      cout: { fixe: true, rang: true, value: 1 }
+      cout: { fixe: true, rang: false, value: 1 }
     }
   },
   "Subtle": {
@@ -283,7 +283,7 @@ const EXTRAS = {
     name: "Triggered",
     data: {
       description: "<p>You can “set” an instant duration effect to activate under particular circumstances.</p><p>Flat 1 point per rank.</p>",
-      cout: { fixe: true, rang: true, value: 1 }
+      cout: { fixe: true, rang: false, value: 1 }
     }
   },
   "Variable Descriptor": {
@@ -292,8 +292,7 @@ const EXTRAS = {
       description: "<p>You can change the descriptors of an effect with this modifier as a free action.</p><p>Flat 1-2 points.</p>",
       cout: { fixe: true, rang: false, value: 1 }
     }
-  },
-  // We will add more extras here as we extract them
+  }
 };
 
 module.exports = EXTRAS;
