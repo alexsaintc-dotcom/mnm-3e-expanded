@@ -273,11 +273,13 @@ async function buildModifiers(dataMap, fileName, subType) {
 async function updateVersion() {
   const manifestPath = path.join(__dirname, '../mnm-3e-expanded/module.json');
   const manifest = await fs.readJson(manifestPath);
+
   const versionParts = manifest.version.split('.');
   versionParts[2] = parseInt(versionParts[2]) + 1;
   manifest.version = versionParts.join('.');
+
   await fs.writeJson(manifestPath, manifest, { spaces: 2 });
-  console.log(`Auto-incremented version to ${manifest.version}`);
+  console.log(`Successfully synced and incremented version to ${manifest.version} in production folder.`);
 }
 
 async function main() {

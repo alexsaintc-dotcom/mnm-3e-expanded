@@ -1,0 +1,32 @@
+{
+  "name": "POINT RESETTER",
+  "type": "talent",
+  "img": "icons/svg/recycle.svg",
+  "system": {
+    "description": "<p>Drag this onto a character to force their Power Point usage back to zero.</p>",
+    "notes": "Nuclear math reset."
+  },
+  "effects": [
+    {
+      "name": "Math Wipe",
+      "changes": [
+        {
+          "key": "system.pp.used",
+          "mode": 5,
+          "value": "0",
+          "priority": 100
+        },
+        {
+          "key": "system.pp.pouvoirs",
+          "mode": 5,
+          "value": "0",
+          "priority": 100
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "img": "icons/svg/recycle.svg"
+    }
+  ],
+  "_id": "wipe000000000001"
+}
