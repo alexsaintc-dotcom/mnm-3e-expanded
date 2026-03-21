@@ -206,7 +206,12 @@ async function buildModifiers(dataMap, fileName, subType) {
       "system": {
         "type": subType,
         "description": sanitizeText(mod.data.description),
-        "cout": { "value": mod.data.cout.value }
+        "cout": {
+          "fixe": mod.data.cout.fixe,
+          "rang": mod.data.cout.rang,
+          "value": mod.data.cout.value,
+          "total": mod.data.cout.value // Set total to base value for Rank 1
+        }
       }
     };
     items.push(JSON.stringify(modItem));
