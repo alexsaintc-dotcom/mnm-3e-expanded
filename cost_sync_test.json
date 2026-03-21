@@ -1,0 +1,31 @@
+{
+  "name": "Math Engine Test (10 PP)",
+  "type": "pouvoir",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "type": "generaux",
+    "description": "Testing if pre-calculated cost (10 PP) syncs to character sheet.",
+    "cout": {
+      "rang": 5,
+      "parrang": 2,
+      "total": 10
+    }
+  },
+  "effects": [
+    {
+      "name": "Power Point Sync",
+      "changes": [
+        {
+          "key": "system.pp.pouvoirs",
+          "mode": 2,
+          "value": "10",
+          "priority": 20
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "img": "icons/svg/book.svg"
+    }
+  ],
+  "_id": "math000000000001"
+}

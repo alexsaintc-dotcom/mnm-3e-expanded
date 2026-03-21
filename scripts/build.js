@@ -10,6 +10,27 @@ const translationMap = {
   type: {
     'power': 'pouvoir',
     'advantage': 'talent'
+  },
+  action: {
+    'standard': 'simple',
+    'move': 'mouvement',
+    'free': 'libre',
+    'reaction': 'reaction',
+    'none': 'aucune'
+  },
+  range: {
+    'personal': 'personnelle',
+    'close': 'contact',
+    'ranged': 'distance',
+    'perception': 'perception',
+    'rank': 'rang'
+  },
+  duration: {
+    'instant': 'instantane',
+    'sustained': 'prolonge',
+    'continuous': 'continu',
+    'concentration': 'concentration',
+    'permanent': 'permanent'
   }
 };
 
@@ -40,6 +61,71 @@ async function buildPowers() {
     if (!rawName || rawName.trim() === '') continue;
     const name = rawName.trim();
 
+    let fullDescription = `<h3>Description</h3><p>${row.Description || row.description || row.DESCRIPTION || ''}</p>`;
+    if (row.Mechanics || row.mechanics || row.MECHANICS) fullDescription += `<h3>Mechanics</h3><p>${row.Mechanics || row.mechanics || row.MECHANICS}</p>`;
+
+    const action = (row.Action || row.action || row.ACTION || 'standard').trim().toLowerCase();
+    const range = (row.Range || row.range || row.RANGE || 'close').trim().toLowerCase();
+    const duration = (row.Duration || row.duration || row.DURATION || 'instant').trim().toLowerCase();
+    const type = (row.Power || row.power || row.POWER || 'power').trim().toLowerCase();
+
+    // DYNAMIC COST CALCULATION (The "Grand Formula")
+    const baseRank = parseInt(row.Rank || row.rank || row.RANK) || 1;
+    const baseCostPerRank = parseInt(row.Cost || row.cost || row.COST) || 1;
+    
+    let modCostPerRank = 0;
+    let flatCost = 0;
+
+    const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
+    const extrasObject = {};
+    if (extrasText) {
+      const extraNames = extrasText.split(',').map(e => e.trim());
+      let count = 1;
+      for (const extraName of extraNames) {
+        const masterExtra = Object.keys(EXTRAS).find(k => k.toLowerCase() === extraName.toLowerCase());
+        if (masterExtra) {
+          const mod = EXTRAS[masterExtra];
+          if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
+          if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
+          extrasObject[count] = {
+            name: mod.name,
+            data: {
+              description: mod.data.description,
+              cout: mod.data.cout
+            }
+          };
+          count++;
+        }
+      }
+    }
+
+    const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
+    const flawsObject = {};
+    if (flawsText) {
+      const flawNames = flawsText.split(',').map(f => f.trim());
+      let count = 1;
+      for (const flawName of flawNames) {
+        const masterFlaw = Object.keys(FLAWS).find(k => k.toLowerCase() === flawName.toLowerCase());
+        if (masterFlaw) {
+          const mod = FLAWS[masterFlaw];
+          if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
+          if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
+          flawsObject[count] = {
+            name: mod.name,
+            data: {
+              description: mod.data.description,
+              cout: mod.data.cout
+            }
+          };
+          count++;
+        }
+      }
+    }
+
+    // Formula: ((Base + Modifiers) * Rank) + Flat
+    const finalCostPerRank = Math.max(1, baseCostPerRank + modCostPerRank);
+    const finalTotal = (finalCostPerRank * baseRank) + flatCost;
+
     let systemType = 'generaux';
     const lowerName = name.toLowerCase();
     const attackPowers = ['blast', 'affliction', 'damage', 'dazzle', 'nullify', 'mind control', 'strike', 'trip', 'weaken'];
@@ -50,15 +136,27 @@ async function buildPowers() {
     const powerItem = {
       "_id": Math.random().toString(36).substring(2, 18),
       "name": name,
-      "type": "pouvoir",
-      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+      "type": translationMap.type[type] || 'pouvoir',
+      "img": `systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg`,
       "system": {
+        "activate": true,
+        "special": translationMap.action[action] || 'simple',
         "type": systemType,
-        "description": `<h3>Description</h3><p>${row.Description || ''}</p><h3>Mechanics</h3><p>${row.Mechanics || ''}</p>`,
+        "action": translationMap.action[action] || 'simple',
+        "portee": translationMap.range[range] || 'contact',
+        "duree": translationMap.duration[duration] || 'instantane',
+        "effets": fullDescription,
+        "notes": row.Description || '',
+        "extras": extrasObject,
+        "defauts": flawsObject,
         "cout": {
-          "total": parseInt(row.Rank) * parseInt(row.Cost) || 1
+          "rang": baseRank,
+          "parrang": baseCostPerRank,
+          "total": finalTotal
         }
-      }
+      },
+      "effects": [],
+      "flags": {}
     };
     items.push(JSON.stringify(powerItem));
   }
@@ -76,6 +174,20 @@ async function buildAdvantages() {
     const name = (row.Name || row.name || "").trim();
     if (!name) continue;
 
+    const effects = [];
+    const modKey = row.ModKey || row.modkey;
+    const modValue = row.ModValue || row.modvalue;
+
+    if (modKey && modValue) {
+      effects.push({
+        "name": `${name} Bonus`,
+        "changes": [{ "key": modKey, "mode": 2, "value": modValue.toString(), "priority": 20 }],
+        "disabled": false,
+        "transfer": true,
+        "icon": 'systems/mutants-and-masterminds-3e/assets/icons/talent.svg'
+      });
+    }
+
     const advantageItem = {
       "_id": Math.random().toString(36).substring(2, 18),
       "name": name,
@@ -84,7 +196,9 @@ async function buildAdvantages() {
       "system": {
         "description": `<p>${row.Description || ''}</p>`,
         "rang": parseInt(row.Ranks || row.ranks) || 1
-      }
+      },
+      "effects": effects,
+      "flags": {}
     };
     items.push(JSON.stringify(advantageItem));
   }
@@ -102,11 +216,13 @@ async function buildModifiers(dataMap, fileName, subType) {
       "_id": Math.random().toString(36).substring(2, 18),
       "name": mod.name,
       "type": 'modificateur',
-      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+      "img": `systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg`,
       "system": {
         "type": subType,
         "description": mod.data.description,
         "cout": {
+          "fixe": mod.data.cout.fixe,
+          "rang": mod.data.cout.rang,
           "value": mod.data.cout.value
         }
       }
