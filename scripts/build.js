@@ -10,27 +10,6 @@ const translationMap = {
   type: {
     'power': 'pouvoir',
     'advantage': 'talent'
-  },
-  action: {
-    'standard': 'simple',
-    'move': 'mouvement',
-    'free': 'libre',
-    'reaction': 'reaction',
-    'none': 'aucune'
-  },
-  range: {
-    'personal': 'personnelle',
-    'close': 'contact',
-    'ranged': 'distance',
-    'perception': 'perception',
-    'rank': 'rang'
-  },
-  duration: {
-    'instant': 'instantane',
-    'sustained': 'prolonge',
-    'continuous': 'continu',
-    'concentration': 'concentration',
-    'permanent': 'permanent'
   }
 };
 
@@ -81,8 +60,11 @@ async function buildPowers() {
     if (!rawName || rawName.trim() === '') continue;
     const name = rawName.trim();
 
-    let fullDescription = `<h3>Description</h3><p>${sanitizeText(row.Description || row.description)}</p>`;
-    if (row.Mechanics || row.mechanics || row.MECHANICS) fullDescription += `<h3>Mechanics</h3><p>${sanitizeText(row.Mechanics || row.mechanics || row.MECHANICS)}</p>`;
+    const cleanDesc = sanitizeText(row.Description || row.description);
+    const cleanMech = sanitizeText(row.Mechanics || row.mechanics);
+
+    let fullDescription = `Description: ${cleanDesc || ''}
+Mechanics: ${cleanMech || ''}`;
 
     const action = (row.Action || row.action || row.ACTION || 'standard').trim().toLowerCase();
     const range = (row.Range || row.range || row.RANGE || 'close').trim().toLowerCase();
@@ -97,10 +79,8 @@ async function buildPowers() {
     let flawsList = [];
 
     const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
-    const extrasObject = {};
     if (extrasText) {
       const extraNames = extrasText.split(',').map(e => e.trim());
-      let count = 1;
       for (const extraName of extraNames) {
         const masterExtra = Object.keys(EXTRAS).find(k => k.toLowerCase() === extraName.toLowerCase());
         if (masterExtra) {
@@ -108,17 +88,13 @@ async function buildPowers() {
           if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
           extrasList.push(`${mod.name} (+${mod.data.cout.value})`);
-          extrasObject[count] = { name: mod.name, data: { description: mod.data.description, cout: mod.data.cout } };
-          count++;
         }
       }
     }
 
     const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
-    const flawsObject = {};
     if (flawsText) {
       const flawNames = flawsText.split(',').map(f => f.trim());
-      let count = 1;
       for (const flawName of flawNames) {
         const masterFlaw = Object.keys(FLAWS).find(k => k.toLowerCase() === flawName.toLowerCase());
         if (masterFlaw) {
@@ -126,22 +102,32 @@ async function buildPowers() {
           modCostPerRank += mod.data.cout.rang ? mod.data.cout.value : 0;
           flatCost += mod.data.cout.fixe ? mod.data.cout.value : 0;
           flawsList.push(`${mod.name} (${mod.data.cout.value})`);
-          flawsObject[count] = { name: mod.name, data: { description: mod.data.description, cout: mod.data.cout } };
-          count++;
         }
       }
     }
 
     const finalCostPerRank = Math.max(1, baseCostPerRank + modCostPerRank);
-    const finalTotal = (finalCostPerRank * baseRank) + flatCost;
+    const finalTotal = Math.max(1, (finalCostPerRank * baseRank) + flatCost);
 
-    let recipe = `<b>[ POWER SETUP RECIPE ]</b><br/>`;
-    recipe += `&bull; <b>Rank:</b> Set Rank to <b>${baseRank}</b><br/>`;
-    recipe += `&bull; <b>Action:</b> Select <b>${action.toUpperCase()}</b><br/>`;
-    recipe += `&bull; <b>Range:</b> Select <b>${range.toUpperCase()}</b><br/>`;
-    recipe += `&bull; <b>Duration:</b> Select <b>${duration.toUpperCase()}</b><br/>`;
-    recipe += `&bull; <b>PP/Rank Ratio:</b> Select <b>${finalCostPerRank}:1</b><br/>`;
-    recipe += `<b>TARGET TOTAL COST: ${finalTotal} PP</b><br/><hr/>`;
+    let recipe = `[ POWER SETUP RECIPE ]
+`;
+    recipe += `* Rank: Set Rank to ${baseRank}
+`;
+    recipe += `* Action: Select ${action.toUpperCase()}
+`;
+    recipe += `* Range: Select ${range.toUpperCase()}
+`;
+    recipe += `* Duration: Select ${duration.toUpperCase()}
+`;
+    recipe += `* PP/Rank Ratio: Select ${finalCostPerRank}:1
+`;
+    if (extrasList.length) recipe += `* Extras to Include: ${extrasList.join(', ')}
+`;
+    if (flawsList.length) recipe += `* Flaws to Include: ${flawsList.join(', ')}
+`;
+    recipe += `TARGET TOTAL COST: ${finalTotal} PP
+--------------------
+`;
 
     let systemType = 'generaux';
     const lowerName = name.toLowerCase();
@@ -154,31 +140,16 @@ async function buildPowers() {
       "_id": Math.random().toString(36).substring(2, 18),
       "name": name,
       "type": "pouvoir",
-      "img": `systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg`,
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "activate": true,
-        "special": translationMap.action[action] || 'simple',
         "type": systemType,
-        "action": translationMap.action[action] || 'simple',
-        "portee": translationMap.range[range] || 'contact',
-        "duree": translationMap.duration[duration] || 'instantane',
-        "description": recipe + fullDescription,
-        "notes": recipe + sanitizeText(row.Description || row.description),
-        "extras": extrasObject,
-        "defauts": flawsObject,
-        "cout": {
-          "rang": baseRank,
-          "parrang": baseCostPerRank,
-          "total": finalTotal,
-          "rangDyn": 0, "rangDynMax": 0, "divers": 0, "modrang": modCostPerRank, "modfixe": flatCost, "totalTheorique": finalTotal, "parrangtotal": "0"
-        }
-      },
-      "effects": [],
-      "flags": {}
+        "description": recipe + fullDescription
+      }
     };
     items.push(JSON.stringify(powerItem));
   }
-  await fs.writeFile(outFile, items.join('\n'));
+  await fs.writeFile(outFile, items.join('
+'));
 }
 
 async function buildAdvantages() {
@@ -190,6 +161,8 @@ async function buildAdvantages() {
   for (const row of rows) {
     const name = (row.Name || row.name || "").trim();
     if (!name) continue;
+
+    const cleanDesc = sanitizeText(row.Description || row.description);
 
     const effects = [];
     if (row.ModKey && row.ModValue) {
@@ -208,15 +181,15 @@ async function buildAdvantages() {
       "type": 'talent',
       "img": 'systems/mutants-and-masterminds-3e/assets/icons/talent.svg',
       "system": {
-        "description": `<p>${sanitizeText(row.Description || row.description)}</p>`,
-        "rang": parseInt(row.Ranks || row.ranks) || 1
+        "description": cleanDesc
       },
       "effects": effects,
       "flags": {}
     };
     items.push(JSON.stringify(advantageItem));
   }
-  await fs.writeFile(outFile, items.join('\n'));
+  await fs.writeFile(outFile, items.join('
+'));
 }
 
 async function buildEquipment() {
@@ -247,22 +220,22 @@ async function buildEquipment() {
         });
       }
 
-      // ARRAY LOGIC
-      const arrayGroup = row.ArrayGroup || row.arraygroup;
-      let finalCost = parseInt(row.Cost) || 1;
-      let arrayNote = "";
-      if (arrayGroup) {
-        arrayNote = `<p><i>Part of the <b>${arrayGroup}</b> Array (Alternate Equipment).</i></p>`;
-      }
-
-      let gearInfo = `<b>[ EQUIPMENT SPECS ]</b><br/>`;
-      gearInfo += `&bull; <b>Type:</b> ${row.Type}<br/>`;
-      gearInfo += `&bull; <b>EP Cost:</b> ${finalCost}<br/>`;
-      if (row.Damage) gearInfo += `&bull; <b>Damage:</b> ${row.Damage}<br/>`;
-      if (row.Critical) gearInfo += `&bull; <b>Critical:</b> ${row.Critical}<br/>`;
-      if (row.Protection) gearInfo += `&bull; <b>Protection:</b> ${row.Protection}<br/>`;
-      if (row.Range) gearInfo += `&bull; <b>Range:</b> ${row.Range}<br/>`;
-      gearInfo += `<hr/>`;
+      let gearInfo = `[ EQUIPMENT SPECS ]
+`;
+      gearInfo += `* Type: ${row.Type}
+`;
+      gearInfo += `* EP Cost: ${row.Cost}
+`;
+      if (row.Damage) gearInfo += `* Damage: ${row.Damage}
+`;
+      if (row.Critical) gearInfo += `* Critical: ${row.Critical}
+`;
+      if (row.Protection) gearInfo += `* Protection: ${row.Protection}
+`;
+      if (row.Range) gearInfo += `* Range: ${row.Range}
+`;
+      gearInfo += `--------------------
+`;
 
       const gearItem = {
         "_id": Math.random().toString(36).substring(2, 18),
@@ -270,8 +243,8 @@ async function buildEquipment() {
         "type": "equipement",
         "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
         "system": {
-          "description": gearInfo + arrayNote + `<p>${row.Notes || ''}</p>`,
-          "cout": finalCost
+          "description": gearInfo + `${row.Notes || ''}`,
+          "cout": parseInt(row.Cost) || 1
         },
         "effects": effects,
         "flags": {}
@@ -279,8 +252,8 @@ async function buildEquipment() {
       allItems.push(JSON.stringify(gearItem));
     }
   }
-  await fs.writeFile(outFile, allItems.join('\n'));
-  console.log(`Successfully built equipment.db with ${allItems.length} items.`);
+  await fs.writeFile(outFile, allItems.join('
+'));
 }
 
 async function buildModifiers(dataMap, fileName, subType) {
@@ -297,20 +270,20 @@ async function buildModifiers(dataMap, fileName, subType) {
       "system": {
         "type": subType,
         "description": sanitizeText(mod.data.description),
-        "cout": { "fixe": mod.data.cout.fixe, "rang": mod.data.cout.rang, "value": mod.data.cout.value }
+        "cout": { "value": mod.data.cout.value }
       }
     };
     items.push(JSON.stringify(modItem));
   }
-  await fs.writeFile(outFile, items.join('\n'));
+  await fs.writeFile(outFile, items.join('
+'));
 }
 
 async function updateVersion() {
   const manifestPath = path.join(__dirname, '../mnm-3e-expanded/module.json');
   const manifest = await fs.readJson(manifestPath);
   const versionParts = manifest.version.split('.');
-  versionParts[2] = parseInt(versionParts[2]) + 1;
-  manifest.version = versionParts.join('.');
+  manifest.version = `${versionParts[0]}.${parseInt(versionParts[1]) + 1}.${versionParts[2]}`;
   await fs.writeJson(manifestPath, manifest, { spaces: 2 });
   console.log(`Auto-incremented version to ${manifest.version}`);
 }

@@ -2,7 +2,7 @@
   "id": "mnm-3e-expanded",
   "title": "M&M 3e Expanded",
   "description": "A Comprehensive Library of Advantages, Powers, Effects, Flaws, and Items for Mutants & Masterminds 3e.",
-  "version": "2.6.4",
+  "version": "3.0.0",
   "author": "Davinchi",
   "compatibility": {
     "minimum": "12",
@@ -36,6 +36,20 @@
       "name": "expanded-flaws",
       "label": "M&M 3e Expanded: Flaws",
       "path": "packs/flaws.db",
+      "type": "Item",
+      "system": "mutants-and-masterminds-3e"
+    },
+    {
+      "name": "expanded-equipment",
+      "label": "M&M 3e Expanded: Equipment",
+      "path": "packs/equipment.db",
+      "type": "Item",
+      "system": "mutants-and-masterminds-3e"
+    },
+    {
+      "name": "expanded-vehicles",
+      "label": "M&M 3e Expanded: Vehicles",
+      "path": "packs/vehicles.db",
       "type": "Item",
       "system": "mutants-and-masterminds-3e"
     }

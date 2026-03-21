@@ -1,0 +1,10 @@
+Name,Size,Strength,Speed,Defense,Toughness,Cost,Notes
+Motorcycle,Medium,1,6,10,8,10,"Standard two-wheeled vehicle."
+Car,Large,7,5,8,8,10,"Standard sedan."
+Armored Truck,Huge,9,4,6,11,15,"Heavily reinforced transport."
+Helicopter,Huge,8,7,6,9,19,"Standard civilian helicopter."
+Combat Jet,Gargantuan,12,11,6,11,25,"Military supersonic jet."
+Submarine,Gargantuan,12,5,4,12,15,"Standard deep-sea vessel."
+Tank,Huge,10,3,4,12,25,"Military main battle tank."
+Small Plane,Huge,6,6,6,8,14,"Single-engine propeller plane."
+Speedboat,Large,6,5,8,6,10,"Standard motorboat."
