@@ -86,20 +86,16 @@ async function buildPowers() {
     const finalCostPerRank = Math.max(1, baseCostPerRank + modCostPerRank);
     const finalTotal = (finalCostPerRank * baseRank) + flatCost;
 
-    // BUILD FINAL RECIPE SUMMARY (HTML)
-    let recipe = `<div style="background: #efefff; padding: 12px; border: 2px solid #4a4a8a; border-radius: 5px; margin-bottom: 15px; font-family: sans-serif; color: #111;">`;
-    recipe += `<strong style="font-size: 1.1em; color: #2a2a6a;">📜 [ POWER SETUP RECIPE ]</strong><br/>`;
-    recipe += `<ul style="margin: 8px 0; padding-left: 20px;">`;
-    recipe += `<li><strong>Rank:</strong> Set to <strong>${baseRank}</strong></li>`;
-    recipe += `<li><strong>Action:</strong> Select <strong>${action}</strong></li>`;
-    recipe += `<li><strong>Range:</strong> Select <strong>${range}</strong></li>`;
-    recipe += `<li><strong>Duration:</strong> Select <strong>${duration}</strong></li>`;
-    recipe += `<li><strong>Cost Per Rank:</strong> <strong>${finalCostPerRank} PP</strong></li>`;
-    if (extrasList.length) recipe += `<li><strong>Included Extras:</strong> ${extrasList.join(', ')}</li>`;
-    if (flawsList.length) recipe += `<li><strong>Included Flaws:</strong> ${flawsList.join(', ')}</li>`;
-    recipe += `</ul>`;
-    recipe += `<div style="text-align: right; font-weight: bold; border-top: 1px solid #aaa; padding-top: 5px;">TARGET TOTAL: ${finalTotal} PP</div>`;
-    recipe += `</div>`;
+    // BUILD FINAL RECIPE SUMMARY (Simple HTML for maximum compatibility)
+    let recipe = `<b>[ POWER SETUP RECIPE ]</b><br/>`;
+    recipe += `&bull; <b>Rank:</b> Set to ${baseRank}<br/>`;
+    recipe += `&bull; <b>Action:</b> Select ${action}<br/>`;
+    recipe += `&bull; <b>Range:</b> Select ${range}<br/>`;
+    recipe += `&bull; <b>Duration:</b> Select ${duration}<br/>`;
+    recipe += `&bull; <b>Cost Per Rank:</b> ${finalCostPerRank} PP<br/>`;
+    if (extrasList.length) recipe += `&bull; <b>Extras:</b> ${extrasList.join(', ')}<br/>`;
+    if (flawsList.length) recipe += `&bull; <b>Flaws:</b> ${flawsList.join(', ')}<br/>`;
+    recipe += `<b>TARGET TOTAL: ${finalTotal} PP</b><br/><hr/>`;
 
     let systemType = 'generaux';
     const lowerName = name.toLowerCase();
