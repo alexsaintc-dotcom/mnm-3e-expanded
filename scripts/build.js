@@ -93,28 +93,40 @@ async function buildPowers() {
     let modCostPerRank = 0;
     let flatCost = 0;
 
+    const extrasObject = {};
     const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
     if (extrasText) {
       const extraNames = extrasText.split(',').map(e => e.trim());
+      let count = 1;
       for (const extraName of extraNames) {
         const masterExtra = Object.keys(EXTRAS).find(k => k.toLowerCase() === extraName.toLowerCase());
         if (masterExtra) {
-          const mod = EXTRAS[masterExtra];
+          const mod = JSON.parse(JSON.stringify(EXTRAS[masterExtra]));
           if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
+          mod.data.type = 'extra';
+          mod.details = true;
+          extrasObject[count] = mod;
+          count++;
         }
       }
     }
 
+    const flawsObject = {};
     const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
     if (flawsText) {
       const flawNames = flawsText.split(',').map(f => f.trim());
+      let count = 1;
       for (const flawName of flawNames) {
         const masterFlaw = Object.keys(FLAWS).find(k => k.toLowerCase() === flawName.toLowerCase());
         if (masterFlaw) {
-          const mod = FLAWS[masterFlaw];
+          const mod = JSON.parse(JSON.stringify(FLAWS[masterFlaw]));
           if (mod.data.cout.rang) modCostPerRank -= mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost -= mod.data.cout.value;
+          mod.data.type = 'defaut';
+          mod.details = true;
+          flawsObject[count] = mod;
+          count++;
         }
       }
     }
@@ -148,11 +160,21 @@ async function buildPowers() {
         "effetsprincipaux": "",
         "effets": effectsHtml,
         "notes": notesHtml,
+        "link": "",
+        "descripteurs": {},
+        "extras": extrasObject,
+        "defauts": flawsObject,
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": true,
         "cout": {
+          "rangDyn": 0,
+          "rangDynMax": 0,
           "rang": baseRank,
           "parrang": baseCostPerRank,
           "total": finalTotal,
           "totalTheorique": finalTotal,
+          "divers": 0,
           "modrang": modCostPerRank,
           "modfixe": flatCost,
           "parrangtotal": "0"
