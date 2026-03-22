@@ -63,9 +63,7 @@ async function buildPowers() {
     const cleanDesc = sanitizeText(row.Description || row.description);
     const cleanMech = sanitizeText(row.Mechanics || row.mechanics);
 
-    let fullDescription = `Description: ${cleanDesc || ''}
-
-Mechanics: ${cleanMech || ''}`;
+    let fullDescription = `Description: ${cleanDesc || ''}\n\nMechanics: ${cleanMech || ''}`;
 
     let systemType = 'generaux';
     const lowerName = name.toLowerCase();
@@ -86,8 +84,7 @@ Mechanics: ${cleanMech || ''}`;
     };
     items.push(JSON.stringify(powerItem));
   }
-  await fs.writeFile(outFile, items.join('
-'));
+  await fs.writeFile(outFile, items.join('\n'));
 }
 
 async function buildAdvantages() {
@@ -127,8 +124,7 @@ async function buildAdvantages() {
     };
     items.push(JSON.stringify(advantageItem));
   }
-  await fs.writeFile(outFile, items.join('
-'));
+  await fs.writeFile(outFile, items.join('\n'));
 }
 
 async function buildEquipment() {
@@ -159,22 +155,14 @@ async function buildEquipment() {
         });
       }
 
-      let gearInfo = `[ EQUIPMENT SPECS ]
-`;
-      gearInfo += `* Type: ${row.Type}
-`;
-      gearInfo += `* EP Cost: ${row.Cost}
-`;
-      if (row.Damage) gearInfo += `* Damage: ${row.Damage}
-`;
-      if (row.Critical) gearInfo += `* Critical: ${row.Critical}
-`;
-      if (row.Protection) gearInfo += `* Protection: ${row.Protection}
-`;
-      if (row.Range) gearInfo += `* Range: ${row.Range}
-`;
-      gearInfo += `--------------------
-`;
+      let gearInfo = `[ EQUIPMENT SPECS ]\n`;
+      gearInfo += `* Type: ${row.Type}\n`;
+      gearInfo += `* EP Cost: ${row.Cost}\n`;
+      if (row.Damage) gearInfo += `* Damage: ${row.Damage}\n`;
+      if (row.Critical) gearInfo += `* Critical: ${row.Critical}\n`;
+      if (row.Protection) gearInfo += `* Protection: ${row.Protection}\n`;
+      if (row.Range) gearInfo += `* Range: ${row.Range}\n`;
+      gearInfo += `--------------------\n`;
 
       const gearItem = {
         "_id": Math.random().toString(36).substring(2, 18),
@@ -191,8 +179,7 @@ async function buildEquipment() {
       allItems.push(JSON.stringify(gearItem));
     }
   }
-  await fs.writeFile(outFile, allItems.join('
-'));
+  await fs.writeFile(outFile, allItems.join('\n'));
 }
 
 async function buildModifiers(dataMap, fileName, subType) {
@@ -224,15 +211,14 @@ async function buildModifiers(dataMap, fileName, subType) {
     };
     items.push(JSON.stringify(modItem));
   }
-  await fs.writeFile(outFile, items.join('
-'));
+  await fs.writeFile(outFile, items.join('\n'));
 }
 
 async function updateVersion() {
   const manifestPath = path.join(__dirname, '../mnm-3e-expanded/module.json');
   const manifest = await fs.readJson(manifestPath);
   const versionParts = manifest.version.split('.');
-  manifest.version = `${versionParts[0]}.${parseInt(versionParts[1])}.${parseInt(versionParts[2]) + 1}`;
+  manifest.version = `${versionParts[0]}.${versionParts[1]}.${parseInt(versionParts[2]) + 1}`;
   await fs.writeJson(manifestPath, manifest, { spaces: 2 });
   console.log(`Auto-incremented version to ${manifest.version}`);
 }
