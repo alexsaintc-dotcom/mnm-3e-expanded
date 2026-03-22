@@ -216,7 +216,8 @@ async function buildAdvantages() {
 async function buildEquipment() {
   const categories = ['melee', 'ranged', 'armor', 'utility'];
   const outFile = path.join(distDir, 'equipment.db');
-  let allItems = [];
+  let allLines = [];
+  const folderMap = {};
 
   for (const cat of categories) {
     const csvFile = path.join(__dirname, `../src/equipment/${cat}/${cat}.csv`);
@@ -225,6 +226,21 @@ async function buildEquipment() {
     for (const row of rows) {
       const name = (row.Name || row.name || "").trim();
       if (!name) continue;
+
+      const type = (row.Type || "General").trim();
+      if (!folderMap[type]) {
+        folderMap[type] = "fld" + Math.random().toString(36).substring(2, 10);
+        const folderDoc = {
+          "_id": folderMap[type],
+          "name": type,
+          "type": "Item",
+          "folder": null,
+          "sort": 0,
+          "color": null,
+          "flags": {}
+        };
+        allLines.push(JSON.stringify(folderDoc));
+      }
 
       const effects = [];
       const modKey = row.ModKey || row.modkey;
@@ -242,7 +258,7 @@ async function buildEquipment() {
       }
 
       let gearInfo = `<b>[ EQUIPMENT SPECS ]</b><br/>`;
-      gearInfo += `&bull; <b>Type:</b> ${row.Type}<br/>`;
+      gearInfo += `&bull; <b>Type:</b> ${type}<br/>`;
       gearInfo += `&bull; <b>EP Cost:</b> ${row.Cost}<br/>`;
       if (row.Damage) gearInfo += `&bull; <b>Damage:</b> ${row.Damage}<br/>`;
       if (row.Critical) gearInfo += `&bull; <b>Critical:</b> ${row.Critical}<br/>`;
@@ -255,6 +271,7 @@ async function buildEquipment() {
         "name": name,
         "type": "equipement",
         "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
+        "folder": folderMap[type],
         "system": {
           "description": gearInfo + `<p>${row.Notes || ''}</p>`,
           "cout": parseInt(row.Cost) || 1
@@ -262,10 +279,10 @@ async function buildEquipment() {
         "effects": effects,
         "flags": {}
       };
-      allItems.push(JSON.stringify(gearItem));
+      allLines.push(JSON.stringify(gearItem));
     }
   }
-  await fs.writeFile(outFile, allItems.join('\n'));
+  await fs.writeFile(outFile, allLines.join('\n'));
 }
 
 async function buildVehicles() {
