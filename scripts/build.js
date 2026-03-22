@@ -289,11 +289,27 @@ async function buildVehicles() {
   const csvFile = path.join(__dirname, '../src/vehicles/vehicles.csv');
   const outFile = path.join(distDir, 'vehicles.db');
   const rows = await readCsv(csvFile);
-  const items = [];
+  let allLines = [];
+  const folderMap = {};
 
   for (const row of rows) {
     const name = (row.Name || row.name || "").trim();
     if (!name) continue;
+
+    const category = (row.Category || "Other").trim();
+    if (!folderMap[category]) {
+      folderMap[category] = "fld" + Math.random().toString(36).substring(2, 10);
+      const folderDoc = {
+        "_id": folderMap[category],
+        "name": category,
+        "type": "Item",
+        "folder": null,
+        "sort": 0,
+        "color": null,
+        "flags": {}
+      };
+      allLines.push(JSON.stringify(folderDoc));
+    }
 
     let vehicleInfo = `<b>[ VEHICLE SPECS ]</b><br/>`;
     vehicleInfo += `&bull; <b>Size:</b> ${row.Size}<br/>`;
@@ -308,6 +324,7 @@ async function buildVehicles() {
       "name": name,
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
+      "folder": folderMap[category],
       "system": {
         "description": vehicleInfo + `<p>${row.Notes || ''}</p>`,
         "cout": parseInt(row.Cost) || 1
@@ -315,9 +332,9 @@ async function buildVehicles() {
       "effects": [],
       "flags": {}
     };
-    items.push(JSON.stringify(vehicleItem));
+    allLines.push(JSON.stringify(vehicleItem));
   }
-  await fs.writeFile(outFile, items.join('\n'));
+  await fs.writeFile(outFile, allLines.join('\n'));
 }
 
 async function buildHeadquarters() {
