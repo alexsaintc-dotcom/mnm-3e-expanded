@@ -94,38 +94,42 @@ async function buildPowers() {
     let flatCost = 0;
 
     const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
-    const extrasArray = []; // Changed to array
+    const extrasObject = {}; // Fix: use object, not array
     if (extrasText) {
       const extraNames = extrasText.split(',').map(e => e.trim());
+      let extraCount = 1;
       for (const extraName of extraNames) {
         const masterExtra = Object.keys(EXTRAS).find(k => k.toLowerCase() === extraName.toLowerCase());
         if (masterExtra) {
           const mod = EXTRAS[masterExtra];
           if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
-          extrasArray.push({ // Pushed as object in array
+          extrasObject[extraCount.toString()] = { // Fix: numeric string key
             name: mod.name,
             data: { description: mod.data.description, cout: mod.data.cout }
-          });
+          };
+          extraCount++;
         }
       }
     }
 
     const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
-    const flawsArray = []; // Changed to array
+    const flawsObject = {}; // Fix: use object, not array
     if (flawsText) {
       const flawNames = flawsText.split(',').map(f => f.trim());
+      let flawCount = 1;
       for (const flawName of flawNames) {
         const masterFlaw = Object.keys(FLAWS).find(k => k.toLowerCase() === flawName.toLowerCase());
         if (masterFlaw) {
           const mod = FLAWS[masterFlaw];
           if (mod.data.cout.rang) modCostPerRank -= mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost -= mod.data.cout.value;
+          flawsObject[flawCount.toString()] = { // Fix: numeric string key and move inside guard
+            name: mod.name,
+            data: { description: mod.data.description, cout: mod.data.cout }
+          };
+          flawCount++;
         }
-        flawsArray.push({ // Pushed as object in array
-          name: mod.name,
-          data: { description: mod.data.description, cout: mod.data.cout }
-        });
       }
     }
 
@@ -133,13 +137,13 @@ async function buildPowers() {
     const finalTotal = Math.max(1, (finalCostPerRank * baseRank) + flatCost);
 
     // DYNAMIC TOGGLE LOGIC
-    let specialToggle = "simple"; // Default to Standard
+    let specialToggle = "standard"; // Fix: default to "standard" not "simple"
     const arrayType = (row.Array || row.array || "").trim().toLowerCase();
     if (arrayType === "alternate" || arrayType === "alternatif") {
-      specialToggle = "alternatif"; // Use French term
+      specialToggle = "alternatif"; 
     }
     if (arrayType === "dynamic" || arrayType === "dynamique") {
-      specialToggle = "dynamique"; // Use French term
+      specialToggle = "dynamique"; 
     }
 
     const headerInfo = `<p>Action: ${action.charAt(0).toUpperCase() + action.slice(1)} &bull; Range: ${range.charAt(0).toUpperCase() + range.slice(1)}<br>Duration: ${duration.charAt(0).toUpperCase() + duration.slice(1)} &bull; Cost: ${finalCostPerRank} point${finalCostPerRank > 1 ? 's' : ''} per rank</p>`;
@@ -177,16 +181,15 @@ async function buildPowers() {
           "modfixe": flatCost,
           "parrangtotal": "0"
         },
-        "extras": extrasArray,
-        "defauts": flawsArray
+        "extras": extrasObject, // Fix: use object
+        "defauts": flawsObject  // Fix: use object
       },
       "effects": [],
       "flags": {}
     };
     items.push(JSON.stringify(powerItem));
   }
-  await fs.writeFile(outFile, items.join('
-')); // Corrected join argument
+  await fs.writeFile(outFile, items.join('\n'));
 }
 
 async function buildAdvantages() {
@@ -227,8 +230,7 @@ async function buildAdvantages() {
     };
     items.push(JSON.stringify(advantageItem));
   }
-  await fs.writeFile(outFile, items.join('
-'));
+  await fs.writeFile(outFile, items.join('\n'));
 }
 
 async function buildEquipment() {
@@ -300,8 +302,7 @@ async function buildEquipment() {
       allLines.push(JSON.stringify(gearItem));
     }
   }
-  await fs.writeFile(outFile, allLines.join('
-'));
+  await fs.writeFile(outFile, allLines.join('\n'));
 }
 
 async function buildVehicles() {
@@ -353,8 +354,7 @@ async function buildVehicles() {
     };
     allLines.push(JSON.stringify(vehicleItem));
   }
-  await fs.writeFile(outFile, allLines.join('
-'));
+  await fs.writeFile(outFile, allLines.join('\n'));
 }
 
 async function buildHeadquarters() {
@@ -387,8 +387,7 @@ async function buildHeadquarters() {
     };
     items.push(JSON.stringify(hqItem));
   }
-  await fs.writeFile(outFile, items.join('
-'));
+  await fs.writeFile(outFile, items.join('\n'));
 }
 
 async function buildModifiers(dataMap, fileName, subType) {
@@ -414,8 +413,7 @@ async function buildModifiers(dataMap, fileName, subType) {
     };
     items.push(JSON.stringify(modItem));
   }
-  await fs.writeFile(outFile, items.join('
-'));
+  await fs.writeFile(outFile, items.join('\n'));
 }
 
 async function main() {
