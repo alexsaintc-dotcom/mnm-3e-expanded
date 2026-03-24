@@ -106,7 +106,7 @@ async function buildPowers() {
           if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
           extrasObject[extraCount.toString()] = {
             name: mod.name,
-            rang: 1, // Fix: Ensure rank field exists for player input
+            rang: 1,
             data: { description: mod.data.description, cout: mod.data.cout }
           };
           extraCount++;
@@ -127,7 +127,7 @@ async function buildPowers() {
           if (mod.data.cout.fixe) flatCost -= mod.data.cout.value;
           flawsObject[flawCount.toString()] = {
             name: mod.name,
-            rang: 1, // Fix: Ensure rank field exists for player input
+            rang: 1,
             data: { description: mod.data.description, cout: mod.data.cout }
           };
           flawCount++;
@@ -217,6 +217,8 @@ async function buildAdvantages() {
       });
     }
 
+    const baseRank = parseInt(row.Ranks || row.ranks) || 1;
+
     const advantageItem = {
       "_id": Math.random().toString(36).substring(2, 18),
       "name": name,
@@ -224,7 +226,13 @@ async function buildAdvantages() {
       "img": 'systems/mutants-and-masterminds-3e/assets/icons/talent.svg',
       "system": {
         "description": `<p>${cleanDesc}</p>`,
-        "rang": parseInt(row.Ranks || row.ranks) || 1
+        "rang": baseRank,
+        "edit": true, // Fix: Ensure rank is editable on character sheet
+        "cout": {
+          "fixe": true, // Fix: Mirror Effects fix for Advantages
+          "rang": true,
+          "value": 1
+        }
       },
       "effects": effects,
       "flags": {}
@@ -405,10 +413,10 @@ async function buildModifiers(dataMap, fileName, subType) {
       "system": {
         "type": subType,
         "description": sanitizeText(mod.data.description),
-        "rang": 1, // Fix: Default rank for individual modifier items
+        "rang": 1,
         "cout": {
-          "fixe": true, // Fix: Allow choosing between flat...
-          "rang": true, // ...and per-rank costs in the UI
+          "fixe": true, 
+          "rang": true, 
           "value": mod.data.cout.value
         }
       }

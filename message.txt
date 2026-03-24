@@ -1,0 +1,102 @@
+Now I have a complete picture. Let me explain everything.                                                                                                                         
+                                                                                          
+  ---                                                                                                                                                                               
+  What All This Is                                                                                                                                                                  
+                                                                                                                                                                                    
+  ★ Insight ─────────────────────────────────────                                                                                                                                   
+  Foundry VTT + Mutants & Masterminds 3e — This is a compendium module for the tabletop RPG system Mutants & Masterminds 3rd Edition, running on https://foundryvtt.com. The game   
+  system implementation is by https://github.com/Zakarik/foundry-mm3 and uses French terminology internally (pouvoir = power, talent = advantage, modificateur = modifier, etc.).
+                                                                                                                                                                                    
+  Your module provides a build pipeline (scripts/build.js) that reads CSV files and generates .db pack files (newline-delimited JSON) for:                                          
+  - Powers (pouvoir) — attacks, defenses, movement, etc.
+  - Advantages (talent) — feats like Improved Initiative                                                                                                                            
+  - Extras (modificateur, type "extra") — power upgrades (+cost)
+  - Flaws (modificateur, type "defaut") — power drawbacks (-cost)
+  - Equipment, Vehicles, Headquarters                                                                                                                                               
+                                     
+  When installed in Foundry, users drag items from these compendium packs onto their character sheets.                                                                              
+  ─────────────────────────────────────────────────                                                                                                                                 
+  
+  The Ghost Points Bug — Root Cause                                                                                                                                                 
+                  
+  I traced the full data flow through the upstream system's code. Here's what happens:                                                                                              
+  
+  How the upstream system handles extras/defauts on powers                                                                                                                          
+                  
+  The upstream system defines extras and defauts as ObjectField (plain objects, NOT arrays):                                                                                        
+                  
+  // pouvoir-data-model.mjs — upstream system                                                                                                                                       
+  extras: new ObjectField(),   // expects: { "1": {name, data}, "2": {name, data} }                                                                                                 
+  defauts: new ObjectField(),  // expects: { "1": {name, data}, "2": {name, data} }                                                                                                 
+                                                                                                                                                                                    
+  When a user drag-drops a modifier onto a power, the system does:                                                                                                                  
+  // _onDrop in pouvoir-item-sheet.mjs — upstream                                                                                                                                   
+  const dataMod = Object.keys(getData[`${getType}s`]);       // e.g. Object.keys(extras)                                                                                            
+  const maxKeysMod = dataMod.length ? Math.max(...dataMod) : 0;                                                                                                                     
+  update[`system.${getType}s.${maxKeysMod+1}`] = { name, data };                                                                                                                    
+                                                                                                                                                                                    
+  It uses numeric string keys ("1", "2", ...) on a plain object.                                                                                                                    
+                                                                                                                                                                                    
+  When a user deletes an extra, the system does:                                                                                                                                    
+  this.item.update({[`system.extras.-=${id}`]: null});  // Foundry object key deletion                                                                                              
+                                                                                                                                                                                    
+  The .-= syntax is Foundry's way to delete a key from an object. It does NOT work correctly on arrays.                                                                             
+                                                                                                                                                                                    
+  Your build script outputs arrays                                                                                                                                                  
+                                                                                                                                                                                    
+  In build.js lines 97 and 115:                                                                                                                                                     
+  const extrasArray = [];  // ← ARRAY
+  // ...                                                                                                                                                                            
+  extrasArray.push({ name, data: { description, cout } });                                                                                                                          
+  // ...                                                  
+  "extras": extrasArray,   // ← stored as JSON array []                                                                                                                             
+  "defauts": flawsArray    // ← stored as JSON array []
+                                                                                                                                                                                    
+  ★ Insight ─────────────────────────────────────                                                                                                                                   
+  Array vs Object in Foundry's -= deletion — When Foundry processes system.extras.-=1, it removes key "1" from an object. On a plain object {1: {...}}, this works perfectly. On an 
+  array, JavaScript's delete arr[1] creates a sparse array — the slot becomes undefined but the array length stays the same. When Foundry serializes and reloads this sparse array, 
+  the undefined slot can become null, which then crashes or misbehaves in the extraCost getter (which tries to access .data.cout on each entry). The leftover entries keep their    
+  cost contribution alive — ghost points.                                                                                                                                           
+  ─────────────────────────────────────────────────
+                                                                                                                                                                                    
+  There's also a second bug: special field value                                                                                                                                    
+                                                                                                                                                                                    
+  In build.js:136:                                                                                                                                                                  
+  let specialToggle = "simple"; // Default to Standard
+                                                                                                                                                                                    
+  But the upstream system expects "standard", not "simple". The cost calculation checks:                                                                                            
+  if(this.special === 'standard') total = trueTotal;                                                                                                                                
+  else if(this.special === 'alternatif') total = 1;                                                                                                                                 
+  else if(this.special === 'dynamique') total = 2;                                                                                                                                  
+                                                                                                                                                                                    
+  With "simple", none of these match, so total stays 0. This means every imported power shows 0 total cost. The value "simple" is the French translation of the action type         
+  "standard", not the special toggle.                                                                                                                                               
+                                                                                                                                                                                    
+  And a third bug: flaws push outside guard                                                                                                                                         
+                  
+  In build.js:125-128, the flawsArray.push() is outside the if (masterFlaw) block:                                                                                                  
+                  
+  if (masterFlaw) {                                                                                                                                                                 
+      const mod = FLAWS[masterFlaw];                                                                                                                                                
+      if (mod.data.cout.rang) modCostPerRank -= mod.data.cout.value;                                                                                                                
+      if (mod.data.cout.fixe) flatCost -= mod.data.cout.value;                                                                                                                      
+  }                                                                                                                                                                                 
+  flawsArray.push({          // ← BUG: `mod` is undefined if masterFlaw was not found                                                                                               
+      name: mod.name,        // ← ReferenceError / uses stale `mod`                                                                                                                 
+      data: { ... }                                                                                                                                                                 
+  });                                                                                                                                                                               
+                                                                                                                                                                                    
+  ---                                                                                                                                                                               
+  Summary of fixes needed
+                                                                                                                                                                                    
+  ┌──────────────────────────────────────────────┬─────────────────────────────────────────┬────────────────────────────────────────┐
+  │                    Issue                     │                Location                 │                  Fix                   │                                               
+  ├──────────────────────────────────────────────┼─────────────────────────────────────────┼────────────────────────────────────────┤                                               
+  │ extras/defauts are arrays, should be objects │ build.js:97,115,106-109,125-128,180-181 │ Use {} with numeric keys instead of [] │                                               
+  ├──────────────────────────────────────────────┼─────────────────────────────────────────┼────────────────────────────────────────┤                                               
+  │ special is "simple", should be "standard"    │ build.js:136                            │ Change to "standard"                   │                                               
+  ├──────────────────────────────────────────────┼─────────────────────────────────────────┼────────────────────────────────────────┤                                               
+  │ flawsArray.push outside if guard             │ build.js:125                            │ Move inside the if (masterFlaw) block  │                                               
+  └──────────────────────────────────────────────┴─────────────────────────────────────────┴────────────────────────────────────────┘                                               
+                  
+  The array-vs-object issue is the primary cause of your ghost points. Want me to fix all three?
