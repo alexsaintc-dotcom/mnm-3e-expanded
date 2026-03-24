@@ -94,7 +94,7 @@ async function buildPowers() {
     let flatCost = 0;
 
     const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
-    const extrasObject = {}; // Fix: use object, not array
+    const extrasObject = {};
     if (extrasText) {
       const extraNames = extrasText.split(',').map(e => e.trim());
       let extraCount = 1;
@@ -104,8 +104,9 @@ async function buildPowers() {
           const mod = EXTRAS[masterExtra];
           if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
-          extrasObject[extraCount.toString()] = { // Fix: numeric string key
+          extrasObject[extraCount.toString()] = {
             name: mod.name,
+            rang: 1, // Fix: Ensure rank field exists for player input
             data: { description: mod.data.description, cout: mod.data.cout }
           };
           extraCount++;
@@ -114,7 +115,7 @@ async function buildPowers() {
     }
 
     const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
-    const flawsObject = {}; // Fix: use object, not array
+    const flawsObject = {};
     if (flawsText) {
       const flawNames = flawsText.split(',').map(f => f.trim());
       let flawCount = 1;
@@ -124,8 +125,9 @@ async function buildPowers() {
           const mod = FLAWS[masterFlaw];
           if (mod.data.cout.rang) modCostPerRank -= mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost -= mod.data.cout.value;
-          flawsObject[flawCount.toString()] = { // Fix: numeric string key and move inside guard
+          flawsObject[flawCount.toString()] = {
             name: mod.name,
+            rang: 1, // Fix: Ensure rank field exists for player input
             data: { description: mod.data.description, cout: mod.data.cout }
           };
           flawCount++;
@@ -136,8 +138,7 @@ async function buildPowers() {
     const finalCostPerRank = Math.max(1, baseCostPerRank + modCostPerRank);
     const finalTotal = Math.max(1, (finalCostPerRank * baseRank) + flatCost);
 
-    // DYNAMIC TOGGLE LOGIC
-    let specialToggle = "standard"; // Fix: default to "standard" not "simple"
+    let specialToggle = "standard"; 
     const arrayType = (row.Array || row.array || "").trim().toLowerCase();
     if (arrayType === "alternate" || arrayType === "alternatif") {
       specialToggle = "alternatif"; 
@@ -181,8 +182,8 @@ async function buildPowers() {
           "modfixe": flatCost,
           "parrangtotal": "0"
         },
-        "extras": extrasObject, // Fix: use object
-        "defauts": flawsObject  // Fix: use object
+        "extras": extrasObject,
+        "defauts": flawsObject
       },
       "effects": [],
       "flags": {}
@@ -404,9 +405,10 @@ async function buildModifiers(dataMap, fileName, subType) {
       "system": {
         "type": subType,
         "description": sanitizeText(mod.data.description),
+        "rang": 1, // Fix: Default rank for individual modifier items
         "cout": {
-          "fixe": mod.data.cout.fixe,
-          "rang": mod.data.cout.rang,
+          "fixe": true, // Fix: Allow choosing between flat...
+          "rang": true, // ...and per-rank costs in the UI
           "value": mod.data.cout.value
         }
       }
@@ -418,8 +420,6 @@ async function buildModifiers(dataMap, fileName, subType) {
 
 async function main() {
   await fs.ensureDir(distDir);
-  // Disabled auto-incrementer for milestone release v3.3.0 (and subsequent manual fixes)
-  // await updateVersion(); // Commented out to prevent auto-incrementing
   await buildPowers();
   await buildAdvantages();
   await buildEquipment();
