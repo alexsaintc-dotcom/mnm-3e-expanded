@@ -10,9 +10,12 @@ async function exportData() {
     const filePath = path.join(packsDir, file);
     if (await fs.pathExists(filePath)) {
       const content = await fs.readFile(filePath, 'utf8');
-      // Some DB files are line-delimited JSON
-      const lines = content.trim().split('\n');
-      allData[file.replace('.db', '')] = lines.map(line => JSON.parse(line));
+      if (content.trim().startsWith('[')) {
+        allData[file.replace('.db', '')] = JSON.parse(content);
+      } else {
+        const lines = content.trim().split('\n');
+        allData[file.replace('.db', '')] = lines.map(line => JSON.parse(line));
+      }
     }
   }
   await fs.writeJson(path.join(__dirname, '../compendium.json'), allData, { spaces: 2 });

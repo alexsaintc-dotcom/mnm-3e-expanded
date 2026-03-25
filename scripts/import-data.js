@@ -108,7 +108,8 @@ async function importData() {
       return item;
     });
 
-    await fs.writeJson(path.join(packsDir, `${key}.db`), processedItems, { spaces: 2 });
+    const ldj = processedItems.map(item => JSON.stringify(item)).join('\n');
+    await fs.writeFile(path.join(packsDir, `${key}.db`), ldj);
   }
   console.log('Imported and recalculated costs from compendium.json using updated math.');
 }
