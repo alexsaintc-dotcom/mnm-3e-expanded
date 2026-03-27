@@ -70,6 +70,24 @@ function sanitizeText(text) {
     .trim();
 }
 
+function createFolder(name, folderMap, lines) {
+  if (!name) return null;
+  if (!folderMap[name]) {
+    const id = "fld" + Math.random().toString(36).substring(2, 10);
+    folderMap[name] = id;
+    lines.push(JSON.stringify({
+      "_id": id,
+      "name": name,
+      "type": "Folder",
+      "folder": null,
+      "sort": 0,
+      "color": null,
+      "flags": {}
+    }));
+  }
+  return folderMap[name];
+}
+
 async function buildPowers() {
   const csvFile = path.join(__dirname, '../1st Powers Input.csv');
   const outFile = path.join(distDir, 'powers.db');
@@ -227,9 +245,9 @@ async function buildAdvantages() {
       "system": {
         "description": `<p>${cleanDesc}</p>`,
         "rang": baseRank,
-        "edit": true, // Fix: Ensure rank is editable on character sheet
+        "edit": true,
         "cout": {
-          "fixe": true, // Fix: Mirror Effects fix for Advantages
+          "fixe": true,
           "rang": true,
           "value": 1
         }
@@ -257,19 +275,7 @@ async function buildEquipment() {
       if (!name) continue;
 
       const type = (row.Type || "General").trim();
-      if (!folderMap[type]) {
-        folderMap[type] = "fld" + Math.random().toString(36).substring(2, 10);
-        const folderDoc = {
-          "_id": folderMap[type],
-          "name": type,
-          "type": "Item",
-          "folder": null,
-          "sort": 0,
-          "color": null,
-          "flags": {}
-        };
-        allLines.push(JSON.stringify(folderDoc));
-      }
+      const folderId = createFolder(type, folderMap, allLines);
 
       const effects = [];
       const modKey = row.ModKey || row.modkey;
@@ -300,7 +306,7 @@ async function buildEquipment() {
         "name": name,
         "type": "equipement",
         "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
-        "folder": folderMap[type],
+        "folder": folderId,
         "system": {
           "description": gearInfo + `<p>${row.Notes || ''}</p>`,
           "cout": parseInt(row.Cost) || 1
@@ -326,19 +332,7 @@ async function buildVehicles() {
     if (!name) continue;
 
     const category = (row.Category || "Other").trim();
-    if (!folderMap[category]) {
-      folderMap[category] = "fld" + Math.random().toString(36).substring(2, 10);
-      const folderDoc = {
-        "_id": folderMap[category],
-        "name": category,
-        "type": "Item",
-        "folder": null,
-        "sort": 0,
-        "color": null,
-        "flags": {}
-      };
-      allLines.push(JSON.stringify(folderDoc));
-    }
+    const folderId = createFolder(category, folderMap, allLines);
 
     let vehicleInfo = `<b>[ VEHICLE SPECS ]</b><br/>`;
     vehicleInfo += `&bull; <b>Size:</b> ${row.Size}<br/>`;
@@ -353,7 +347,7 @@ async function buildVehicles() {
       "name": name,
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
-      "folder": folderMap[category],
+      "folder": folderId,
       "system": {
         "description": vehicleInfo + `<p>${row.Notes || ''}</p>`,
         "cout": parseInt(row.Cost) || 1
@@ -370,7 +364,11 @@ async function buildHeadquarters() {
   const csvFile = path.join(__dirname, '../src/headquarters/headquarters.csv');
   const outFile = path.join(distDir, 'headquarters.db');
   const rows = await readCsv(csvFile);
-  const items = [];
+  const allLines = [];
+  const folderMap = {};
+
+  // For Headquarters, we'll create a single folder if not specified
+  const folderId = createFolder("Bases & Strongholds", folderMap, allLines);
 
   for (const row of rows) {
     const name = (row.Name || row.name || "").trim();
@@ -387,6 +385,7 @@ async function buildHeadquarters() {
       "name": name,
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
+      "folder": folderId,
       "system": {
         "description": hqInfo + `<p>${row.Notes || ''}</p>`,
         "cout": parseInt(row.Cost) || 1
@@ -394,9 +393,9 @@ async function buildHeadquarters() {
       "effects": [],
       "flags": {}
     };
-    items.push(JSON.stringify(hqItem));
+    allLines.push(JSON.stringify(hqItem));
   }
-  await fs.writeFile(outFile, items.join('\n'));
+  await fs.writeFile(outFile, allLines.join('\n'));
 }
 
 async function buildModifiers(items, fileName) {

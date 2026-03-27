@@ -74,12 +74,12 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>An effect with this extra is especially accurate; you get +2 per Accurate rank to attack checks made with it.</p><p>Flat 1 point per rank.</p>",
+      "description": "<p><strong>Especially accurate:</strong>  You get +2 per Accurate rank to attack checks made with it.</p><p><br></p><p><em>Flat </em>1 point per rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
         "fixe": true,
-        "rang": true,
+        "rang": false,
         "value": 1
       }
     }
@@ -91,7 +91,7 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>An incorporeal being can use an effect with this extra on the corporeal world. When an effect is used against a corporeal target, the effect’s rank is equal to the rank of this extra, up to a maximum of the effect’s full rank.</p><p>Flat 1 point per rank.</p>",
+      "description": "<p>An incorporeal being can use an effect on the corporeal world. </p><p><br></p><p>When an effect is used against a corporeal target, the effect’s rank is equal to the rank of this extra, up to a maximum of the effect’s full rank.</p><p><br></p><p><em>Flat</em> 1 point per rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
@@ -108,7 +108,7 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>An effect with this extra works on insubstantial targets, in addition to having its normal effect on corporeal targets. Rank 1 allows the effect to work at half its normal rank; rank 2 allows it to function at full rank.</p><p>Flat 1 or 2 points.</p>",
+      "description": "<p>An effect with this extra works on insubstantial targets, in addition to having its normal effect on corporeal targets. Rank 1 allows the effect to work at half its normal rank; rank 2 allows it to function at full rank.</p><p><br></p><p><em>Flat </em>1 or 2 points.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
@@ -193,7 +193,7 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>The effect fills a sphere with a 30-foot radius (distance rank 0).</p><p>+1 cost per rank.</p>",
+      "description": "<p>The effect fills a sphere with a 30-foot radius (distance rank 0).</p><p>+1 cost per Power rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
