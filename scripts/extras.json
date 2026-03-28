@@ -448,7 +448,7 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>You can remove conditions caused by a Reversible effect at will as a free action.</p><p>Flat 1 point.</p>",
+      "description": "<p>You can remove conditions caused by a Reversible effect at will as a free action.</p><p><br></p><p><em>Flat </em>1 point.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
@@ -465,12 +465,12 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>You can ricochet or bounce an attack effect off of a solid surface to change its direction.</p><p>Flat 1 point per rank.</p>",
+      "description": "<p>You can ricochet or bounce an attack effect off of a solid surface to change its direction.</p><p><br></p><p>Each rank in Ricochet allows you to bounce the attack once before it hits. Ricochet may grant a bonus to hit due to surprise, at the GM’s discretion.</p><p><br></p><p><em>Flat </em>1 point per rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
         "fixe": true,
-        "rang": true,
+        "rang": false,
         "value": 1
       }
     }
@@ -482,7 +482,7 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>An instant duration effect with this modifier affects the target once immediately and then once again on the following round.</p><p>+1 cost per rank.</p>",
+      "description": "<p>An instant duration effect with this modifier affects the target once immediately and then once again on the following round.</p><p><br></p><p>+1 cost per Power rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
@@ -499,7 +499,7 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>A resistible effect with this extra is discriminating, allowing you to decide who is and is not affected by it.</p><p>+1 cost per rank.</p>",
+      "description": "<p>A resistible effect with this extra is discriminating, allowing you to decide who is and is not affected by it.</p><p><br></p><p>+1 cost per Power rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
@@ -516,7 +516,7 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>The effect leaves targets asleep whenever it would normally render them incapacitated.</p><p>+0 cost per rank.</p>",
+      "description": "<p>The effect leaves targets asleep whenever it would normally render them incapacitated.</p><p><br></p><p>+0 cost per Power rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
@@ -533,12 +533,12 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>A resistible effect that works on one target can be split between two or more targets.</p><p>Flat 1 point per rank.</p>",
+      "description": "<p>A resistible effect that works on one target can be split between two or more targets.</p><p><br></p><p>Each additional rank of this modifier allows the power to split an additional time, so rank 2 allows an effect to split among three targets, then four, and so forth. An effect cannot split to less than 1 rank per target, and cannot apply more than one split to the same target</p><p><br></p><p><em>Flat </em>1 point per rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
         "fixe": true,
-        "rang": true,
+        "rang": false,
         "value": 1
       }
     }
@@ -550,7 +550,7 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>Subtle effects are not as noticeable. Rank 1 is difficult to notice, Rank 2 is undetectable.</p><p>Flat 1-2 points.</p>",
+      "description": "<p>Subtle effects are not as noticeable. Rank 1 is difficult to notice, Rank 2 is undetectable.</p><p><br></p><p>Flat 1-2 points.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
@@ -567,7 +567,7 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>Applied to a permanent duration effect, this modifier makes it sustained duration.</p><p>+0 cost per rank.</p>",
+      "description": "<p>Applied to a permanent duration effect, this modifier makes it sustained duration.</p><p><br></p><p>+0 cost per Power rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
@@ -584,12 +584,12 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>You can “set” an instant duration effect to activate under particular circumstances.</p><p>Flat 1 point per rank.</p>",
+      "description": "<p>You can “set” an instant duration effect to activate under particular circumstances.</p><p><br></p><p>You can “set” an instant duration effect with this modifier to activate under particular circumstances, such as in response to a particular danger, after a set amount of time, in response to a particular event, and so forth—chosen when you apply the modifier. </p><p><br></p><p>Once chosen, the trigger cannot be changed. The circumstances must be detectable by your senses. You can acquire Senses Limited and Linked to Triggered effects, if desired. Setting the effect requires the same action as using it normally. </p><p><br></p><p>A Triggered effect lying in wait may be detected with a Perception check (DC 10 + effect rank) and in some cases disarmed with a successful skill or power check (such as Sleight of Hand, Technology, Nullify or another countering effect) with a DC of (10 + effect rank). </p><p><br></p><p>A Triggered effect is good for one use per rank in this modifier. After its last activation, it stops working. You can apply an additional rank of Triggered to have a Variable Trigger, allowing you to change the effect’s trigger each time you set it.</p><p><br></p><p><em>Flat </em>1 point per rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
         "fixe": true,
-        "rang": true,
+        "rang": false,
         "value": 1
       }
     }
@@ -720,7 +720,7 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>Your Healing can also restore points to a subject’s weakened or drained traits. You make a separate Healing check (DC 10) for each trait.</p><p>+1 cost per rank.</p>",
+      "description": "<p>Your Healing effect can restore power points removed by Weaken effects with the appropriate descriptors, such as injury, disease, or poison. You restore points equal to your rank to the affected trait(s). </p><p><br></p><p>+1 cost per Power rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
@@ -737,7 +737,7 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>You can return the dead to life. If the subject has been dead for more than a minute, the DC is 10 + 1 per additional minute. If the check fails, you can't try again on that subject.</p><p>+1 cost per rank.</p>",
+      "description": "<p>You can return the dead to life. If the subject has been dead for more than a minute, the DC is 10 + 1 per additional minute. If the check fails, you can't try again on that subject.</p><p><br></p><p>+1 cost per Power rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
@@ -839,7 +839,7 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>Your created objects are stationary and remain where they are even if you move away.</p><p>+0 cost per rank.</p>",
+      "description": "<p>Your created objects are stationary and remain where they are even if you move away.</p><p><br></p><p>Your created objects can hang immobile in the air. They resist being moved with a Strength rank equal to the modifier rank. Unless you have the Tether extra or the Movable extra, you cannot move a stationary created object once it’s placed any more than anyone else can.</p><p><br></p><p>+0 cost per rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {
@@ -958,7 +958,7 @@
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
       "type": "extra",
-      "description": "<p>You choose who perceives your Illusion and who doesn’t. </p><p><br></p><p>+1 cost per Power rank.</p>",
+      "description": "<p>You choose who perceives your Illusion and who doesn’t.</p><p><br></p><p>+1 cost per Power rank.</p>",
       "rang": 1,
       "edit": true,
       "cout": {

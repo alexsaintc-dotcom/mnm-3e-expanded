@@ -75,7 +75,7 @@ async function buildPowers() {
       "system": {
         "type": systemType,
         "activate": true,
-        "special": translatedAction,
+        "special": action,
         "action": translatedAction,
         "portee": translationMap.range[range] || 'contact',
         "duree": translationMap.duration[duration] || 'instantane',
