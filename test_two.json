@@ -1,0 +1,1533 @@
+{
+  "name": "Test 2",
+  "type": "personnage",
+  "img": "https://assets.forge-vtt.com/60906eb7419a5ac534610764/MnM/Cherry%20v1.png",
+  "system": {
+    "version": 2,
+    "identite": {
+      "name": "",
+      "secret": false
+    },
+    "description": "",
+    "historique": "",
+    "puissance": 8,
+    "heroisme": 0,
+    "blessure": 0,
+    "blessureNL": 0,
+    "ddparade": 0,
+    "ddesquive": 0,
+    "ptsEquipements": {
+      "max": 0,
+      "use": 0
+    },
+    "filtre": "pouvoirs",
+    "complications": {},
+    "caracteristique": {
+      "force": {
+        "total": 0,
+        "base": 0,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "agilite": {
+        "total": 0,
+        "base": 0,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "combativite": {
+        "total": 0,
+        "base": 0,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "sensibilite": {
+        "total": 0,
+        "base": 0,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "endurance": {
+        "total": 0,
+        "base": 0,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "dexterite": {
+        "total": 0,
+        "base": 0,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "intelligence": {
+        "total": 0,
+        "base": 0,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "presence": {
+        "total": 0,
+        "base": 0,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      }
+    },
+    "competence": {
+      "combatcontact": {
+        "canAdd": true,
+        "car": "cbt",
+        "modele": {
+          "label": "",
+          "carac": 0,
+          "rang": 0,
+          "autre": 0,
+          "total": 0
+        },
+        "list": {},
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "combatdistance": {
+        "canAdd": true,
+        "car": "dex",
+        "modele": {
+          "label": "",
+          "carac": 0,
+          "rang": 0,
+          "autre": 0,
+          "total": 0
+        },
+        "list": {},
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "expertise": {
+        "canAdd": true,
+        "modele": {
+          "car": "int",
+          "carCanChange": true,
+          "label": "",
+          "carac": 0,
+          "rang": 0,
+          "autre": 0,
+          "total": 0
+        },
+        "list": {},
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "acrobaties": {
+        "carac": 0,
+        "car": "agi",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "athletisme": {
+        "carac": 0,
+        "car": "for",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "duperie": {
+        "carac": 0,
+        "car": "prs",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "perspicacite": {
+        "carac": 0,
+        "car": "sns",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "intimidation": {
+        "carac": 0,
+        "car": "prs",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "investigation": {
+        "carac": 0,
+        "car": "int",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "perception": {
+        "carac": 0,
+        "car": "sns",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "persuasion": {
+        "carac": 0,
+        "car": "prs",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "habilete": {
+        "carac": 0,
+        "car": "dex",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "discretion": {
+        "carac": 0,
+        "car": "agi",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "technologie": {
+        "carac": 0,
+        "car": "int",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "soins": {
+        "carac": 0,
+        "car": "int",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "vehicules": {
+        "carac": 0,
+        "car": "dex",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "new": {
+        "modele": {
+          "carCanChange": true,
+          "car": "int",
+          "label": "",
+          "carac": 0,
+          "rang": 0,
+          "autre": 0,
+          "total": 0
+        },
+        "list": {},
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "new": true
+      }
+    },
+    "pp": {
+      "base": 150,
+      "gain": 0,
+      "used": 0,
+      "divers": 0,
+      "caracteristiques": 0,
+      "pouvoirs": 0,
+      "talents": 0,
+      "competences": 0,
+      "defenses": 0,
+      "total": 0
+    },
+    "attaque": {},
+    "defense": {
+      "esquive": {
+        "car": "agi",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "parade": {
+        "car": "cbt",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "vigueur": {
+        "car": "end",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "robustesse": {
+        "car": "end",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "volonte": {
+        "car": "sns",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      }
+    },
+    "initiative": {
+      "base": 0,
+      "carac": 0,
+      "bonuses": 0,
+      "surcharge": 0,
+      "ranks": {},
+      "surchargeranks": {},
+      "total": 0
+    },
+    "strategie": {
+      "attaqueprecision": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "attaqueoutrance": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "attaquedefensive": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "attaquepuissance": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "etats": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "total": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "limite": {
+        "attaqueprecision": {
+          "atk": {
+            "base": 2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "eff": {
+            "base": -2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "def": {
+            "base": 0,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "attaque": 2,
+          "defense": 0,
+          "effet": -2
+        },
+        "attaqueoutrance": {
+          "atk": {
+            "base": 2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "eff": {
+            "base": 0,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "def": {
+            "base": -2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "attaque": 2,
+          "defense": -2,
+          "effet": 0
+        },
+        "attaquedefensive": {
+          "atk": {
+            "base": -2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "eff": {
+            "base": 0,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "def": {
+            "base": 2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "attaque": -2,
+          "defense": 2,
+          "effet": 0
+        },
+        "attaquepuissance": {
+          "atk": {
+            "base": -2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "eff": {
+            "base": 2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "def": {
+            "base": 0,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "attaque": -2,
+          "defense": 0,
+          "effet": 2
+        }
+      }
+    },
+    "pwr": {
+      "T3qrEcEgCmWxLFDU": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "AyHjOzfjki1zxD5D": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "2qDHIozBpugXKaJi": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "1aMcakg00elPIq11": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "UsPRTrlhSdYCJsSk": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "JNiZaI3MuMqJnkxQ": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "FrTpzwOvvZMOYS6S": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "1zvNaGA3HkJrCjrP": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "wETknHt5rPtrHInH": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "eqkK12fMah8C6ppz": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "inZtoNa0rP5FbDzy": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "NgVHVSYECbnKneDK": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "ZQXps3tHR9Lk7l8P": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "LRn2fFvFMEPT31Wu": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "lzduimLutFcCIpSJ": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "TCyro4EZEL32lh8R": {
+        "cout": {
+          "rang": 0
+        }
+      },
+      "9DSHp5oIWE9Arxve": {
+        "cout": {
+          "rang": 0
+        }
+      }
+    },
+    "accessibility": {
+      "font": "Kalam",
+      "fontOther": ""
+    },
+    "vitesse": {
+      "list": {
+        "base": {
+          "autotrade": "base",
+          "rang": 0,
+          "round": 0,
+          "kmh": 0,
+          "selected": true
+        },
+        "course": {
+          "autotrade": "course",
+          "rang": 1,
+          "round": 0,
+          "kmh": 0,
+          "selected": false
+        },
+        "natation": {
+          "autotrade": "natation",
+          "rang": -2,
+          "round": 0,
+          "kmh": 0,
+          "selected": false
+        }
+      },
+      "actuel": 0
+    },
+    "affiliation": "",
+    "base": "",
+    "genre": "",
+    "age": "",
+    "taille": "1.80m",
+    "poids": "90kg",
+    "yeux": "",
+    "cheveux": "",
+    "etats": ""
+  },
+  "prototypeToken": {
+    "name": "Test 2",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "https://assets.forge-vtt.com/60906eb7419a5ac534610764/MnM/Cherry%20v1.png",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "blessure"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "flags": {},
+    "randomImg": false,
+    "appendNumber": false,
+    "prependAdjective": false
+  },
+  "items": [
+    {
+      "_id": "AyHjOzfjki1zxD5D",
+      "name": "Blast",
+      "type": "pouvoir",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/pouvoir.svg",
+      "system": {
+        "type": "attaque",
+        "activate": true,
+        "special": "standard",
+        "action": "simple",
+        "portee": "distance",
+        "duree": "instantane",
+        "effetsprincipaux": "",
+        "effets": "<p>RANGED DAMAGE. YOU MAKE A RANGED ATTACK CHECK AGAINST THE TARGET’S DODGE DEFENSE. TARGET MAKES TOUGHNESS RESISTANCE CHECK.</p>",
+        "notes": "<p>Action: Standard &bull; Range: Ranged<br>Duration: Instant &bull; Cost: 2 points per rank</p><p>You can make a damaging ranged attack. It might be a blast of energy, a projectile (arrow, bullet, throwing blade, etc.), or some similar effect.</p>",
+        "cout": {
+          "rang": 16,
+          "parrang": 2,
+          "total": 2,
+          "totalTheorique": 2,
+          "modrang": 0,
+          "modfixe": 0,
+          "parrangtotal": "2",
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0
+        },
+        "extras": {
+          "1": {
+            "name": "Cloud Area",
+            "data": {
+              "type": "extra",
+              "description": "<p>The effect fills a sphere with a 15-foot radius (distance rank –1) that lingers for one round.</p><p>+1 cost per rank.</p>",
+              "cout": {
+                "fixe": false,
+                "rang": true,
+                "value": 1
+              }
+            },
+            "details": true
+          },
+          "2": {
+            "name": "Accurate",
+            "data": {
+              "type": "extra",
+              "description": "<p>An effect with this extra is especially accurate; you get +2 per Accurate rank to attack checks made with it.</p><p>Flat 1 point per rank.</p>",
+              "cout": {
+                "fixe": true,
+                "rang": false,
+                "value": 1
+              }
+            },
+            "details": true
+          },
+          "3": {
+            "name": "Homing",
+            "data": {
+              "type": "extra",
+              "description": "<p>This modifier grants a ranged effect an additional opportunity to hit if it misses.</p><p>Flat 1 point per rank.</p>",
+              "cout": {
+                "fixe": true,
+                "rang": false,
+                "value": 1
+              }
+            },
+            "details": true
+          }
+        },
+        "defauts": {
+          "1": {
+            "name": "Check Required",
+            "data": {
+              "type": "defaut",
+              "description": "<p>An effect with this flaw requires a check of some sort—usually a skill check—with a base difficulty of 10, +1 for each additional rank in Check Required.</p><p>–1 cost per rank.</p>",
+              "cout": {
+                "fixe": true,
+                "rang": false,
+                "value": 3
+              }
+            },
+            "details": true
+          },
+          "2": {
+            "name": "Noticeable",
+            "data": {
+              "type": "defaut",
+              "description": "<p>A continuous or permanent effect with this flaw is very noticeable (glows, makes a loud noise, etc.).</p><p>Flat -1 point.</p>",
+              "cout": {
+                "fixe": true,
+                "rang": false,
+                "value": 1
+              }
+            },
+            "details": true
+          },
+          "3": {
+            "name": "Reduced Range",
+            "data": {
+              "type": "defaut",
+              "description": "<p>Each rank of this flaw reduces the range of an effect (Ranged to Close, etc.).</p><p>–1 cost per rank.</p>",
+              "cout": {
+                "fixe": false,
+                "rang": true,
+                "value": 1
+              }
+            },
+            "details": true
+          }
+        },
+        "link": "",
+        "descripteurs": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774483004278,
+        "modifiedTime": 1774484150552,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "feNjpcSfwejBf0ws",
+      "name": "Equipment",
+      "type": "talent",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/talent.svg",
+      "system": {
+        "description": "<p>You have 5 points per rank to spend on equipment, vehicles, and headquarters.</p>",
+        "rang": 8,
+        "equipement": true,
+        "edit": false,
+        "listEffectsVariantes": {}
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774716525111,
+        "modifiedTime": 1774726101935,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "EIUNMIkAeJNFmb78",
+      "name": "Blaster Pistol",
+      "type": "equipement",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/equipement.svg",
+      "system": {
+        "description": "<p>Energy bolt.</p>",
+        "cout": 10
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774716644689,
+        "modifiedTime": 1774716644689,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "lIA0rgb3HqJ3vro7",
+      "name": "Bow",
+      "type": "equipement",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/equipement.svg",
+      "system": {
+        "description": "<p>Strength-based damage.</p>",
+        "cout": 6
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774716651716,
+        "modifiedTime": 1774716651716,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Utility Belt",
+      "type": "equipement",
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
+      "_id": "YR7TZteKxzcXP3Nq",
+      "system": {
+        "description": "<p>The starting cost of the belt is the cost of the highest powered equipment piece.&nbsp; Each additional piece costs additional one point.&nbsp;&nbsp;<br><br>Build here:&nbsp;&nbsp;<br><br><br></p>",
+        "cout": 0
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774716679268,
+        "modifiedTime": 1774716898285,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "1aMcakg00elPIq11",
+      "name": "Blast",
+      "type": "pouvoir",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/pouvoir.svg",
+      "system": {
+        "type": "attaque",
+        "activate": true,
+        "special": "simple",
+        "action": "simple",
+        "portee": "distance",
+        "duree": "instantane",
+        "notes": "<p>You can make a damaging ranged attack. It might be a blast of energy, a projectile (arrow, bullet, throwing blade, etc.), or some similar effect.</p>",
+        "effets": "<p>RANGED DAMAGE. YOU MAKE A RANGED ATTACK CHECK AGAINST THE TARGET’S DODGE DEFENSE. TARGET MAKES TOUGHNESS RESISTANCE CHECK.</p>",
+        "effetsprincipaux": "<p>RANGED DAMAGE. YOU MAKE A RANGED ATTACK CHECK AGAINST THE TARGET’S DODGE DEFENSE. TARGET MAKES TOUGHNESS RESISTANCE CHECK.</p>",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
+        "cout": {
+          "rang": 1,
+          "parrang": 2,
+          "total": 2,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 0,
+          "parrangtotal": "0"
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774732753035,
+        "modifiedTime": 1774732753035,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "UsPRTrlhSdYCJsSk",
+      "name": "Burrowing",
+      "type": "pouvoir",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/pouvoir.svg",
+      "system": {
+        "type": "mouvement",
+        "activate": true,
+        "special": "libre",
+        "action": "libre",
+        "portee": "personnelle",
+        "duree": "prolonge",
+        "notes": "<p>You can burrow through the ground, leaving a tunnel behind if you choose. You move through soil and sand at a speed rank equal to your Burrowing rank, minus 5.</p>",
+        "effets": "<p>SPEED RANK = BURROWING RANK - 5.</p>",
+        "effetsprincipaux": "<p>SPEED RANK = BURROWING RANK - 5.</p>",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 0,
+          "parrangtotal": "0"
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774732759661,
+        "modifiedTime": 1774732759661,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "JNiZaI3MuMqJnkxQ",
+      "name": "Comprehend",
+      "type": "pouvoir",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/pouvoir.svg",
+      "system": {
+        "type": "sensoriel",
+        "activate": true,
+        "special": "aucune",
+        "action": "aucune",
+        "portee": "personnelle",
+        "duree": "permanent",
+        "notes": "<p>You can comprehend different sorts of communication. Each rank in this effect allows you to choose one of the options (Animals, Languages, Machines, Objects, Plants, Spirits).</p>",
+        "effets": "<p>ALLOWS UNDERSTANDING OF SPECIFIC COMMUNICATION TYPES.</p>",
+        "effetsprincipaux": "<p>ALLOWS UNDERSTANDING OF SPECIFIC COMMUNICATION TYPES.</p>",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
+        "cout": {
+          "rang": 1,
+          "parrang": 2,
+          "total": 2,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 0,
+          "parrangtotal": "0"
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774732766756,
+        "modifiedTime": 1774732766756,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "eqkK12fMah8C6ppz",
+      "name": "Armor",
+      "type": "pouvoir",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/pouvoir.svg",
+      "system": {
+        "type": "generaux",
+        "activate": true,
+        "special": "none",
+        "action": "aucune",
+        "portee": "personnelle",
+        "duree": "permanent",
+        "notes": "<p>You have a protective layer of armor that grants you Protection. This is typically a permanent effect that adds to your Toughness defense.</p>",
+        "effets": "<p>PROTECTION RANK EQUALS ARMOR RANK.</p>",
+        "effetsprincipaux": "<p>PROTECTION RANK EQUALS ARMOR RANK.</p>",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 1,
+          "parrangtotal": "1"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774735910900,
+        "modifiedTime": 1774735910900,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "inZtoNa0rP5FbDzy",
+      "name": "Burrowing",
+      "type": "pouvoir",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/pouvoir.svg",
+      "system": {
+        "type": "mouvement",
+        "activate": true,
+        "special": "free",
+        "action": "libre",
+        "portee": "personnelle",
+        "duree": "prolonge",
+        "notes": "<p>You can burrow through the ground, leaving a tunnel behind if you choose. You move through soil and sand at a speed rank equal to your Burrowing rank, minus 5.</p>",
+        "effets": "<p>SPEED RANK = BURROWING RANK - 5.</p>",
+        "effetsprincipaux": "<p>SPEED RANK = BURROWING RANK - 5.</p>",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 1,
+          "parrangtotal": "1"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774735915174,
+        "modifiedTime": 1774735915174,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "LRn2fFvFMEPT31Wu",
+      "name": "Elongation",
+      "type": "pouvoir",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/pouvoir.svg",
+      "system": {
+        "type": "generaux",
+        "activate": true,
+        "special": "free",
+        "action": "libre",
+        "portee": "personnelle",
+        "duree": "prolonge",
+        "notes": "<p>ELONGATION GENERAL Action: Free • Range: Personal Duration: Sustained • Cost: 1 point per rank You can elongate your body and/or limbs to extend your reach. Add your effect rank to your normal size rank to de- termine how far you can elongate; for a normal-sized hu- man (size rank –2) this is 15 feet at rank 1, 30 feet at rank 2, and so forth. Rank 20 Elongation can stretch 1,000 miles! “Snapping back” to your normal shape is a free action. You can use Elongation to make “close” attacks at a great- er distance by elongating your limbs. Once elongated, you can make melee attacks within your new reach as a standard action. If you can’t accurately sense your target (you’re elongating around a corner, for example), apply the rules for concealment (see Concealment in the Ac- tion & Adventure chapter). In addition, Elongation allows you to wrap up and entangle an opponent so it grants a +1 bonus to grab checks per rank (limited by PL). ENHANCED TRAIT GENERAL Action: Free • Range: Personal Du</p>",
+        "effets": "<p>RATION: SUSTAINED • COST: AS BASE TRAIT YOU CAN TEMPORARILY IMPROVE ONE OF YOUR EXISTING TRAITS, CHOSEN WHEN YOU TAKE THIS EFFECT. WHILE THIS EFFECT IS AC- TIVE, YOU INCREASE THE AFFECTED TRAIT BY ITS RANK. SO, FOR EX- AMPLE, ENHANCED STRENGTH 5 INCREASES YOUR STRENGTH BY +5 WHILE IT IS ACTIVE. YOUR ENHANCED TRAIT IS STILL SUBJECT TO POWER LEVEL LIMITS, SO YOUR UNENHANCED RANK MUST BE BE- LOW THE LIMIT BY AT LEAST THE AMOUNT OF THE ENHANCEMENT TO ACCOMMODATE IT. THE COST OF ENHANCED TRAIT IS THE SAME PER RANK AS ACQUIR- ING A RANK IN THE AFFECTED TRAIT. THE KEY DIFFERENCES ARE THAT ENHANCED TRAIT IS A POWER EFFECT, RATHER THAN A NATURAL TRAIT, AND AS AN EFFECT IT CAN BE COMBINED WITH EXTRA EFFORT AND OTHER EFFECTS. SEE EXTRA EFFORT IN THE BASICS CHAPTER AND ENHANCED ABILITIES IN THE ABILITIES CHAPTER FOR MORE. FLAWS LIMITED: ENHANCED TRAITS ARE OFTEN LIMITED IN SOME FASH- ION, SUCH AS NIGHTTIME (OR DAYTIME) ONLY, WHILE ANGRY (OR IN ANOTHER EMOTIONAL STATE), UNDERWATER (OR IN SOME OTHER ENVIRONMENT), AND SO FORTH. A LIMIT THAT RARELY COMES INTO PLAY—LIKE LOSING YOUR ENHANCED TRAIT DURING A NEW MOON—CAN BE HANDLED AS A POWER LOSS COMPLICATION. SEE COMPLICATIONS IN THE BASICS CHAPTER FOR DETAILS. –1 COST PER RANK. PERMANENT: AT NO CHANGE IN COST, YOUR ENHANCED TRAIT MAY BE A PERMANENT IMPROVEMENT, RATHER THAN A SUS- TAINED EFFECT. THE PRIMARY DIFFERENCE IS THAT YOUR PER- MANENT ENHANCEMENT CANNOT BE TURNED ON AND OFF AND CANNOT BE IMPROVED BY EXTRA EFFORT, INCLUDING USING IT TO PERFORM POWER STUNTS (SEE EXTRA EFFORT). THERE IS NO AC- TION TO USE A PERMANENT ENHANCED TRAIT, AS IT IS ALWAYS AC- TIVE. +0 COST PER RANK. MUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOKMUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOK 158158 CHAPTER 6: POWERSCHAPTER 6: POWERS REDUCED TRAIT: ONE OR MORE OF YOUR TRAITS IS LOWERED WHILE OTHERS ARE</p>",
+        "effetsprincipaux": "<p>RATION: SUSTAINED • COST: AS BASE TRAIT YOU CAN TEMPORARILY IMPROVE ONE OF YOUR EXISTING TRAITS, CHOSEN WHEN YOU TAKE THIS EFFECT. WHILE THIS EFFECT IS AC- TIVE, YOU INCREASE THE AFFECTED TRAIT BY ITS RANK. SO, FOR EX- AMPLE, ENHANCED STRENGTH 5 INCREASES YOUR STRENGTH BY +5 WHILE IT IS ACTIVE. YOUR ENHANCED TRAIT IS STILL SUBJECT TO POWER LEVEL LIMITS, SO YOUR UNENHANCED RANK MUST BE BE- LOW THE LIMIT BY AT LEAST THE AMOUNT OF THE ENHANCEMENT TO ACCOMMODATE IT. THE COST OF ENHANCED TRAIT IS THE SAME PER RANK AS ACQUIR- ING A RANK IN THE AFFECTED TRAIT. THE KEY DIFFERENCES ARE THAT ENHANCED TRAIT IS A POWER EFFECT, RATHER THAN A NATURAL TRAIT, AND AS AN EFFECT IT CAN BE COMBINED WITH EXTRA EFFORT AND OTHER EFFECTS. SEE EXTRA EFFORT IN THE BASICS CHAPTER AND ENHANCED ABILITIES IN THE ABILITIES CHAPTER FOR MORE. FLAWS LIMITED: ENHANCED TRAITS ARE OFTEN LIMITED IN SOME FASH- ION, SUCH AS NIGHTTIME (OR DAYTIME) ONLY, WHILE ANGRY (OR IN ANOTHER EMOTIONAL STATE), UNDERWATER (OR IN SOME OTHER ENVIRONMENT), AND SO FORTH. A LIMIT THAT RARELY COMES INTO PLAY—LIKE LOSING YOUR ENHANCED TRAIT DURING A NEW MOON—CAN BE HANDLED AS A POWER LOSS COMPLICATION. SEE COMPLICATIONS IN THE BASICS CHAPTER FOR DETAILS. –1 COST PER RANK. PERMANENT: AT NO CHANGE IN COST, YOUR ENHANCED TRAIT MAY BE A PERMANENT IMPROVEMENT, RATHER THAN A SUS- TAINED EFFECT. THE PRIMARY DIFFERENCE IS THAT YOUR PER- MANENT ENHANCEMENT CANNOT BE TURNED ON AND OFF AND CANNOT BE IMPROVED BY EXTRA EFFORT, INCLUDING USING IT TO PERFORM POWER STUNTS (SEE EXTRA EFFORT). THERE IS NO AC- TION TO USE A PERMANENT ENHANCED TRAIT, AS IT IS ALWAYS AC- TIVE. +0 COST PER RANK. MUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOKMUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOK 158158 CHAPTER 6: POWERSCHAPTER 6: POWERS REDUCED TRAIT: ONE OR MORE OF YOUR TRAITS IS LOWERED WHILE OTHERS ARE</p>",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 1,
+          "parrangtotal": "1"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774735966909,
+        "modifiedTime": 1774735966909,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "lzduimLutFcCIpSJ",
+      "name": "Elongation",
+      "type": "pouvoir",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/pouvoir.svg",
+      "system": {
+        "type": "generaux",
+        "activate": true,
+        "special": "libre",
+        "action": "libre",
+        "portee": "personnelle",
+        "duree": "prolonge",
+        "notes": "<p>ELONGATION GENERAL Action: Free • Range: Personal Duration: Sustained • Cost: 1 point per rank You can elongate your body and/or limbs to extend your reach. Add your effect rank to your normal size rank to de- termine how far you can elongate; for a normal-sized hu- man (size rank –2) this is 15 feet at rank 1, 30 feet at rank 2, and so forth. Rank 20 Elongation can stretch 1,000 miles! “Snapping back” to your normal shape is a free action. You can use Elongation to make “close” attacks at a great- er distance by elongating your limbs. Once elongated, you can make melee attacks within your new reach as a standard action. If you can’t accurately sense your target (you’re elongating around a corner, for example), apply the rules for concealment (see Concealment in the Ac- tion & Adventure chapter). In addition, Elongation allows you to wrap up and entangle an opponent so it grants a +1 bonus to grab checks per rank (limited by PL). ENHANCED TRAIT GENERAL Action: Free • Range: Personal Du</p>",
+        "effets": "<p>RATION: SUSTAINED • COST: AS BASE TRAIT YOU CAN TEMPORARILY IMPROVE ONE OF YOUR EXISTING TRAITS, CHOSEN WHEN YOU TAKE THIS EFFECT. WHILE THIS EFFECT IS AC- TIVE, YOU INCREASE THE AFFECTED TRAIT BY ITS RANK. SO, FOR EX- AMPLE, ENHANCED STRENGTH 5 INCREASES YOUR STRENGTH BY +5 WHILE IT IS ACTIVE. YOUR ENHANCED TRAIT IS STILL SUBJECT TO POWER LEVEL LIMITS, SO YOUR UNENHANCED RANK MUST BE BE- LOW THE LIMIT BY AT LEAST THE AMOUNT OF THE ENHANCEMENT TO ACCOMMODATE IT. THE COST OF ENHANCED TRAIT IS THE SAME PER RANK AS ACQUIR- ING A RANK IN THE AFFECTED TRAIT. THE KEY DIFFERENCES ARE THAT ENHANCED TRAIT IS A POWER EFFECT, RATHER THAN A NATURAL TRAIT, AND AS AN EFFECT IT CAN BE COMBINED WITH EXTRA EFFORT AND OTHER EFFECTS. SEE EXTRA EFFORT IN THE BASICS CHAPTER AND ENHANCED ABILITIES IN THE ABILITIES CHAPTER FOR MORE. FLAWS LIMITED: ENHANCED TRAITS ARE OFTEN LIMITED IN SOME FASH- ION, SUCH AS NIGHTTIME (OR DAYTIME) ONLY, WHILE ANGRY (OR IN ANOTHER EMOTIONAL STATE), UNDERWATER (OR IN SOME OTHER ENVIRONMENT), AND SO FORTH. A LIMIT THAT RARELY COMES INTO PLAY—LIKE LOSING YOUR ENHANCED TRAIT DURING A NEW MOON—CAN BE HANDLED AS A POWER LOSS COMPLICATION. SEE COMPLICATIONS IN THE BASICS CHAPTER FOR DETAILS. –1 COST PER RANK. PERMANENT: AT NO CHANGE IN COST, YOUR ENHANCED TRAIT MAY BE A PERMANENT IMPROVEMENT, RATHER THAN A SUS- TAINED EFFECT. THE PRIMARY DIFFERENCE IS THAT YOUR PER- MANENT ENHANCEMENT CANNOT BE TURNED ON AND OFF AND CANNOT BE IMPROVED BY EXTRA EFFORT, INCLUDING USING IT TO PERFORM POWER STUNTS (SEE EXTRA EFFORT). THERE IS NO AC- TION TO USE A PERMANENT ENHANCED TRAIT, AS IT IS ALWAYS AC- TIVE. +0 COST PER RANK. MUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOKMUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOK 158158 CHAPTER 6: POWERSCHAPTER 6: POWERS REDUCED TRAIT: ONE OR MORE OF YOUR TRAITS IS LOWERED WHILE OTHERS ARE</p>",
+        "effetsprincipaux": "<p>RATION: SUSTAINED • COST: AS BASE TRAIT YOU CAN TEMPORARILY IMPROVE ONE OF YOUR EXISTING TRAITS, CHOSEN WHEN YOU TAKE THIS EFFECT. WHILE THIS EFFECT IS AC- TIVE, YOU INCREASE THE AFFECTED TRAIT BY ITS RANK. SO, FOR EX- AMPLE, ENHANCED STRENGTH 5 INCREASES YOUR STRENGTH BY +5 WHILE IT IS ACTIVE. YOUR ENHANCED TRAIT IS STILL SUBJECT TO POWER LEVEL LIMITS, SO YOUR UNENHANCED RANK MUST BE BE- LOW THE LIMIT BY AT LEAST THE AMOUNT OF THE ENHANCEMENT TO ACCOMMODATE IT. THE COST OF ENHANCED TRAIT IS THE SAME PER RANK AS ACQUIR- ING A RANK IN THE AFFECTED TRAIT. THE KEY DIFFERENCES ARE THAT ENHANCED TRAIT IS A POWER EFFECT, RATHER THAN A NATURAL TRAIT, AND AS AN EFFECT IT CAN BE COMBINED WITH EXTRA EFFORT AND OTHER EFFECTS. SEE EXTRA EFFORT IN THE BASICS CHAPTER AND ENHANCED ABILITIES IN THE ABILITIES CHAPTER FOR MORE. FLAWS LIMITED: ENHANCED TRAITS ARE OFTEN LIMITED IN SOME FASH- ION, SUCH AS NIGHTTIME (OR DAYTIME) ONLY, WHILE ANGRY (OR IN ANOTHER EMOTIONAL STATE), UNDERWATER (OR IN SOME OTHER ENVIRONMENT), AND SO FORTH. A LIMIT THAT RARELY COMES INTO PLAY—LIKE LOSING YOUR ENHANCED TRAIT DURING A NEW MOON—CAN BE HANDLED AS A POWER LOSS COMPLICATION. SEE COMPLICATIONS IN THE BASICS CHAPTER FOR DETAILS. –1 COST PER RANK. PERMANENT: AT NO CHANGE IN COST, YOUR ENHANCED TRAIT MAY BE A PERMANENT IMPROVEMENT, RATHER THAN A SUS- TAINED EFFECT. THE PRIMARY DIFFERENCE IS THAT YOUR PER- MANENT ENHANCEMENT CANNOT BE TURNED ON AND OFF AND CANNOT BE IMPROVED BY EXTRA EFFORT, INCLUDING USING IT TO PERFORM POWER STUNTS (SEE EXTRA EFFORT). THERE IS NO AC- TION TO USE A PERMANENT ENHANCED TRAIT, AS IT IS ALWAYS AC- TIVE. +0 COST PER RANK. MUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOKMUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOK 158158 CHAPTER 6: POWERSCHAPTER 6: POWERS REDUCED TRAIT: ONE OR MORE OF YOUR TRAITS IS LOWERED WHILE OTHERS ARE</p>",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 1,
+          "parrangtotal": "1"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774740454750,
+        "modifiedTime": 1774740454750,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "TCyro4EZEL32lh8R",
+      "name": "Dimension travel",
+      "type": "pouvoir",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/pouvoir.svg",
+      "system": {
+        "type": "generaux",
+        "activate": true,
+        "special": "simple",
+        "action": "simple",
+        "portee": "personnelle",
+        "duree": "instantane",
+        "notes": "<p>DIMENSION TRAVEL You can move instantly from one dimension to another as a move action. For 1 rank, you can move between your home dimension and one other. For 2 ranks you can move between any of a related group of dimensions (mystical dimensions, alien dimensions, etc). For 3 ranks you can travel to any dimension. You can carry up to 50 lbs. (mass rank 0) of additional material with you when you move. If you apply the Increased Mass modifier, you can carry ad- ditional mass up to your modifier rank. ENVIRONMENTAL ADAPTATION You’re adapted to a particular environment, such as un- derwater, zero gravity, and so forth (see Environmental Hazards, pages 185-187, for details). You suffer none of the normal unfavorable circumstance or movement pen- alties associated with that environment, moving and act- ing normally. You are still affected by environmental haz- ards like suffocation, exposure, and so forth. You need the Immunity effect to ignore such things. PERMEATE You can pass through so</p>",
+        "effets": "<p>LID OBJECTS AS IF THEY WEREN’T THERE. FOR 1 RANK, YOU CAN MOVE AT SPEED RANK –2 THROUGH ANY PHYSICAL OBJECT. FOR 2 RANKS, YOU CAN MOVE AT SPEED RANK –1 AND FOR 3 RANKS, YOU MOVE AT YOUR NORMAL SPEED THROUGH ANY OBSTACLES. YOU CANNOT BREATHE WHILE COM- PLETELY INSIDE A SOLID OBJECT, SO YOU EITHER NEED IM- MUNITY TO SUFFOCATION OR HAVE TO HOLD YOUR BREATH. YOU MAY ALSO NEED PENETRATES CONCEALMENT SENSES TO KNOW WHERE YOU’RE GOING, SINCE YOU CANNOT SEE INSIDE SOLID OB- JECTS, EITHER. PERMEATE IS OFTEN LIMITED TO A PARTICULAR SUBSTANCE LIKE EARTH, ICE, OR METAL, FOR EXAMPLE. PERMEATE PROVIDES NO PROTECTION AGAINST ATTACKS, ALTHOUGH YOU DO GAIN COVER WHILE INSIDE AN OBJECT (SEE COVER, PAGE 244). FOR THE ABIL- ITY TO ALLOW THINGS (INCLUDING ATTACKS) TO PASS THROUGH YOU, SEE THE INSUBSTANTIAL EFFECT. SAFE FALL SO LONG AS YOU ARE CAPABLE OF ACTION, YOU CAN FALL ANY DIS- TANCE WITHOUT HARM. YOU CAN ALSO STOP YOUR FALL AT ANY POINT ALONG A DISTANCE SO LONG AS THERE IS A HANDHOLD OR PROJEC- TION FOR YOU TO GRAB (SUCH AS A LEDGE, FLAGPOLE, BRANCH, ETC.). IF YOU HAVE THE WALL-CRAWLING POWER (LATER IN MOVEMENT), ANY SURFACE YOU CAN CLIMB PROVIDES YOU WITH A HANDHOLD. SAFE FALL MAY BE LIMITED TO ONLY WHEN YOU ARE NEAR A SUR- FACE (SUCH AS THE SIDE OF A BUILDING); YOU’RE ASSUMED TO BE USING THE SURFACE TO HELP SLOW YOUR FALL. SLITHERING YOU CAN MOVE WHILE PRONE AT YOUR NORMAL GROUND SPEED. YOU SUFFER NO CIRCUMSTANCE PENALTY FOR MAKING ATTACKS WHILE PRONE. SPACE TRAVEL YOU CAN TRAVEL FASTER THAN THE SPEED OF LIGHT THROUGH THE VACUUM OF SPACE (BUT NOT IN A PLANETARY ATMOSPHERE). AT RANK 1 YOU CAN TRAVEL TO OTHER PLANETS IN A SOLAR SYSTEM. AT RANK 2, YOU CAN TRAVEL TO OTHER STAR SYSTEMS, WHILE AT RANK 3, YOU CAN VISIT DISTANT STAR SYSTEMS, PERHAPS EVEN OTHER GALAXIES! THIS EFFECT DOES NOT PROVIDE PROTECTION FR</p>",
+        "effetsprincipaux": "<p>LID OBJECTS AS IF THEY WEREN’T THERE. FOR 1 RANK, YOU CAN MOVE AT SPEED RANK –2 THROUGH ANY PHYSICAL OBJECT. FOR 2 RANKS, YOU CAN MOVE AT SPEED RANK –1 AND FOR 3 RANKS, YOU MOVE AT YOUR NORMAL SPEED THROUGH ANY OBSTACLES. YOU CANNOT BREATHE WHILE COM- PLETELY INSIDE A SOLID OBJECT, SO YOU EITHER NEED IM- MUNITY TO SUFFOCATION OR HAVE TO HOLD YOUR BREATH. YOU MAY ALSO NEED PENETRATES CONCEALMENT SENSES TO KNOW WHERE YOU’RE GOING, SINCE YOU CANNOT SEE INSIDE SOLID OB- JECTS, EITHER. PERMEATE IS OFTEN LIMITED TO A PARTICULAR SUBSTANCE LIKE EARTH, ICE, OR METAL, FOR EXAMPLE. PERMEATE PROVIDES NO PROTECTION AGAINST ATTACKS, ALTHOUGH YOU DO GAIN COVER WHILE INSIDE AN OBJECT (SEE COVER, PAGE 244). FOR THE ABIL- ITY TO ALLOW THINGS (INCLUDING ATTACKS) TO PASS THROUGH YOU, SEE THE INSUBSTANTIAL EFFECT. SAFE FALL SO LONG AS YOU ARE CAPABLE OF ACTION, YOU CAN FALL ANY DIS- TANCE WITHOUT HARM. YOU CAN ALSO STOP YOUR FALL AT ANY POINT ALONG A DISTANCE SO LONG AS THERE IS A HANDHOLD OR PROJEC- TION FOR YOU TO GRAB (SUCH AS A LEDGE, FLAGPOLE, BRANCH, ETC.). IF YOU HAVE THE WALL-CRAWLING POWER (LATER IN MOVEMENT), ANY SURFACE YOU CAN CLIMB PROVIDES YOU WITH A HANDHOLD. SAFE FALL MAY BE LIMITED TO ONLY WHEN YOU ARE NEAR A SUR- FACE (SUCH AS THE SIDE OF A BUILDING); YOU’RE ASSUMED TO BE USING THE SURFACE TO HELP SLOW YOUR FALL. SLITHERING YOU CAN MOVE WHILE PRONE AT YOUR NORMAL GROUND SPEED. YOU SUFFER NO CIRCUMSTANCE PENALTY FOR MAKING ATTACKS WHILE PRONE. SPACE TRAVEL YOU CAN TRAVEL FASTER THAN THE SPEED OF LIGHT THROUGH THE VACUUM OF SPACE (BUT NOT IN A PLANETARY ATMOSPHERE). AT RANK 1 YOU CAN TRAVEL TO OTHER PLANETS IN A SOLAR SYSTEM. AT RANK 2, YOU CAN TRAVEL TO OTHER STAR SYSTEMS, WHILE AT RANK 3, YOU CAN VISIT DISTANT STAR SYSTEMS, PERHAPS EVEN OTHER GALAXIES! THIS EFFECT DOES NOT PROVIDE PROTECTION FR</p>",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 1,
+          "parrangtotal": "1"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774740460928,
+        "modifiedTime": 1774740460928,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "9DSHp5oIWE9Arxve",
+      "name": "Feature",
+      "type": "pouvoir",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/pouvoir.svg",
+      "system": {
+        "type": "generaux",
+        "activate": true,
+        "special": "simple",
+        "action": "simple",
+        "portee": "personnelle",
+        "duree": "instantane",
+        "notes": "<p>FEATURE GENERAL Action: None • Range: Personal Duration: Permanent • Cost: 1 point per rank You have one or more minor features, effects granting you an occasionally useful ability, one per rank. This ef- fect is essentially a version of the Benefit advantage (see page 134) but a power rather than a virtue of skill, talent, or social background. For example, diplomatic immunity or wealth are Benefits; fur, the ability to mimic sounds, or a hidden compartment in your hollow leg are Features. It’s up to the GM what capabilities qualify as Features; generally, if something has no real game effect, it’s just a descriptor. If it has an actual game system benefit, it may be a Feature. There’s no need to define every possible Fea- ture a character may have down to the last detail. Some Features may be sustained duration rather than permanent with no change in cost. This suits active Fea- UNDER THE HOOD: EXTRA LIMBS, NOT EXTRA ACTIONS As a default, Extra Limbs do not grant characters the abil-</p>",
+        "effets": "<p>ITY TO TAKE EXTRA ACTIONS IN A ROUND, SIMPLY BECAUSE MULTI- PLE ACTIONS—ESPECIALLY EXTRA STANDARD ACTIONS USABLE FOR ATTACKS—TEND TO SLOW DOWN AND UNBALANCE PLAY. AS AN OPTION FOR INCLUDING SOME COMBAT BENEFITS WITH EXTRA LIMBS, CONSIDER ALLOWING THE APPLICATION OF THE MULTIATTACK EXTRA TO THE STRENGTH OF A CHARACTER WITH EXTRA LIMBS, REFLECTING THE ABILITY TO LAUNCH A FLURRY OF ATTACKS AT A SINGLE OPPONENT, OR TO “SPREAD” THOSE ATTACKS AMONG A NUMBER OF NEARBY OPPONENTS. SEE THE MULTIATTACK DE- SCRIPTION UNDER EXTRAS IN THIS CHAPTER FOR DETAILS. MUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOKMUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOK 160160 CHAPTER 6: POWERSCHAPTER 6: POWERS TURES A CHARACTER HAS TO USE AND MAINTAIN RATHER THAN HAV- ING THEM AS PASSIVE TRAITS REQUIRING NO EFFORT WHATSOEVER. SAMPLE FEATURES • INSULATING FUR: YOU HAVE A LAYER OF FUR THAT PROTECTS YOU FROM INTENSE HEAT AND COLD, GIVING YOU IMMUNITY TO THOSE ENVIRONMENTS. • INTERNAL COMPARTMENT: YOU CAN CARRY A PORTION OF YOUR CARRYING CAPACITY INSIDE YOUR BODY! YOU HAVE A POUCH OR COMPARTMENT OF SOME SORT, ABLE TO HOLD OBJECTS WITH A SIZE RANK NO GREATER THAN 3 LESS THAN YOUR OWN (SIZE -5 FOR A NORMAL SIZE RANK -2 HUMAN). • IRON STOMACH: YOU CAN EAT ANYTHING THAT’S NOT TOXIC WITHOUT ILL EFFECTS, NO MATTER HOW UNPLEASANT IT MAY BE: SPOILED OR PARTICULARLY GROSS OR SPICY FOOD, FOR EXAMPLE. • MIMICRY: YOU CAN IMITATE ALMOST ANY SOUND YOU’VE HEARD, GIVING YOU A +10 BONUS TO DECEPTION CHECKS TO CONVINCE OTHERS YOUR MIMICKED SOUNDS ARE REAL. • QUICK CHANGE: YOU CAN CHANGE CLOTHES—SUCH AS INTO OR OUT OF YOUR COSTUME—AS A FREE ACTION. WITH 2 RANKS, YOU CAN CHANGE INTO ANY OUTFIT AT WILL. • SPECIAL EFFECT: YOU HAVE SOME SPECIAL EFFECT, LIKE A GUST OF WIND AT THE RIGHT DRAMATIC MOMENT, OR IDEAL SPOTLIGHTING, OR PERSONAL THEME MUSIC. THE GM MAY GIVE YOU A +</p>",
+        "effetsprincipaux": "<p>ITY TO TAKE EXTRA ACTIONS IN A ROUND, SIMPLY BECAUSE MULTI- PLE ACTIONS—ESPECIALLY EXTRA STANDARD ACTIONS USABLE FOR ATTACKS—TEND TO SLOW DOWN AND UNBALANCE PLAY. AS AN OPTION FOR INCLUDING SOME COMBAT BENEFITS WITH EXTRA LIMBS, CONSIDER ALLOWING THE APPLICATION OF THE MULTIATTACK EXTRA TO THE STRENGTH OF A CHARACTER WITH EXTRA LIMBS, REFLECTING THE ABILITY TO LAUNCH A FLURRY OF ATTACKS AT A SINGLE OPPONENT, OR TO “SPREAD” THOSE ATTACKS AMONG A NUMBER OF NEARBY OPPONENTS. SEE THE MULTIATTACK DE- SCRIPTION UNDER EXTRAS IN THIS CHAPTER FOR DETAILS. MUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOKMUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOK 160160 CHAPTER 6: POWERSCHAPTER 6: POWERS TURES A CHARACTER HAS TO USE AND MAINTAIN RATHER THAN HAV- ING THEM AS PASSIVE TRAITS REQUIRING NO EFFORT WHATSOEVER. SAMPLE FEATURES • INSULATING FUR: YOU HAVE A LAYER OF FUR THAT PROTECTS YOU FROM INTENSE HEAT AND COLD, GIVING YOU IMMUNITY TO THOSE ENVIRONMENTS. • INTERNAL COMPARTMENT: YOU CAN CARRY A PORTION OF YOUR CARRYING CAPACITY INSIDE YOUR BODY! YOU HAVE A POUCH OR COMPARTMENT OF SOME SORT, ABLE TO HOLD OBJECTS WITH A SIZE RANK NO GREATER THAN 3 LESS THAN YOUR OWN (SIZE -5 FOR A NORMAL SIZE RANK -2 HUMAN). • IRON STOMACH: YOU CAN EAT ANYTHING THAT’S NOT TOXIC WITHOUT ILL EFFECTS, NO MATTER HOW UNPLEASANT IT MAY BE: SPOILED OR PARTICULARLY GROSS OR SPICY FOOD, FOR EXAMPLE. • MIMICRY: YOU CAN IMITATE ALMOST ANY SOUND YOU’VE HEARD, GIVING YOU A +10 BONUS TO DECEPTION CHECKS TO CONVINCE OTHERS YOUR MIMICKED SOUNDS ARE REAL. • QUICK CHANGE: YOU CAN CHANGE CLOTHES—SUCH AS INTO OR OUT OF YOUR COSTUME—AS A FREE ACTION. WITH 2 RANKS, YOU CAN CHANGE INTO ANY OUTFIT AT WILL. • SPECIAL EFFECT: YOU HAVE SOME SPECIAL EFFECT, LIKE A GUST OF WIND AT THE RIGHT DRAMATIC MOMENT, OR IDEAL SPOTLIGHTING, OR PERSONAL THEME MUSIC. THE GM MAY GIVE YOU A +</p>",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 1,
+          "parrangtotal": "1"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774740464655,
+        "modifiedTime": 1774740464655,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "mandm",
+      "uuid": "Actor.bM0RsJMTAOGzppJh",
+      "coreVersion": "13.350",
+      "systemId": "mutants-and-masterminds-3e",
+      "systemVersion": "1.39.13"
+    },
+    "coreVersion": "13.350",
+    "systemId": "mutants-and-masterminds-3e",
+    "systemVersion": "1.39.13",
+    "createdTime": 1774476045527,
+    "modifiedTime": 1774740502044,
+    "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+  },
+  "ownership": {
+    "default": 0
+  }
+}
