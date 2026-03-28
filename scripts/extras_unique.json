@@ -1,7 +1,7 @@
 [
   {
     "_id": "uex001deflect",
-    "name": "Reflect - Unique to Deflect",
+    "name": "Reflect (Deflect)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -9,12 +9,16 @@
       "description": "<p>You can reflect attacks back at the attacker as a free action. First, you must successfully deflect the attack, then make a normal attack check using your own attack modifier to hit with the reflected attack. It has its normal effect if it hits.</p><p>+1 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex002deflect",
-    "name": "Redirect - Unique to Deflect",
+    "name": "Redirect (Deflect)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -22,12 +26,16 @@
       "description": "<p>You can redirect attacks you successfully deflect at any target within the attack’s normal range, as Reflect, above. You must have the Reflect extra to take this one.</p><p>+1 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex003extralimb",
-    "name": "Projection - Unique to Extra Limbs",
+    "name": "Projection (Extra Limbs)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -35,12 +43,16 @@
       "description": "<p>Your Extra Limbs are merely a projection of your power rather than an extension of your body. Therefore, any harm directed specifically against your Extra Limb(s) has no effect. So, for example, one of your additional limbs could reach into a container of acid or a blast furnace to pull out an object without any harm to you.</p><p>+1 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex004flight",
-    "name": "Aquatic - Unique to Flight",
+    "name": "Aquatic (Flight)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -48,12 +60,16 @@
       "description": "<p>You can move underwater as easily as in the air. You have a water speed equal to your Flight rank, minus 2, subject to the usual rules for swimming. You can make Athletics checks to swim as routine checks.</p><p>Flat +1 point.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": true, "rang": false, "value": 1 }
+      "cout": {
+        "fixe": true,
+        "rang": false,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex005healing",
-    "name": "Energizing - Unique to Healing",
+    "name": "Energizing (Healing)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -61,12 +77,16 @@
       "description": "<p>You can heal the fatigued and exhausted conditions as well as damage conditions: DC 10, one degree of success for fatigued, two degrees for exhausted.</p><p>+1 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex006healing",
-    "name": "Stabilize - Unique to Healing",
+    "name": "Stabilize (Healing)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -74,12 +94,16 @@
       "description": "<p>You can stabilize a dying subject as a free action without a check.</p><p>Flat +1 point.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": true, "rang": false, "value": 1 }
+      "cout": {
+        "fixe": true,
+        "rang": false,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex007healing",
-    "name": "Restorative - Unique to Healing",
+    "name": "Restorative (Healing)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -87,12 +111,16 @@
       "description": "<p>Your Healing can also restore points to a subject’s weakened or drained traits. You make a separate Healing check (DC 10) for each trait.</p><p>+1 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex008healing",
-    "name": "Resurrection - Unique to Healing",
+    "name": "Resurrection (Healing)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -100,12 +128,16 @@
       "description": "<p>You can return the dead to life. If the subject has been dead for more than a minute, the DC is 10 + 1 per additional minute. If the check fails, you can't try again on that subject.</p><p>+1 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex009illusion",
-    "name": "Independent - Unique to Illusion",
+    "name": "Independent (Illusion)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -113,12 +145,16 @@
       "description": "<p>Your illusions do not require your concentration to maintain. They persist until you choose to end them or they are countered.</p><p>+0 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 0 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 0
+      }
     }
   },
   {
     "_id": "uex010morph",
-    "name": "Metamorph - Unique to Morph",
+    "name": "Metamorph (Morph)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -126,12 +162,16 @@
       "description": "<p>Each rank in this extra allows you to have an entirely different character sheet for one of your forms, with the same point total.</p><p>Flat +1 point per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": true, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": true,
+        "rang": true,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex011shrinking",
-    "name": "Normal Strength - Unique to Shrinking",
+    "name": "Normal Strength (Shrinking)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -139,12 +179,16 @@
       "description": "<p>You retain your full Strength and related traits (Stamina, etc.) while at your smaller size.</p><p>+1 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex012shrinking",
-    "name": "Growth Punch - Unique to Shrinking",
+    "name": "Growth Punch (Shrinking)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -152,12 +196,16 @@
       "description": "<p>You can use your Shrinking momentum to add to the force of your attacks. You gain a +1 bonus to Damage per 4 ranks of Shrinking.</p><p>Flat +1 point.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": true, "rang": false, "value": 1 }
+      "cout": {
+        "fixe": true,
+        "rang": false,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex013create",
-    "name": "Movable - Unique to Create",
+    "name": "Movable (Create)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -165,12 +213,16 @@
       "description": "<p>You can move your created objects as if you had Move Object with a Strength equal to your Create rank.</p><p>+1 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex014create",
-    "name": "Stationary - Unique to Create",
+    "name": "Stationary (Create)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -178,12 +230,16 @@
       "description": "<p>Your created objects are stationary and remain where they are even if you move away.</p><p>+0 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 0 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 0
+      }
     }
   },
   {
     "_id": "uex015create",
-    "name": "Tether - Unique to Create",
+    "name": "Tether (Create)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -191,12 +247,16 @@
       "description": "<p>You can create a line or 'tether' of force connecting you to your created object.</p><p>Flat +1 point.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": true, "rang": false, "value": 1 }
+      "cout": {
+        "fixe": true,
+        "rang": false,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex016teleport",
-    "name": "Portal - Unique to Teleport",
+    "name": "Portal (Teleport)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -204,12 +264,16 @@
       "description": "<p>Instead of moving yourself, you open a portal between two points. Anyone can move through the portal.</p><p>+2 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 2 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 2
+      }
     }
   },
   {
     "_id": "uex017teleport",
-    "name": "Turnabout - Unique to Teleport",
+    "name": "Turnabout (Teleport)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -217,12 +281,16 @@
       "description": "<p>You can teleport, take an action, and then teleport back to your starting point in the same round.</p><p>Flat +1 point.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": true, "rang": false, "value": 1 }
+      "cout": {
+        "fixe": true,
+        "rang": false,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex018teleport",
-    "name": "Change Velocity - Unique to Teleport",
+    "name": "Change Velocity (Teleport)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -230,12 +298,16 @@
       "description": "<p>You can change your velocity relative to your starting point when you teleport.</p><p>Flat +1 point.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": true, "rang": false, "value": 1 }
+      "cout": {
+        "fixe": true,
+        "rang": false,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex019teleport",
-    "name": "Change Direction - Unique to Teleport",
+    "name": "Change Direction (Teleport)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -243,12 +315,16 @@
       "description": "<p>You can change your direction when you teleport.</p><p>Flat +1 point.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": true, "rang": false, "value": 1 }
+      "cout": {
+        "fixe": true,
+        "rang": false,
+        "value": 1
+      }
     }
   },
   {
     "_id": "uex020teleport",
-    "name": "Easy - Unique to Teleport",
+    "name": "Easy (Teleport)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -256,12 +332,16 @@
       "description": "<p>Teleporting is easy for you, requiring only a move action for any distance.</p><p>+1 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 1
+      }
     }
   },
   {
     "_id": "ufl001flight",
-    "name": "Gliding - Unique to Flight",
+    "name": "Gliding (Flight)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -269,12 +349,16 @@
       "description": "<p>You fly by gliding on wind currents. Your maximum gliding distance is limited to your starting height distance rank plus your flight speed rank. You may be able to gain altitude occasionally by catching a thermal or updraft.</p><p>–1 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 1
+      }
     }
   },
   {
     "_id": "ufl002healing",
-    "name": "Empathic - Unique to Healing",
+    "name": "Empathic (Healing)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -282,12 +366,16 @@
       "description": "<p>When you heal a subject, you take on their damage conditions yourself. Your Toughness cannot resist this damage.</p><p>–1 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 1
+      }
     }
   },
   {
     "_id": "ufl003healing",
-    "name": "Temporary - Unique to Healing",
+    "name": "Temporary (Healing)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -295,12 +383,16 @@
       "description": "<p>The healing you provide is temporary, lasting for only one minute, after which the subject’s damage conditions return.</p><p>–1 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 1
+      }
     }
   },
   {
     "_id": "ufl004leaping",
-    "name": "Full Power - Unique to Leaping",
+    "name": "Full Power (Leaping)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -308,12 +400,16 @@
       "description": "<p>You can only leap your maximum distance; you can make shorter leaps only by not using your Leaping effect at all.</p><p>Flat –1 point.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": true, "rang": false, "value": 1 }
+      "cout": {
+        "fixe": true,
+        "rang": false,
+        "value": 1
+      }
     }
   },
   {
     "_id": "ufl005teleport",
-    "name": "Medium - Unique to Teleport",
+    "name": "Medium (Teleport)",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
     "system": {
@@ -321,7 +417,11 @@
       "description": "<p>You require a medium (like shadows, mirrors, electricity, etc.) to teleport.</p><p>–1 cost per rank.</p>",
       "rang": 1,
       "edit": true,
-      "cout": { "fixe": false, "rang": true, "value": 1 }
+      "cout": {
+        "fixe": false,
+        "rang": true,
+        "value": 1
+      }
     }
   }
 ]
