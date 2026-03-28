@@ -75,6 +75,7 @@ async function buildPowers() {
         "portee": translationMap.range[range] || 'contact',
         "duree": translationMap.duration[duration] || 'instantane',
         "notes": `<p>${sanitizeText(row.Description)}</p>`,
+        "description": `<p>${sanitizeText(row.Description)}</p>`,
         "effets": sanitizeText(row.Mechanics) ? `<p>${sanitizeText(row.Mechanics).toUpperCase()}</p>` : "",
         "link": "",
         "descripteurs": {},
