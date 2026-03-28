@@ -59,7 +59,7 @@ async function buildPowers() {
     const description = (row.Description || '').toLowerCase();
     
     let systemType = 'generaux';
-    if (rawType === 'attack' || mechanics.includes('attack check') || mechanics.includes('resistance check')) systemType = 'attaque';
+    if (rawType === 'attack' || mechanics.includes('attack check') || mechanics.includes('resistance check') || (action !== 'none' && range !== 'personal')) systemType = 'attaque';
     else if (rawType === 'movement') systemType = 'mouvement';
     else if (rawType === 'sensory') systemType = 'sensoriel';
     else if (rawType === 'defense') systemType = 'defensif';
@@ -91,6 +91,7 @@ async function buildPowers() {
         "listEffectsVariantes": {},
         "edit": false,
         "carac": 0,
+        "check": "",
         "cout": { 
           "rang": baseRank, 
           "parrang": baseCostPerRank, 
