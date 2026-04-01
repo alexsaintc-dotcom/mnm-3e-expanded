@@ -1,0 +1,1188 @@
+{
+  "folder": "iuJmhB4XYoMGUYgp",
+  "name": "NIGHTFALL",
+  "type": "personnage",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "version": 2,
+    "identite": {
+      "name": "",
+      "secret": false
+    },
+    "description": "",
+    "historique": "",
+    "puissance": 8,
+    "heroisme": 0,
+    "blessure": 0,
+    "blessureNL": 0,
+    "ddparade": 0,
+    "ddesquive": 0,
+    "ptsEquipements": {
+      "max": 0,
+      "use": 0
+    },
+    "filtre": "tous",
+    "complications": {},
+    "caracteristique": {
+      "force": {
+        "total": 0,
+        "base": 3,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "agilite": {
+        "total": 0,
+        "base": 6,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "combativite": {
+        "total": 0,
+        "base": 12,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "sensibilite": {
+        "total": 0,
+        "base": 4,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "endurance": {
+        "total": 0,
+        "base": 3,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "dexterite": {
+        "total": 0,
+        "base": 6,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "intelligence": {
+        "total": 0,
+        "base": 4,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "presence": {
+        "total": 0,
+        "base": 4,
+        "divers": 0,
+        "absente": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      }
+    },
+    "competence": {
+      "combatcontact": {
+        "canAdd": true,
+        "car": "cbt",
+        "modele": {
+          "label": "",
+          "carac": 0,
+          "rang": 0,
+          "autre": 0,
+          "total": 0
+        },
+        "list": {
+          "1": {
+            "label": "Steel Guantlet",
+            "carac": 0,
+            "rang": 2,
+            "autre": 0,
+            "total": 0,
+            "_id": "oRKJNArUXbvXk5ZL"
+          }
+        },
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "combatdistance": {
+        "canAdd": true,
+        "car": "dex",
+        "modele": {
+          "label": "",
+          "carac": 0,
+          "rang": 0,
+          "autre": 0,
+          "total": 0
+        },
+        "list": {
+          "1": {
+            "label": "Star-trops",
+            "carac": 0,
+            "rang": 8,
+            "autre": 0,
+            "total": 0,
+            "_id": "LM1c5T56jq5JhZ1L"
+          }
+        },
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "expertise": {
+        "canAdd": true,
+        "modele": {
+          "car": "int",
+          "carCanChange": true,
+          "label": "",
+          "carac": 0,
+          "rang": 0,
+          "autre": 0,
+          "total": 0
+        },
+        "list": {
+          "1": {
+            "car": "int",
+            "carCanChange": true,
+            "label": "New Technology",
+            "carac": 0,
+            "rang": 4,
+            "autre": 0,
+            "total": 0,
+            "_id": "MMAbT3ojQgZfvVWr"
+          }
+        },
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "acrobaties": {
+        "carac": 0,
+        "car": "agi",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 6,
+        "autre": 0,
+        "total": 0
+      },
+      "athletisme": {
+        "carac": 0,
+        "car": "for",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 6,
+        "autre": 0,
+        "total": 0
+      },
+      "duperie": {
+        "carac": 0,
+        "car": "prs",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 6,
+        "autre": 0,
+        "total": 0
+      },
+      "perspicacite": {
+        "carac": 0,
+        "car": "sns",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 6,
+        "autre": 0,
+        "total": 0
+      },
+      "intimidation": {
+        "carac": 0,
+        "car": "prs",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 8,
+        "autre": 0,
+        "total": 0
+      },
+      "investigation": {
+        "carac": 0,
+        "car": "int",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 8,
+        "autre": 0,
+        "total": 0
+      },
+      "perception": {
+        "carac": 0,
+        "car": "sns",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 6,
+        "autre": 0,
+        "total": 0
+      },
+      "persuasion": {
+        "carac": 0,
+        "car": "prs",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "habilete": {
+        "carac": 0,
+        "car": "dex",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 4,
+        "autre": 0,
+        "total": 0
+      },
+      "discretion": {
+        "carac": 0,
+        "car": "agi",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 8,
+        "autre": 0,
+        "total": 0
+      },
+      "technologie": {
+        "carac": 0,
+        "car": "int",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 2,
+        "autre": 0,
+        "total": 0
+      },
+      "soins": {
+        "carac": 0,
+        "car": "int",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 0,
+        "autre": 0,
+        "total": 0
+      },
+      "vehicules": {
+        "carac": 0,
+        "car": "dex",
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "rang": 4,
+        "autre": 0,
+        "total": 0
+      },
+      "new": {
+        "modele": {
+          "carCanChange": true,
+          "car": "int",
+          "label": "",
+          "carac": 0,
+          "rang": 0,
+          "autre": 0,
+          "total": 0
+        },
+        "list": {},
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {},
+        "new": true
+      }
+    },
+    "pp": {
+      "base": 150,
+      "gain": null,
+      "used": 138,
+      "divers": 0,
+      "caracteristiques": 84,
+      "pouvoirs": 3,
+      "talents": 12,
+      "competences": 39,
+      "defenses": 0,
+      "total": 138
+    },
+    "attaque": {},
+    "defense": {
+      "esquive": {
+        "car": "agi",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "parade": {
+        "car": "cbt",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "vigueur": {
+        "car": "end",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "robustesse": {
+        "car": "end",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      },
+      "volonte": {
+        "car": "sns",
+        "carac": 0,
+        "base": 0,
+        "divers": 0,
+        "total": 0,
+        "defenseless": false,
+        "bonuses": 0,
+        "surcharge": 0,
+        "ranks": {},
+        "surchargeranks": {}
+      }
+    },
+    "initiative": {
+      "base": 0,
+      "carac": 0,
+      "bonuses": 0,
+      "surcharge": 0,
+      "ranks": {},
+      "surchargeranks": {},
+      "total": 0
+    },
+    "strategie": {
+      "attaqueprecision": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "attaqueoutrance": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "attaquedefensive": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "attaquepuissance": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "etats": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "total": {
+        "attaque": 0,
+        "defense": 0,
+        "effet": 0
+      },
+      "limite": {
+        "attaqueprecision": {
+          "atk": {
+            "base": 2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "eff": {
+            "base": -2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "def": {
+            "base": 0,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "attaque": 2,
+          "defense": 0,
+          "effet": -2
+        },
+        "attaqueoutrance": {
+          "atk": {
+            "base": 2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "eff": {
+            "base": 0,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "def": {
+            "base": -2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "attaque": 2,
+          "defense": -2,
+          "effet": 0
+        },
+        "attaquedefensive": {
+          "atk": {
+            "base": -2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "eff": {
+            "base": 0,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "def": {
+            "base": 2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "attaque": -2,
+          "defense": 2,
+          "effet": 0
+        },
+        "attaquepuissance": {
+          "atk": {
+            "base": -2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "eff": {
+            "base": 2,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "def": {
+            "base": 0,
+            "bonuses": 0,
+            "surcharge": 0,
+            "ranks": {},
+            "surchargeranks": {},
+            "allbonuses": 0
+          },
+          "attaque": -2,
+          "defense": 0,
+          "effet": 2
+        }
+      }
+    },
+    "pwr": {
+      "nGnUsXo9fZR2CSS8": {
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 3,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 3,
+          "parrangtotal": 3
+        }
+      }
+    },
+    "accessibility": {
+      "font": "Kalam",
+      "fontOther": ""
+    },
+    "vitesse": {
+      "list": {
+        "base": {
+          "autotrade": "base",
+          "rang": 0,
+          "round": 0,
+          "kmh": 0,
+          "selected": true
+        },
+        "course": {
+          "autotrade": "course",
+          "rang": 1,
+          "round": 0,
+          "kmh": 0,
+          "selected": false
+        },
+        "natation": {
+          "autotrade": "natation",
+          "rang": -2,
+          "round": 0,
+          "kmh": 0,
+          "selected": false
+        }
+      },
+      "actuel": 0
+    },
+    "affiliation": "",
+    "base": "",
+    "genre": "M",
+    "age": "43",
+    "taille": "1.80m",
+    "poids": "90kg",
+    "yeux": "",
+    "cheveux": "",
+    "etats": ""
+  },
+  "prototypeToken": {
+    "name": "Andy",
+    "displayName": 0,
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "blessure"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "flags": {},
+    "randomImg": false,
+    "appendNumber": false,
+    "prependAdjective": false
+  },
+  "items": [
+    {
+      "_id": "vjKOi730ljdKBxdq",
+      "name": "Defensive Roll",
+      "type": "talent",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/talent.svg",
+      "system": {
+        "rang": 3,
+        "description": "<p>Receive a bonus to Toughness equal to rank. This is an active defense and is lost if vulnerable or defenseless.</p>",
+        "equipement": false,
+        "edit": false,
+        "listEffectsVariantes": {},
+        "cout": {
+          "rang": 3,
+          "parrang": 1,
+          "total": 3
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774999057353,
+        "modifiedTime": 1774999230266,
+        "lastModifiedBy": "C7PGI0tEfGGvp8lq"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "WhjwosqxjJjhn6FP",
+      "name": "Equipment",
+      "type": "talent",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/talent.svg",
+      "system": {
+        "rang": 4,
+        "description": "<p>You have 5 points per rank to spend on equipment, vehicles, and headquarters.</p>",
+        "equipement": true,
+        "edit": false,
+        "listEffectsVariantes": {},
+        "cout": {
+          "rang": 4,
+          "parrang": 1,
+          "total": 4
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774999066848,
+        "modifiedTime": 1774999278125,
+        "lastModifiedBy": "C7PGI0tEfGGvp8lq"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "NvrXDsBUdk7CcwqQ",
+      "name": "Uncanny Dodge",
+      "type": "talent",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/talent.svg",
+      "system": {
+        "rang": 1,
+        "description": "<p>Not vulnerable when surprised or caught off-guard.</p>",
+        "equipement": false,
+        "edit": false,
+        "listEffectsVariantes": {},
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774999077996,
+        "modifiedTime": 1774999077996,
+        "lastModifiedBy": "C7PGI0tEfGGvp8lq"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "j6qF0iybr1MTEzmg",
+      "name": "Eidetic Memory",
+      "type": "talent",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/talent.svg",
+      "system": {
+        "rang": 1,
+        "description": "<p>Perfect recall. +5 circumstance bonus on memory checks. Can make Expertise checks as if trained.</p>",
+        "equipement": false,
+        "edit": false,
+        "listEffectsVariantes": {},
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774999088248,
+        "modifiedTime": 1774999088248,
+        "lastModifiedBy": "C7PGI0tEfGGvp8lq"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "DGWUGUBjggQtUSLh",
+      "name": "Benefit",
+      "type": "talent",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/talent.svg",
+      "system": {
+        "rang": 1,
+        "description": "<p>You have some significant social or structural benefit, such as wealth, status, or a secret identity.</p>",
+        "equipement": false,
+        "edit": false,
+        "listEffectsVariantes": {},
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774999104969,
+        "modifiedTime": 1774999104969,
+        "lastModifiedBy": "C7PGI0tEfGGvp8lq"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "Is8uxHEkBd5010XC",
+      "name": "Throwing Mastery",
+      "type": "talent",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/talent.svg",
+      "system": {
+        "rang": 1,
+        "description": "<p>+1 damage bonus with thrown weapons per rank.</p>",
+        "equipement": false,
+        "edit": false,
+        "listEffectsVariantes": {},
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774999145116,
+        "modifiedTime": 1774999145116,
+        "lastModifiedBy": "C7PGI0tEfGGvp8lq"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "DmKrWtbEhBwb8cfm",
+      "name": "Takedown",
+      "type": "talent",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/talent.svg",
+      "system": {
+        "rang": 1,
+        "description": "<p>Free extra attack against adjacent minion after incapacitating one. Rank 2 allows movement.</p>",
+        "equipement": false,
+        "edit": false,
+        "listEffectsVariantes": {},
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 1
+        }
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774999147405,
+        "modifiedTime": 1774999311256,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "nGnUsXo9fZR2CSS8",
+      "name": "Dazzle",
+      "type": "pouvoir",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/pouvoir.svg",
+      "system": {
+        "type": "attaque",
+        "activate": true,
+        "special": "standard",
+        "action": "simple",
+        "portee": "contact",
+        "duree": "instantane",
+        "notes": "<p>DAZZLE Effect: Ranged, Cumulative Affliction, Limited to One Sense • 2 points per rank You can overwhelm one of the target’s senses, chosen when you take this effect. The target makes a Forti- tude or Will resistance check against your effect DC (choose one when you acquire the effect). One degree of failure leaves the sense impaired (–2 penalty). Two degrees leave it disabled (–5 penalty) while three de- grees leave the sense unaware: The target automati- cally fails Perception checks involving the sense, and everything effectively has total concealment from that sense. The target makes a new resistance check at the end of each turn to recover. Success removes the condition imposed by the Dazzle power. Failure means it persists. Multiple Dazzle effects against the same sense are cu- mulative. If a target is already visually disabled, for ex- ample, another Visual Dazzle with one degree of suc- cess leaves the target blind, as if subjected to a Dazzle with two degrees of effect. Your D</p>",
+        "effets": "<p>AZZLE EFFECT CAN WORK ON MORE THAN ONE SENSE AT ONCE; APPLY THE EXTRA CONDITION MODIFIER FOR EACH AD- DITIONAL SENSE AFFECTED. MUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOKMUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOK 155155 CHAPTER 6: POWERSCHAPTER 6: POWERS DAMAGE ATTACK ACTION: STANDARD • RANGE: CLOSE DURATION: INSTANT • COST: 1 POINT PER RANK YOU CAN INFLICT DAMAGE ON A TARGET BY MAKING A CLOSE AT- TACK. THE EXACT NATURE OF YOUR DAMAGE IS UP TO YOU, WITH THE GM’S APPROVAL; IT CAN BE ANYTHING FROM A POWERFUL IM- PACT TO RAZOR CLAWS, ENERGY FIELDS, OR SOME OTHER DAMAGING MEDIUM. THE TARGET RESISTS WITH TOUGHNESS: DAMAGE RESISTANCE CHECK TOUGHNESS VS. [DAMAGE RANK + 15] SUCCESS : THE DAMAGE HAS NO EFFECT. FAILURE (ONE DEGREE): THE TARGET HAS A –1 CIRCUMSTANCE PENALTY TO FURTHER RESISTANCE CHECKS AGAINST DAMAGE. FAILURE (TWO DEGREES): THE TARGET IS DAZED UNTIL THE END OF THEIR NEXT TURN AND HAS A –1 CIRCUMSTANCE PENALTY TO FURTHER CHECKS AGAINST DAMAGE. FAILURE (THREE DEGREES): THE TARGET IS STAGGERED AND HAS A -1 CIRCUMSTANCE PENALTY TO FURTHER CHECKS AGAINST DAMAGE. IF THE TARGET IS STAGGERED AGAIN (THREE DEGREES OF FAILURE ON A DAMAGE RESISTANCE CHECK), AP- PLY THE FOURTH DEGREE OF EFFECT. THE STAGGERED CONDI- TION REMAINS UNTIL THE TARGET RECOVERS (SEE RECOVERY, FOLLOWING). FAILURE (FOUR DEGREES): THE TARGET IS INCAPACITATED . THE CIRCUMSTANCE PENALTIES TO TOUGHNESS CHECKS ARE CU- MULATIVE, SO A TARGET WHO FAILS THREE RESISTANCE CHECKS AGAINST DAMAGE, EACH WITH ONE DEGREE OF FAILURE, HAS A TOTAL –3 PENALTY. IF AN INCAPACITATED TARGET FAILS A RESISTANCE CHECK AGAINST DAMAGE, THE TARGET’S CONDITION SHIFTS TO DYING. A DYING TAR- GET WHO FAILS A RESISTANCE CHECK AGAINST DAMAGE IS DEAD. STRENGTH AND DAMAGE STRENGTH PROVIDES A “BUILT-IN” DAMAGE EFFECT: THE ABILITY TO HIT THINGS! YOU CAN APPL</p>",
+        "effetsprincipaux": "<p>AZZLE EFFECT CAN WORK ON MORE THAN ONE SENSE AT ONCE; APPLY THE EXTRA CONDITION MODIFIER FOR EACH AD- DITIONAL SENSE AFFECTED. MUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOKMUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOK 155155 CHAPTER 6: POWERSCHAPTER 6: POWERS DAMAGE ATTACK ACTION: STANDARD • RANGE: CLOSE DURATION: INSTANT • COST: 1 POINT PER RANK YOU CAN INFLICT DAMAGE ON A TARGET BY MAKING A CLOSE AT- TACK. THE EXACT NATURE OF YOUR DAMAGE IS UP TO YOU, WITH THE GM’S APPROVAL; IT CAN BE ANYTHING FROM A POWERFUL IM- PACT TO RAZOR CLAWS, ENERGY FIELDS, OR SOME OTHER DAMAGING MEDIUM. THE TARGET RESISTS WITH TOUGHNESS: DAMAGE RESISTANCE CHECK TOUGHNESS VS. [DAMAGE RANK + 15] SUCCESS : THE DAMAGE HAS NO EFFECT. FAILURE (ONE DEGREE): THE TARGET HAS A –1 CIRCUMSTANCE PENALTY TO FURTHER RESISTANCE CHECKS AGAINST DAMAGE. FAILURE (TWO DEGREES): THE TARGET IS DAZED UNTIL THE END OF THEIR NEXT TURN AND HAS A –1 CIRCUMSTANCE PENALTY TO FURTHER CHECKS AGAINST DAMAGE. FAILURE (THREE DEGREES): THE TARGET IS STAGGERED AND HAS A -1 CIRCUMSTANCE PENALTY TO FURTHER CHECKS AGAINST DAMAGE. IF THE TARGET IS STAGGERED AGAIN (THREE DEGREES OF FAILURE ON A DAMAGE RESISTANCE CHECK), AP- PLY THE FOURTH DEGREE OF EFFECT. THE STAGGERED CONDI- TION REMAINS UNTIL THE TARGET RECOVERS (SEE RECOVERY, FOLLOWING). FAILURE (FOUR DEGREES): THE TARGET IS INCAPACITATED . THE CIRCUMSTANCE PENALTIES TO TOUGHNESS CHECKS ARE CU- MULATIVE, SO A TARGET WHO FAILS THREE RESISTANCE CHECKS AGAINST DAMAGE, EACH WITH ONE DEGREE OF FAILURE, HAS A TOTAL –3 PENALTY. IF AN INCAPACITATED TARGET FAILS A RESISTANCE CHECK AGAINST DAMAGE, THE TARGET’S CONDITION SHIFTS TO DYING. A DYING TAR- GET WHO FAILS A RESISTANCE CHECK AGAINST DAMAGE IS DEAD. STRENGTH AND DAMAGE STRENGTH PROVIDES A “BUILT-IN” DAMAGE EFFECT: THE ABILITY TO HIT THINGS! YOU CAN APPL</p>",
+        "link": "",
+        "descripteurs": {},
+        "extras": {
+          "1": {
+            "name": "BURST AREA",
+            "data": {
+              "type": "extra",
+              "description": "<p>This extra allows an effect that normally works on a single target to affect an area.  Player must choose the Shape and Range from MnM 3e PHB</p><p><br></p><p>No attack check is needed; potential targets are permitted a Dodge resistance check (DC 10 + effect rank) to reduce the effect.</p><p><br></p><p>+1 cost per Power rank.</p>",
+              "cout": {
+                "fixe": false,
+                "rang": true,
+                "value": 2
+              }
+            },
+            "details": true
+          }
+        },
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
+        "cout": {
+          "rang": 1,
+          "parrang": 1,
+          "total": 3,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": 3,
+          "parrangtotal": 3
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1774999924623,
+        "modifiedTime": 1775000219006,
+        "lastModifiedBy": "C7PGI0tEfGGvp8lq"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Utility Belt",
+      "type": "equipement",
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
+      "_id": "J3bgRVoGebHVE9vs",
+      "system": {
+        "description": "",
+        "cout": 0
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1775000315160,
+        "modifiedTime": 1775000332838,
+        "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "DC5rTOuGThEv7agH",
+      "name": "Commlink",
+      "type": "equipement",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/equipement.svg",
+      "system": {
+        "description": "<p>Miniature radio transceiver.</p>",
+        "cout": 1
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1775000367207,
+        "modifiedTime": 1775000367207,
+        "lastModifiedBy": "C7PGI0tEfGGvp8lq"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "MVKDtujUR9I8yJ7k",
+      "name": "Assault Rifle",
+      "type": "equipement",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/equipement.svg",
+      "system": {
+        "description": "<p>Military rifle, Multiattack.</p>",
+        "cout": 15
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1775000407025,
+        "modifiedTime": 1775000407025,
+        "lastModifiedBy": "C7PGI0tEfGGvp8lq"
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "EdBSPNVObtOSGxhG",
+      "name": "Reinforced Costume",
+      "type": "equipement",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/mutants-and-masterminds-3e/assets/assets/icons/equipement.svg",
+      "system": {
+        "description": "<p>Standard hero gear.</p>",
+        "cout": 2
+      },
+      "effects": [],
+      "flags": {},
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.350",
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "createdTime": 1775000510828,
+        "modifiedTime": 1775000510828,
+        "lastModifiedBy": "C7PGI0tEfGGvp8lq"
+      },
+      "ownership": {
+        "default": 0
+      }
+    }
+  ],
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "mandm",
+      "uuid": "Actor.frHsMI29SDcjjJM6",
+      "coreVersion": "13.350",
+      "systemId": "mutants-and-masterminds-3e",
+      "systemVersion": "1.39.13"
+    },
+    "coreVersion": "13.350",
+    "systemId": "mutants-and-masterminds-3e",
+    "systemVersion": "1.39.13",
+    "createdTime": 1774998847431,
+    "modifiedTime": 1775000665613,
+    "lastModifiedBy": "C7PGI0tEfGGvp8lq"
+  },
+  "ownership": {
+    "default": 2
+  }
+}
