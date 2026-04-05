@@ -1,3 +1,5 @@
+console.log("M&M 3e Expanded | Script Loaded");
+
 // Self-Healing Logic: Fixes legacy data structures on the fly
 async function healActorData(actor) {
   if (!actor.isOwner || actor._healing) return;
@@ -139,10 +141,11 @@ async function healActorData(actor) {
 }
 
 Hooks.on('renderActorSheet', (app, html, data) => {
-  if (app.actor.type !== 'personnage') return;
+  const actor = data.actor || app.actor;
+  if (!actor || actor.type !== 'personnage') return;
 
   // Run self-healing
-  healActorData(app.actor);
+  healActorData(actor);
 
   // --- Drag and Drop Sorting for Powers ---
   const powerList = html.find('.pouvoir-list, .item-list');
@@ -154,7 +157,7 @@ Hooks.on('renderActorSheet', (app, html, data) => {
     const li = ev.currentTarget;
     ev.originalEvent.dataTransfer.setData('text/plain', JSON.stringify({
       type: 'Item',
-      uuid: app.actor.items.get(li.dataset.itemId).uuid,
+      uuid: actor.items.get(li.dataset.itemId).uuid,
       sort: parseInt(li.dataset.sort || 0)
     }));
   });
@@ -170,9 +173,9 @@ Hooks.on('renderActorSheet', (app, html, data) => {
     const sourceId = dragData.uuid.split('.').pop();
     if (targetId === sourceId) return;
 
-    const siblings = app.actor.items.filter(i => i.type === 'pouvoir');
-    const sourceItem = app.actor.items.get(sourceId);
-    const targetItem = app.actor.items.get(targetId);
+    const siblings = actor.items.filter(i => i.type === 'pouvoir');
+    const sourceItem = actor.items.get(sourceId);
+    const targetItem = actor.items.get(targetId);
 
     if (!sourceItem || !targetItem) return;
 
@@ -187,12 +190,13 @@ Hooks.on('renderActorSheet', (app, html, data) => {
       sort: u.update.sort
     }));
 
-    await app.actor.updateEmbeddedDocuments('Item', updateData);
+    await actor.updateEmbeddedDocuments('Item', updateData);
   });
 });
 
 Hooks.on('renderItemSheet', (app, html, data) => {
-  if (app.item.type !== 'pouvoir') return;
+  const item = data.item || app.item;
+  if (!item || item.type !== 'pouvoir') return;
 
   // --- Drag and Drop Sorting for Modifiers ---
   const modifiers = html.find('.extras-list .item, .flaws-list .item, .modifier-item');
@@ -219,7 +223,7 @@ Hooks.on('renderItemSheet', (app, html, data) => {
     const newIndex = parseInt(targetLi.data('index'));
     if (oldIndex === newIndex) return;
 
-    const list = duplicate(app.item.system[dropType]);
+    const list = duplicate(item.system[dropType]);
     const entries = Object.entries(list).sort((a, b) => parseInt(a[0]) - parseInt(b[0]));
     
     const [moved] = entries.splice(oldIndex - 1, 1);
@@ -230,6 +234,6 @@ Hooks.on('renderItemSheet', (app, html, data) => {
       newList[i + 1] = entry[1];
     });
 
-    await app.item.update({ [`system.${dropType}`]: newList });
+    await item.update({ [`system.${dropType}`]: newList });
   });
 });
