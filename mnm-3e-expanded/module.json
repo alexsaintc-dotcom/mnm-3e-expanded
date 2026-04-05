@@ -11,6 +11,9 @@
   "esmodules": [
     "mnm-3e-expanded.js"
   ],
+  "scripts": [
+    "mnm-3e-expanded.js"
+  ],
   "compatibility": {
     "minimum": "12",
     "verified": "13"
