@@ -1,4 +1,4 @@
-console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.3.56) ', 'background: #800080; color: #fff; font-weight: bold;');
+console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.3.58) ', 'background: #800080; color: #fff; font-weight: bold;');
 
 /**
  * Calculates the theoretical full cost of a power based on M&M 3e rules.
@@ -18,77 +18,120 @@ function calculatePowerCost(item) {
 }
 
 /**
- * The core logic to override Power PP totals.
+ * The core logic to override Power and Equipment PP/EP totals.
  * This is run every time the actor data is prepared.
  */
 function applyExpandedLogic(actor) {
   if (actor.type !== 'personnage') return;
 
   const powers = actor.items.filter(i => i.type === 'pouvoir');
-  if (powers.length === 0) return;
+  const equipment = actor.items.filter(i => i.type === 'equipement');
 
-  // 1. Map out Arrays
-  const arrays = {};
-  powers.forEach(p => {
-    const link = p.system.link;
-    if (link) {
-      const parent = actor.items.get(link) || powers.find(i => i.name === link);
-      if (parent) {
-        const pId = parent._id;
-        if (!arrays[pId]) arrays[pId] = [pId];
-        if (!arrays[pId].includes(p._id)) arrays[pId].push(p._id);
-      }
-    }
-  });
-
-  // 2. Identify Bearers and Max Costs
-  const arrayMetadata = {};
-  for (const pId in arrays) {
-    let maxCost = 0;
-    let bearerId = pId;
-    
-    arrays[pId].forEach(id => {
-      const item = actor.items.get(id);
-      if (!item) return;
-      const full = calculatePowerCost(item);
-      if (full > maxCost) {
-        maxCost = full;
-        bearerId = id;
+  // --- 1. POWER ARRAY LOGIC ---
+  if (powers.length > 0) {
+    const pArrays = {};
+    powers.forEach(p => {
+      const link = p.system.link;
+      if (link) {
+        const parent = actor.items.get(link) || powers.find(i => i.name === link);
+        if (parent) {
+          const pId = parent._id;
+          if (!pArrays[pId]) pArrays[pId] = [pId];
+          if (!pArrays[pId].includes(p._id)) pArrays[pId].push(p._id);
+        }
       }
     });
-    arrayMetadata[pId] = { max: maxCost, bearer: bearerId };
-  }
 
-  // 3. Force values in memory for rendering
-  let totalPowerPP = 0;
-  powers.forEach(item => {
-    const full = calculatePowerCost(item);
-    let target = full;
-
-    const link = item.system.link;
-    const parent = link ? (actor.items.get(link) || powers.find(i => i.name === link)) : null;
-    const parentId = arrays[item._id] ? item._id : (parent ? parent._id : null);
-
-    if (parentId && arrayMetadata[parentId]) {
-      const meta = arrayMetadata[parentId];
-      target = (item._id === meta.bearer) ? meta.max : 0;
+    const pArrayMetadata = {};
+    for (const pId in pArrays) {
+      let maxCost = 0;
+      let bearerId = pId;
+      pArrays[pId].forEach(id => {
+        const item = actor.items.get(id);
+        if (!item) return;
+        const full = calculatePowerCost(item);
+        if (full > maxCost) { maxCost = full; bearerId = id; }
+      });
+      pArrayMetadata[pId] = { max: maxCost, bearer: bearerId };
     }
 
-    // Override the value in the actor's current data structure
-    item.system.cout.total = target;
-    item.system.cout.totalTheorique = target;
-    if (target === 0) item.system.cout.parrangtotal = "0";
-    
-    totalPowerPP += target;
-  });
+    let totalPowerPP = 0;
+    powers.forEach(item => {
+      const full = calculatePowerCost(item);
+      let target = full;
+      const link = item.system.link;
+      const parent = link ? (actor.items.get(link) || powers.find(i => i.name === link)) : null;
+      const parentId = pArrays[item._id] ? item._id : (parent ? parent._id : null);
 
-  // 4. Override top-level actor PP pool
-  if (actor.system?.pp) {
-    actor.system.pp.pouvoirs = totalPowerPP;
-    const pp = actor.system.pp;
-    const newUsed = (pp.caracteristiques || 0) + totalPowerPP + (pp.talents || 0) + (pp.competences || 0) + (pp.defenses || 0) + (pp.divers || 0);
-    actor.system.pp.used = newUsed;
-    // DO NOT overwrite actor.system.pp.total or base, as those are the budget (e.g. 150)
+      if (parentId && pArrayMetadata[parentId]) {
+        const meta = pArrayMetadata[parentId];
+        target = (item._id === meta.bearer) ? meta.max : 0;
+      }
+      item.system.cout.total = target;
+      item.system.cout.totalTheorique = target;
+      if (target === 0) item.system.cout.parrangtotal = "0";
+      totalPowerPP += target;
+    });
+
+    if (actor.system?.pp) {
+      actor.system.pp.pouvoirs = totalPowerPP;
+      const pp = actor.system.pp;
+      const newUsed = (pp.caracteristiques || 0) + totalPowerPP + (pp.talents || 0) + (pp.competences || 0) + (pp.defenses || 0) + (pp.divers || 0);
+      actor.system.pp.used = newUsed;
+    }
+  }
+
+  // --- 2. EQUIPMENT ARRAY LOGIC ---
+  if (equipment.length > 0) {
+    const eArrays = {};
+    equipment.forEach(e => {
+      const link = e.flags['mnm-3e-expanded']?.link;
+      if (link) {
+        const parent = actor.items.get(link) || equipment.find(i => i.name === link);
+        if (parent) {
+          const pId = parent._id;
+          if (!eArrays[pId]) eArrays[pId] = [pId];
+          if (!eArrays[pId].includes(e._id)) eArrays[pId].push(e._id);
+        }
+      }
+    });
+
+    const eArrayMetadata = {};
+    for (const pId in eArrays) {
+      let maxCost = 0;
+      let bearerId = pId;
+      eArrays[pId].forEach(id => {
+        const item = actor.items.get(id);
+        if (!item) return;
+        const cost = parseInt(item.system.cout) || 0;
+        if (cost > maxCost) { maxCost = cost; bearerId = id; }
+      });
+      eArrayMetadata[pId] = { max: maxCost, bearer: bearerId };
+    }
+
+    let totalEquipmentEP = 0;
+    equipment.forEach(item => {
+      const baseCost = parseInt(item.system.cout) || 0;
+      let target = baseCost;
+      const link = item.flags['mnm-3e-expanded']?.link;
+      const parent = link ? (actor.items.get(link) || equipment.find(i => i.name === link)) : null;
+      const parentId = eArrays[item._id] ? item._id : (parent ? parent._id : null);
+
+      if (parentId && eArrayMetadata[parentId]) {
+        const meta = eArrayMetadata[parentId];
+        // In M&M 3e, Equipment Arrays usually cost: Most Expensive + 1 EP per Alternate.
+        // We simulate this by making alternates cost 1 EP instead of their full cost.
+        target = (item._id === meta.bearer) ? meta.max : 1;
+      }
+      
+      // Update the derived cost for the sheet display
+      item.system.derivedCout = target;
+      totalEquipmentEP += target;
+    });
+
+    if (actor.system?.ptsEquipements) {
+      actor.system.ptsEquipements.use = totalEquipmentEP;
+    }
   }
 }
 
@@ -96,14 +139,12 @@ function applyExpandedLogic(actor) {
 Hooks.once('init', () => {
   const originalPrepareDerivedData = CONFIG.Actor.documentClass.prototype.prepareDerivedData;
   CONFIG.Actor.documentClass.prototype.prepareDerivedData = function() {
-    // Run the system's standard math first
     originalPrepareDerivedData.call(this);
-    // Then immediately overwrite it with our corrected math
     applyExpandedLogic(this);
   };
 });
 
-// Structural Healing (Database-level fixes for malformed items)
+// Structural Healing
 async function structuralFixes(actor) {
   if (!actor.isOwner || actor._fixing) return;
   const updates = [];
@@ -138,7 +179,7 @@ Hooks.on('renderActorSheet', (app, html, data) => {
   if (actor) structuralFixes(actor);
 });
 
-// Drag and Drop Logic
+// Drag and Drop Logic for Powers
 Hooks.on('renderActorSheet', (app, html, data) => {
   const actor = data.actor || app.actor;
   if (!actor || actor.type !== 'personnage') return;
