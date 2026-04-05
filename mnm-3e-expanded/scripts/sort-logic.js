@@ -1,3 +1,5 @@
+alert("M&M 3E EXPANDED SCRIPT INITIALIZING...");
+console.error("M&M 3E EXPANDED | SCRIPT STARTING (ERROR LOG)");
 console.warn("M&M 3e Expanded | Script Initializing...");
 
 // Self-Healing Logic: Fixes legacy data structures on the fly
