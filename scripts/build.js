@@ -20,12 +20,14 @@ async function loadExistingIds(packName) {
   const dbFile = path.join(distDir, `${packName}.db`);
   const idMap = {};
   if (!fs.existsSync(dbFile)) return idMap;
-  const lines = (await fs.readFile(dbFile, 'utf-8')).split('\n').filter(Boolean);
+  // Using synchronous read for simplicity and to avoid potential async issues
+  const lines = fs.readFileSync(dbFile, 'utf-8').split('
+').filter(Boolean);
   for (const line of lines) {
     try {
       const doc = JSON.parse(line);
       if (doc.name && doc._id) idMap[doc.name] = doc._id;
-    } catch (e) { /* skip malformed lines */ }
+    } catch (e) { console.warn(`Failed to parse line in ${dbFile}: ${e.message}`); /* skip malformed lines */ }
   }
   return idMap;
 }
@@ -33,7 +35,10 @@ async function loadExistingIds(packName) {
 async function readCsv(filePath) {
   return new Promise((resolve, reject) => {
     const results = [];
-    if (!fs.existsSync(filePath)) return resolve([]);
+    if (!fs.existsSync(filePath)) {
+      console.warn(`CSV file not found: ${filePath}`);
+      return resolve([]);
+    }
     fs.createReadStream(filePath)
       .pipe(csv({ mapHeaders: ({ header }) => header.trim().replace(/^\uFEFF/, '') }))
       .on('data', (data) => results.push(data))
@@ -44,7 +49,12 @@ async function readCsv(filePath) {
 
 function sanitizeText(text) {
   if (!text) return "";
-  return text.replace(/\?\?\?s/g, "'s").replace(/\?\?\?t/g, "'t").replace(/\?\?\?re/g, "'re").replace(/\?\?\?ve/g, "'ve").replace(/\?\?\? /g, "— ").replace(/ \?\?\?/g, " —").replace(/\?\?\?/g, "—").replace(/â€“/g, "—").replace(/â€¢/g, "•").replace(/â€™/g, "'").replace(/â€œ/g, '"').replace(/â€\?/g, '"').replace(/Â/g, "").replace(/\s\s+/g, ' ').trim();
+  // Updated regex for robustness and consistency
+  return text.replace(/[\u2013\u2014]/g, '—') // Em dashes
+             .replace(/[\u201C\u201D\u201E\u201F]/g, '"') // Quotation marks
+             .replace(/[\u2018\u2019\u201B]/g, "'") // Apostrophes/single quotes
+             .replace(/[\u00C2]/g, '') // Remove Â
+             .replace(/\s\s+/g, ' ').trim(); // Collapse whitespace
 }
 
 function createId() {
@@ -53,11 +63,17 @@ function createId() {
 
 async function savePack(packName, documents) {
   const outFile = path.join(distDir, `${packName}.db`);
+  console.log(`Saving pack: ${packName} to ${outFile}`);
+  // Ensure correct string encoding and newline handling for JSON lines
+  // Using JSON.stringify directly for each document and joining with '
+'
   const lines = documents.map(d => JSON.stringify(d));
-  await fs.writeFile(outFile, lines.join('\n'));
+  await fs.writeFile(outFile, lines.join('
+'), 'utf-8'); // Explicitly setting utf-8
 }
 
 async function buildPowers() {
+  console.log("Building Powers...");
   const existingIds = await loadExistingIds('powers');
   const rows = await readCsv(path.join(__dirname, '../1st Powers Input.csv'));
   const items = rows.map(row => {
@@ -70,10 +86,8 @@ async function buildPowers() {
     const baseRank = parseInt(row.Rank) || 1;
     const baseCostPerRank = parseInt(row.Cost) || 1;
     
-    // Map CSV Type to system.type
     const rawType = (row.Power || row.power || row.TYPE || 'General').trim().toLowerCase();
     const mechanics = (row.Mechanics || '').toLowerCase();
-    const description = (row.Description || '').toLowerCase();
     
     let systemType = 'generaux';
     if (rawType === 'attack' || mechanics.includes('attack check') || mechanics.includes('resistance check') || (action !== 'none' && range !== 'personal')) systemType = 'attaque';
@@ -84,7 +98,6 @@ async function buildPowers() {
 
     const translatedAction = translationMap.action[action] || 'simple';
 
-    // Modifier logic: Parse Extras and Flaws from the CSV
     const extrasObj = {};
     const flawsObj = {};
     let modCostPerRank = 0;
@@ -92,37 +105,28 @@ async function buildPowers() {
     let extraCount = 0;
     let flawCount = 0;
 
-    // Parse Extras
     const extrasList = (row.Extras || "").split(',').map(e => e.trim()).filter(Boolean);
     extrasList.forEach(extraName => {
         const masterExtra = Object.values(EXTRAS).find(e => e.name.toLowerCase() === extraName.toLowerCase());
         if (masterExtra) {
             extraCount++;
-            extrasObj[extraCount.toString()] = {
-                name: masterExtra.name,
-                data: masterExtra.system
-            };
+            extrasObj[extraCount.toString()] = { name: masterExtra.name, data: masterExtra.system };
             if (masterExtra.system.cout.rang) modCostPerRank += masterExtra.system.cout.value;
             if (masterExtra.system.cout.fixe) flatCost += masterExtra.system.cout.value;
         }
     });
 
-    // Parse Flaws
     const flawsList = (row.Flaws || "").split(',').map(f => f.trim()).filter(Boolean);
     flawsList.forEach(flawName => {
         const masterFlaw = Object.values(FLAWS).find(f => f.name.toLowerCase() === flawName.toLowerCase());
         if (masterFlaw) {
             flawCount++;
-            flawsObj[flawCount.toString()] = {
-                name: masterFlaw.name,
-                data: masterFlaw.system
-            };
+            flawsObj[flawCount.toString()] = { name: masterFlaw.name, data: masterFlaw.system };
             if (masterFlaw.system.cout.rang) modCostPerRank -= masterFlaw.system.cout.value;
             if (masterFlaw.system.cout.fixe) flatCost -= masterFlaw.system.cout.value;
         }
     });
 
-    // Final Cost Math
     let netCostPerRank = baseCostPerRank + modCostPerRank;
     let totalRankCost = 0;
     let displayCostPerRank = "";
@@ -202,7 +206,7 @@ async function buildEquipment() {
         "name": name,
         "type": "equipement",
         "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
-        "system": { "description": `<p>${row.Notes || ''}</p>`, "cout": parseInt(row.Cost) || 1 },
+        "system": { "description": `<p>${sanitizeText(row.Notes)}</p>`, "cout": parseInt(row.Cost) || 1 },
         "effects": [],
         "flags": {
           "mnm-3e-expanded": {
@@ -227,7 +231,7 @@ async function buildVehicles() {
       "name": name,
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
-      "system": { "description": `<p>${row.Notes || ''}</p>`, "cout": parseInt(row.Cost) || 1 },
+      "system": { "description": `<p>${sanitizeText(row.Notes)}</p>`, "cout": parseInt(row.Cost) || 1 },
       "effects": [],
       "flags": {}
     });
@@ -247,7 +251,7 @@ async function buildHeadquarters() {
       "name": name,
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
-      "system": { "description": `<p>${row.Notes || ''}</p>`, "cout": parseInt(row.Cost) || 1 },
+      "system": { "description": `<p>${sanitizeText(row.Notes)}</p>`, "cout": parseInt(row.Cost) || 1 },
       "effects": [],
       "flags": {}
     });
@@ -257,7 +261,8 @@ async function buildHeadquarters() {
 
 async function buildModifiers(items, fileName) {
   const outFile = path.join(distDir, fileName);
-  await fs.writeFile(outFile, items.map(i => JSON.stringify(i)).join('\n'));
+  await fs.writeFile(outFile, items.map(i => JSON.stringify(i)).join('
+'));
 }
 
 async function main() {
